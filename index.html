@@ -4,658 +4,598 @@ Author URL: http://w3layouts.com
 License: Creative Commons Attribution 3.0 Unported
 License URL: http://creativecommons.org/licenses/by/3.0/
 -->
-
-<?php
-require("connexion.php");
-if(isset($_post ["username"]);
-{$user=$_POST["username"];
- $pass=$_POST["password"];}
- $sql='select * from user where username="$user" and $password="$pass"';
- $req=mysql_querry($sql);
- $count=mysql_num_rows($req);
- if($count>0)
- {header ("location:./index.html");}
- ?>
-
-
-
-
-
-
-
-
-
-
-
-
 <!DOCTYPE html>
+<!-- html -->
 <html lang="en">
-<head>
-<title>Immo_Tunis | Home :: w3layouts</title>
-<!--mobile apps-->
+<!-- head -->
+<head>   
+<title>Relaxation a Travel Category Bootstrap Responsive Website Template | Home :: w3layouts</title>
+<link href="css/font-awesome.css" rel="stylesheet" type="text/css" media="all" /><!-- fontawesome css -->     
+<link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all" /><!-- Bootstrap stylesheet -->
+<link href="css/style.css" rel="stylesheet" type="text/css" media="all" /><!-- stylesheet -->
+<!-- meta tags -->
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta name="keywords" content="Villa Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, 
-	Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
+<meta name="keywords" content="Relaxation Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, 
+Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony Ericsson, Motorola web design" />
 <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
-<!-- fonts -->
+<!-- //meta tags -->
+<!-- css for banner slider -->	
+<link rel="stylesheet" href="css/jquery.maximage.css?v=1.2" type="text/css" media="screen" />
+<!-- //css for banner slider -->			
+<!-- online-fonts-->
+<link href="//fonts.googleapis.com/css?family=Lobster+Two:400,400i,700,700i" rel="stylesheet">
 <link href="//fonts.googleapis.com/css?family=Abel" rel="stylesheet">
-<link href="//fonts.googleapis.com/css?family=Comfortaa:300,400,700" rel="stylesheet">
-<!-- /fonts -->
-<!-- css -->
-<link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
-<link href="css/font-awesome.css" rel="stylesheet" type="text/css" media="all" />
-<link href="css/chromagallery.css" rel="stylesheet" type="text/css" media="all" />
-<link href="css/jquery.dop.ThumbnailScroller.css" rel="stylesheet" type="text/css" media="all" />
-<link href='css/aos.css' rel='stylesheet prefetch' type="text/css" media="all" />
-<link href="css/pogo-slider.css" rel="stylesheet" type="text/css" media="all" />
-<link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
-<!-- /css -->
+<link href="//fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+<!--//online-fonts-->		
 </head>
-<body>
-<!-- navigation -->
-<div class="navbar-wrapper">
-	<nav class="navbar navbar-inverse navbar-fixed-top">
-		<div class="container">
-			<div class="navbar-header">
-				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+<!-- //head -->
+	<!-- body -->
+	<body>
+	<!-- top-strip -->
+	<div class="w3layouts-top-strip">
+		<div class="container-fluid">
+			<div class="w3ls-subscribe">
+				<a class="btn btnprimary scroll" href="#subscribe">Subscribe</a>
+			</div>
+			<!-- Large modal -->
+			<div class="w3layouts-login">
+				<button class="btn btn-primary" data-toggle="modal" data-target="#myModal">Login</button>
+					<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-hidden="true">
+						<div class="modal-dialog modal-lg">
+							<div class="modal-content">
+								<div class="modal-header">
+									<button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+										&times;</button>
+									<h4 class="modal-title" id="myModalLabel">
+										Don't Wait, Login now!</h4>
+								</div>
+								<div class="modal-body">
+									<div class="sap_tabs">
+									<div id="horizontalTab" style="display: block; width: 100%; margin: 0px;">
+										<ul class="resp-tabs-list">
+											<li class="resp-tab-item"><span>Login</span></li>
+											<li class="resp-tab-item"><span>Register</span></li> 
+										</ul>	
+										<div class="clearfix"> </div>	
+										<div class="resp-tabs-container">
+											<div class="tab-1 resp-tab-content">
+												<div class="agileits-login">
+													<form action="#" method="post">
+														<input type="text" class="email" name="Email" placeholder="Username" required=""/>
+														<input type="password" class="password" name="Password" placeholder="Password" required=""/>
+														<div class="wthree-text"> 
+															<ul> 
+																<li>
+																	<label class="anim">
+																		<input type="checkbox" class="checkbox">
+																		<span> Remember me ?</span> 
+																	</label> 
+																</li>
+																<li> <a href="#">Forgot password?</a> </li>
+															</ul>
+															<div class="clearfix"> </div>
+														</div>  
+														<div class="w3ls-submit">
+															<div class="submit-text">
+																<input type="submit" value="LOGIN"> 
+															</div>	
+														</div>	
+													</form>
+												</div> 
+											</div>
+											<div class="tab-1 resp-tab-content">
+												<div class="login-top sign-top">
+													<div class="agileits-login">
+														<form action="#" method="post">
+															<input type="text" name="Username" placeholder="Username" required="">
+															<input type="email" class="email" name="Email" placeholder="Email" required=""/>
+															<input type="password" class="password" name="Password" placeholder="Password" required=""/>	
+															<input type="password" class="password" name="Password" placeholder="Confirm Password" required=""/>	
+															<label class="anim">
+																<input type="checkbox" class="checkbox">
+																<span> I accept the terms of use</span> 
+															</label> 
+															<div class="w3ls-submit">
+																<div class="submit-text">
+																	<input class="register" type="submit" value="REGISTER">  
+																</div>	
+															</div>
+														</form> 
+													</div>  
+												</div>
+											</div>
+										</div>	
+									</div>
+									<div class="clearfix"> </div>
+								</div>  			
+								</div>
+							</div>
+						</div>
+					</div>
+			</div>			
+			<div class="agileinfo-contact-info">
+				<ul>
+					<li><span class="glyphicon glyphicon-earphone" aria-hidden="true"></span>Call : +1234567890</li>
+					<li><span class="glyphicon glyphicon-envelope" aria-hidden="true"></span>Mail : <a href="mailto:info@example.com">info@example.com</a></li>
+				</ul>
+			</div>
+			<div class="clearfix"></div>
+		</div>
+	</div>	
+	<!-- //top-strip -->
+		
+		<!-- navigation -->
+			<nav class="navbar navbar-default">
+			  <div class="container-fluid">
+				<!-- Brand and toggle get grouped for better mobile display -->
+				<div class="navbar-header">
+				  <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
 					<span class="sr-only">Toggle navigation</span>
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
-				</button>
-				<a class="navbar-brand" href="index.html"><h1>immo</h1></a>
-			</div>
-			<div id="navbar" class="navbar-collapse collapse">
-				<ul class="nav navbar-nav cl-effect-10">
-					<li class="active"><a href="index.html" class="page-scroll" data-hover="Acceuil"><span>Acceuil</span></a></li>
-					<li><a href="#about" class="page-scroll" data-hover="A propos"><span>A propos</span></a></li>
-					<li><a href="#service" class="page-scroll" data-hover="Services"><span>Services</span></a></li>
-					<li><a href="#gallery" class="page-scroll" data-hover="Gallerie"><span>Gallerie</span></a></li>
-					<li><a href="#team" class="page-scroll" data-hover="Actualité"><span>Actualité</span></a></li>
-					<li><a href="#contact" class="page-scroll" data-hover="Contact"><span>Contact</span></a></li>
-				</ul>
-				<ul class="nav navbar-nav navbar-right">
-					<li><a href="#"><i class="fa fa-facebook"></i></a></li>
-					<li><a href="#"><i class="fa fa-twitter"></i></a></li>
-					<li><a href="#"><i class="fa fa-google-plus"></i></a></li>
-				</ul>
-			</div>
-		</div>
-    </nav>
-</div>
-<!-- /navigation -->
-<!-- banner -->
-<div class="pogoSlider" id="js-main-slider">
-	<div class="pogoSlider-slide" data-transition="blocksReveal" data-duration="1000"  style="background-image:url(images/banner1.jpg);">
-		<div class="pogoSlider-slide-element">
-			<h3>immobilier Tunis_VLA en ligne</h3>
-			<p></p>
-			<a href="#about" class="btn btn-circle page-scroll">
-                <i class="fa fa-angle-double-down animated"></i>
-            </a>
-		</div>
-	</div>
-	<div class="pogoSlider-slide " data-transition="blocksReveal" data-duration="1000"  style="background-image:url(images/banner2.jpg);">
-		<div class="pogoSlider-slide-element">
-			<h3>immobilier Tunis_VLA en ligne</h3>
-			<p></p>
-			<a href="#about" class="btn btn-circle page-scroll">
-                <i class="fa fa-angle-double-down animated"></i>
-            </a>
-		</div>
-	</div>
-	<div class="pogoSlider-slide " data-transition="blocksReveal" data-duration="1000"  style="background-image:url(images/banner3.jpg);">
-		<div class="pogoSlider-slide-element">
-			<h3>immobilier Tunis_VLA en ligne</h3>
-			<p> </p>
-			<a href="#about" class="btn btn-circle page-scroll">
-                <i class="fa fa-angle-double-down animated"></i>
-            </a>
-		</div>
-	</div>
-	<div class="pogoSlider-slide " data-transition="blocksReveal" data-duration="1000"  style="background-image:url(images/banner4.jpg);">
-		<div class="pogoSlider-slide-element">
-			<h3>immobilier Tunis_vla en ligne</h3>
-			<p> </p>
-			<a href="#about" class="btn btn-circle page-scroll">
-                <i class="fa fa-angle-double-down animated"></i>
-            </a>
-		</div>
-	</div>
-</div><!-- .pogoSlider -->	
-<!-- /banner -->
-<!-- about us -->
-<section class="about-w3ls" id="about">
-	<div class="container-fluid">
-		<div class="col-lg-6 col-md-6 col-sm-6 w3l1" data-aos="zoom-in">
-			<h2>Notre site</h2>
-			<p></p>
-		</div>
-		<div class="col-lg-6 col-md-6 col-sm-6 w3l2" data-aos="zoom-in">
-			<div class="hover01 column">
-				<div>
-					<figure><img src="images/about-img1.jpg" class="agile1 img-responsive" alt=""></figure>
+				  </button>
 				</div>
-			</div>	
-			<img src="images/about-img2.jpg" class="agile2 img-responsive" alt="" data-aos="flip-up">
-		</div>
-		<div class="clearfix"></div>
-	</div>
-</section>
-<!-- /about us -->
-<!-- services -->
-<section class="service-agileinfo" id="service">
-	<div class="container">
-		<h3 class="text-center">Nos Services</h3>
-		<div class="col-lg-3 col-md-3 col-sm-6 wthree1" data-aos="zoom-in">
-			<div class="w3-agileits">
-				<img src="images/serv-img1.png" alt="" class="img-responsive">
-				<h4>Achat</h4>
-				<p></p>
-			</div>	
-		</div>
-		<div class="col-lg-3 col-md-3 col-sm-6 wthree2" data-aos="zoom-in">
-			<div class="w3-agileits">
-				<img src="images/serv-img2.png" alt="" class="img-responsive">
-				<h4>Vente</h4>
-				<p></p>
-			</div>	
-		</div>
-		<div class="col-lg-3 col-md-3 col-sm-6 wthree3" data-aos="zoom-in">
-			<div class="w3-agileits">
-				<img src="images/serv-img3.png" alt="" class="img-responsive">
-				<h4>Location</h4>
-				<p></p>
-			</div>	
-		</div>
+				
+				<!-- Collect the nav links, forms, and other content for toggling -->
+				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1" bgcolor="rose">
+				  <ul class="nav navbar-nav">
+					<li><a class="active" href="index.html">Acheter</a></li>
+					<li><a href="about.html">Louer</a></li>
+					<li><a href="services.html">Vacances</a></li>
+					<li><a href="gallery.html">creer annonce</a></li>
+					<li><a href="contact.html">Contact</a></li></ul></div></div>
+					<br><br><br>
+					
+					
+					
+					
+					
+					
+					<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+				  <ul class="nav navbar-nav">
+					<li class="dropdown">
+					
+					  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">type <span class="caret"></span></a>
+					  <ul class="dropdown-menu">
+						<li><a href="typography.html">Maison</a></li>
+						<li><a href="icons.html">Bureau</a></li>
+						<li><a href="icons.html">Depots</a></li>
+						<li><a href="icons.html">Appartement</a></li>
+						<li><a href="icons.html">Commerce</a></li>
+						<li><a href="icons.html">Terrain</a></li>
+					  </ul>
+					</li>
+					
+					<li class="dropdown">
+					
+					  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">prix<span class="caret"></span></a>
+					  <ul class="dropdown-menu">
+						<li><a href="typography.html">0-100000</a></li>
+						<li><a href="icons.html">100000-200000</a></li>
+						<li><a href="icons.html">200000-300000</a></li>
+						<li><a href="icons.html">300000-400000</a></li>
+						<li><a href="icons.html">400000-500000</a></li>
+						<li><a href="icons.html">500000-+</a></ul></li>
+						
+						
+						<li class="dropdown">
+					
+					  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Piéce<span class="caret"></span></a>
+					  <ul class="dropdown-menu">
+						<li><a href="typography.html">1+</a></li>
+						<li><a href="icons.html">2+</a></li>
+						<li><a href="icons.html">3+</a></li>
+						<li><a href="icons.html">4+</a></li></ul></li>
+						
+						
+						
+						
+						<li class="dropdown">
+					
+					  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Ville<span class="caret"></span></a>
+					  <ul class="dropdown-menu">
+						<li><a href="typography.html"></a></li>
+						<li><a href="icons.html"></a></li>
+						<li><a href="icons.html"></a></li>
+						<li><a href="icons.html"></a></li></ul></li>
+						
+						
+						
+						
+						
+						<li class="dropdown">
+					
+					  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Surface<span class="caret"></span></a>
+					  <ul class="dropdown-menu">
+						<li><a href="typography.html">0-50m²</a></li>
+						<li><a href="icons.html">50m²-75m²</a></li>
+						<li><a href="icons.html">75m²-100m²</a></li>
+						<li><a href="icons.html">100m²-150m²</a></li>
+						<li><a href="icons.html">+150m²</a></li></ul></LI>
+					  </ul>
+					</li>
+					
+				
+				  </ul>
+				</div><!-- /.navbar-collapse -->
+			  </div><!-- /.container-fluid -->
+			</nav>
+		<!-- //navigation -->
 		
-		<div class="clearfix"></div>
-	</div>	
-</section>
-<!-- /services -->
-<!-- specialities -->
-<section class="special-w3ls">
-	<div class="container">
-		<div class="col-lg-5 col-md-5 col-sm-5 special-agileits1" data-aos="flip-right">
-			<div class="hover01 column">
-				<div>
-					<figure><img src="images/special-img.jpg" class="img-responsive" alt=""></figure>
+		
+		
+	<!-- main-banner-slider -->
+	<div class="w3layouts-slider">
+		<a href="index.html" id="logo"><h1></h1></a>
+		<a href="#" id="arrow_left"><img src="images/arrow_left.png" alt="Slide Left" /></a>
+		<a href="#" id="arrow_right"><img src="images/arrow_right.png" alt="Slide Right" /></a>
+		
+		<img id="cycle-loader" src="images/ajax-loader.gif" alt="" />
+		<div id="maximage">
+			<div>
+				<img src="images/slider-1.jpg" alt="slider image" />
+				<img id="gradient" src="images/gradient.png" alt="" />
+				<div class="in-slide-content" style="display:none;">
+					<h2></h2> 
+				</div>
+			</div>
+			<div class="video">
+				<img src="images/pattern.jpg" alt="" />
+				<!-- "Video For Everybody" http://camendesign.com/code/video_for_everybody -->
+				<video controls="controls" muted="muted" poster="images/video-image.jpg">
+					<!-- <source src="http://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4" type="video/mp4" /> -->
+					<source src="video/video.mp4" type="video/mp4" />
+					<source src="" type="video/webm" />
+					<source src="" type="video/ogg" />
+					Your browser does not support HTML5 videos.
+				</video>
+			</div>
+			<img src="images/slider-2.jpg" alt="slider image" />
+			<img src="images/slider-3.jpg" alt="slider image" />
+			<img src="images/slider-4.jpg" alt="slider image" />
+			<img src="images/slider-5.jpg" alt="slider image" />
+		</div>			
+	</div>
+	<!-- //main-banner-slider -->
+		
+	<!--about-->
+	<div id="about" class="about">
+		<div class="container">
+			<div class="title">
+				<h3> </h3>
+				<p> </p>
+			</div>
+			<div class="about-row">
+				<div class="col-md-4 about-grids">
+					<span class="glyphicon glyphicon-globe effect-1" aria-hidden="true"></span>
+					<h4></h4>
+					<p></p>
+					
+				</div>
+				<div class="col-md-4 about-grids">
+					<span class="glyphicon glyphicon-tent effect-1" aria-hidden="true"></span>
+					<h4></h4>
+					<p></p>
+					
+				</div>
+				<div class="col-md-4 about-grids">
+					<span class="glyphicon glyphicon-earphone effect-1" aria-hidden="true"></span>
+					<h4></h4>
+					<p></p>
+					
+				</div>
+				<div class="clearfix"> </div>
+			</div>
+		</div>
+	</div>
+	<!--//about-->
+	
+	<!-- info section -->
+	<div class="where">
+		<div class="container">
+			<div class="col-md-4 where-left"></div>
+			<div class="col-md-8 where-right">
+				<div class="wel-left">
+					<div class="welcome-info wel-grid">
+						<figure class="icon">
+							<span class="glyphicon glyphicon-screenshot" aria-hidden="true"></span>
+						</figure>
+						<ul>
+							<li><a href="#"><span class="glyphicon glyphicon-globe"></span></a></li>
+							<li><a href="#"><span class="glyphicon glyphicon-map-marker"></span></a></li>
+							<li><a href="#"><span class="glyphicon glyphicon-move"></span></a></li>
+							<li><a href="#"><span class="glyphicon glyphicon-glass"></span></a></li>
+						</ul>
+					</div>
+				</div>
+				<div class="wel-right">
+					<div class="content-item">
+						<div class="overlay"></div>
+						  <div class="corner-overlay-content">Info</div>
+						  <div class="overlay-content">
+							<h4></h4>
+							<p> </p>
+						  </div>
+					</div>
+				</div>
+				<div class="clearfix"></div>
+			</div>
+			<div class="clearfix"> </div>
+		</div>
+	</div>
+	<!-- //info section -->	
+	
+	<!--featured tours-->
+	<div id="features" class="features">
+		<div class="container">
+			<div class="title">
+				<h3></h3>
+				<p> </p>
+			</div>
+			<div class="features-row">
+				<div class="col-md-4 features-grids">
+					<div class="features-left">
+						<h4></h4>
+						<h5></h5>
+						<p></P>
+					<div class="features-right">
+						<span class="glyphicon glyphicon-" aria-hidden="true">1</span>
+					</div>
+					<div class="clearfix"> </div>
+				</div>
+				<div class="col-md-4 features-grids features-grids-mdl">
+					<div class="features-left">
+						<h4></h4>
+						<h5> </h5>
+						<p></p>
+					</div>
+					<div class="features-right">
+						<span class="glyphicon glyphicon-" aria-hidden="true">2</span>
+					</div>
+					<div class="clearfix"> </div>
+				</div>
+				<div class="col-md-4 features-grids">
+					<div class="features-left">
+						<h4></h4>
+						<h5> </h5>
+						<p></P></div>
+					<div class="features-right">
+						<span class="glyphicon glyphicon-" aria-hidden="true">3</span>
+					</div>
+					<div class="clearfix"> </div>
+				</div>
+				<div class="clearfix"> </div>
+			</div>
+		</div>
+	</div>
+	<!--//featured tours-->
+	
+	<!-- popular-places -->
+	<div class="agileits-popular-places">
+			<div class="container">
+				<div class="w3layouts-title">
+					<h3></h3>
+					<p> </p>
+				</div>
+				<div class="grid">
+					<figure class="effect-marley">
+						<img src="images/slider-2.jpg" alt="image"/>
+						<figcaption>
+							<h3> <span> </span></h3>
+							<p></p>
+							<a href="#">View more</a>
+						</figcaption>			
+					</figure>
+					<figure class="effect-marley">
+						<img src="images/slider-4.jpg" alt="image"/>
+						<figcaption>
+							<h3> <span> </span></h3>
+							<p></p>
+							<a href="#"></a>
+						</figcaption>			
+					</figure>
+					<figure class="effect-marley">
+						<img src="images/slider-5.jpg" alt="image"/>
+						<figcaption>
+							<h3><span> </span></h3>
+							<p></p>
+							<a href="#">View more</a>
+						</figcaption>			
+					</figure>
+					<figure class="effect-marley">
+						<img src="images/slider-4.jpg" alt="image"/>
+						<figcaption>
+							<h3> <span> </span></h3>
+							<p></p>
+							<a href="#">View more</a>
+						</figcaption>			
+					</figure>
+					<figure class="effect-marley">
+						<img src="images/slider-3.jpg" alt="image"/>
+						<figcaption>
+							<h3> <span> </span></h3>
+							<p></p>
+							<a href="#">View more</a>
+						</figcaption>			
+					</figure>
+					<figure class="effect-marley">
+						<img src="images/slider-1.jpg" alt="image"/>
+						<figcaption>
+							<h3> <span> </span></h3>
+							<p></p>
+							<a href="#">View more</a>
+						</figcaption>			
+					</figure>
+					<div class="clearfix"></div>
 				</div>
 			</div>
 		</div>
-		<div class="col-lg-7 col-md-7 col-sm-7 special-agileits2">
-			<h3>Nos Specialities</h3>
-			<p class="special-agile1" data-aos="flip-up">Lorem ipsum dolor sit amet.</p>
-			<p class="special-agile2" data-aos="flip-up">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris sodales ornare mollis. Praesent mauris tortor, efficitur in mauris accumsan, suscipit ullamcorper orci. Sed eu velit cursus, rhoncus orci ut, placerat ipsum. Ut et ornare ante.</p>
-			<div class="entry-content" data-aos="flip-up">
-                <div id="scrollerContainer3">
-					<ul class="Settings" style="display:none;">
-                                        <li class="Width">901</li>
-                                        <li class="Height">238</li>     
-                                        <li class="BgColor">000000</li>
-                                        <li class="BgAlpha">100</li>
-                                        <li class="BgBorderSize">1</li>
-                                        <li class="BgBorderColor">000000</li>
-                                        <li class="ThumbnailsOrder">random</li>
-                                        <li class="ResponsiveEnabled">true</li>
-                                        <li class="UltraResponsiveEnabled">false</li>
-                                        <li class="ThumbnailsOrder">random</li>
-                                        <li class="ThumbnailsPosition">horizontal</li>
-                                        <li class="ThumbnailsBgColor">000000</li>
-                                        <li class="ThumbnailsBgAlpha">0</li>
-                                        <li class="ThumbnailsBorderSize">0</li>
-                                        <li class="ThumbnailsBorderColor">e0e0e0</li>
-                                        <li class="ThumbnailsSpacing">9</li>
-                                        <li class="ThumbnailsMarginTop">10</li>
-                                        <li class="ThumbnailsMarginRight">0</li>
-                                        <li class="ThumbnailsMarginBottom">10</li>
-                                        <li class="ThumbnailsMarginLeft">0</li>
-                                        <li class="ThumbnailsPaddingTop">0</li>
-                                        <li class="ThumbnailsPaddingRight">0</li>
-                                        <li class="ThumbnailsPaddingBottom">0</li>
-                                        <li class="ThumbnailsPaddingLeft">0</li>
-                                        <li class="ThumbnailsInfo">label</li>
-                                        <li class="ThumbnailsNavigationEasing">linear</li>
-                                        <li class="ThumbnailsNavigationLoop">false</li>
-                                        <li class="ThumbnailsNavigationMouseEnabled">false</li>
-                                        <li class="ThumbnailsNavigationScrollEnabled">true</li>
-                                        <li class="ThumbnailsScrollPosition">bottom/right</li>
-                                        <li class="ThumbnailsScrollSize">7</li>
-                                        <li class="ThumbnailsScrollScrubColor">afbd21</li>
-                                        <li class="ThumbnailsScrollBarColor">606060</li> 
-                                        <li class="ThumbnailsNavigationArrowsEnabled">true</li>
-                                        <li class="ThumbnailsNavigationArrowsNoItemsSlide">3</li>
-                                        <li class="ThumbnailsNavigationArrowsSpeed">600</li>
-                                        <li class="ThumbnailsNavigationPrev">images/ThumbnailsPrev3.png</li>
-                                        <li class="ThumbnailsNavigationPrevHover">images/ThumbnailsPrevHover3.png</li>
-                                        <li class="ThumbnailsNavigationPrevDisabled">images/ThumbnailsPrevDisabled3.png</li>
-                                        <li class="ThumbnailsNavigationNext">images/ThumbnailsNext3.png</li>
-                                        <li class="ThumbnailsNavigationNextHover">images/ThumbnailsNextHover3.png</li>
-                                        <li class="ThumbnailsNavigationNextDisabled">images/ThumbnailsNextDisabled3.png</li>
-                                        <li class="ThumbnailLoader">images/ThumbnailLoader3.gif</li>
-                                        <li class="ThumbnailWidth">262</li>
-                                        <li class="ThumbnailHeight">200</li>
-                                        <li class="ThumbnailAlpha">90</li>
-                                        <li class="ThumbnailAlphaHover">100</li>
-                                        <li class="ThumbnailBgColor">000000</li>
-                                        <li class="ThumbnailBgColorHover">000000</li>
-                                        <li class="ThumbnailBorderSize">0</li>
-                                        <li class="ThumbnailBorderColor">d0d0d0</li>
-                                        <li class="ThumbnailBorderColorHover">303030</li>
-                                        <li class="ThumbnailPaddingTop">0</li>
-                                        <li class="ThumbnailPaddingRight">0</li>
-                                        <li class="ThumbnailPaddingBottom">0</li>
-                                        <li class="ThumbnailPaddingLeft">0</li> 
-                                        <li class="LightboxEnabled">true</li>
-                                        <li class="LightboxDisplayTime">600</li>
-                                        <li class="LightboxWindowColor">000000</li>
-                                        <li class="LightboxWindowAlpha">80</li>
-                                        <li class="LightboxLoader">images/LightboxLoader3.gif</li>
-                                        <li class="LightboxBgColor">202020</li>
-                                        <li class="LightboxBgAlpha">100</li>
-                                        <li class="LightboxBorderSize">2</li>
-                                        <li class="LightboxBorderColor">000000</li>
-                                        <li class="LightboxCaptionTextColor">999999</li>
-                                        <li class="LightboxMarginTop">30</li>
-                                        <li class="LightboxMarginRight">30</li>
-                                        <li class="LightboxMarginBottom">30</li>
-                                        <li class="LightboxMarginLeft">30</li>
-                                        <li class="LightboxPaddingTop">10</li>
-                                        <li class="LightboxPaddingRight">10</li>
-                                        <li class="LightboxPaddingBottom">10</li>
-                                        <li class="LightboxPaddingLeft">10</li>
-                                        <li class="LightboxNavigationPrev">images/LightboxPrev3.png</li>
-                                        <li class="LightboxNavigationPrevHover">images/LightboxPrevHover3.png</li>
-                                        <li class="LightboxNavigationNext">images/LightboxNext3.png</li>
-                                        <li class="LightboxNavigationNextHover">images/LightboxNextHover3.png</li>
-                                        <li class="LightboxNavigationClose">images/LightboxClose3.png</li>
-                                        <li class="LightboxNavigationCloseHover">images/LightboxCloseHover3.png</li>
-                                        <li class="LightboxNavigationInfoBgColor">202020</li>
-                                        <li class="LightboxNavigationInfoTextColor">ffffff</li>
-                                        <li class="LightboxNavigationDisplayTime">600</li>
-                                        <li class="LightboxNavigationTouchDeviceSwipeEnabled">true</li>
-                                        <li class="SocialShareEnabled">false</li>
-                                        <li class="SocialShareLightbox">images/SocialShareLightbox3.png</li>
-                                        <li class="TooltipBgColor">ffffff</li>
-                                        <li class="TooltipStrokeColor">000000</li>
-                                        <li class="TooltipTextColor">000000</li>
-                                        <li class="LabelPosition">top</li>
-                                        <li class="LabelAlwaysVisible">false</li>
-                                        <li class="LabelUnderHeight">50</li>
-                                        <li class="LabelBgColor">000000</li>
-                                        <li class="LabelBgAlpha">80</li>
-                                        <li class="LabelTextColor">ffffff</li>
-                                        <li class="SlideshowEnabled">false</li>
-                                        <li class="SlideshowTime">5000</li>
-                                        <li class="SlideshowLoop">false</li>
-                                    </ul>
-						<ul class="Content" style="display:none;">
-                            <li>
-                                <img class="Image" src="images/special-img1-1.jpg" alt="Lorem ipsum dolor sit amet, consectetur adipiscing elit." title="Lorem ipsum dolor sit amet, consectetur adipiscing elit." />
-								<img class="Thumb" src="images/special-img1.jpg" alt="Lorem ipsum dolor sit amet, consectetur adipiscing elit." title="Lorem ipsum dolor sit amet, consectetur adipiscing elit." />
-								<span class="Title">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</span>
-								<span class="Caption"></span>
-                                <span class="Media"></span>
-                                <span class="LightboxMedia"></span>
-                                <span class="Link"></span>
-                                <span class="Target">_blank</span>
-                            </li>
+	<!-- //popular-places -->	
+	
+	<!-- news letter -->
+		<div class="subscribe text-center" id="subscribe">
+		<div class="container"> 
+			<div class="title">
+				<h3>Subscribe Here</h3>
+				<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+			</div>
+			<form action="#" method="get">
+				<input placeholder="Enter Email Address" class="user" type="email" required="">
+				<input type="submit" value="Subscribe">
+			</form>
+		</div>
+	</div>
+	<!-- //news letter -->	
+	
+	<!-- footer -->
+		<footer>
+			<div class="w3ls-footer-grids">
+				<div class="container">
+					<div class="col-md-3 w3l-footer one">
+						<h3>About Company</h3>
+						<p> Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of Latin at Hampden-Sydney College in Virginia from a Lorem Ipsum passage, undoubtable source.</p>
+						<p class="adam">- Mark Thomson, CEO</p>
+						<div class="clearfix"></div>
+					</div>
+					<div class="col-md-3 w3l-footer one tweet">
+						<h3>Tweets</h3>
+						<ul>
 							<li>
-                                <img class="Image" src="images/special-img2-2.jpg" alt="Lorem ipsum dolor sit amet, consectetur adipiscing elit." title="Lorem ipsum dolor sit amet, consectetur adipiscing elit." />
-                                <img class="Thumb" src="images/special-img2.jpg" alt="Lorem ipsum dolor sit amet, consectetur adipiscing elit." title="Lorem ipsum dolor sit amet, consectetur adipiscing elit." />
-                                <span class="Title">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</span>
-                                <span class="Caption"></span>
-                                <span class="Media"></span>
-                                <span class="LightboxMedia"></span>
-                                <span class="Link"></span>
-                                <span class="Target">_blank</span>
-                            </li>
-                            <li>
-                                <img class="Image" src="images/special-img3-3.jpg" alt="Lorem ipsum dolor sit amet, consectetur adipiscing elit." title="Lorem ipsum dolor sit amet, consectetur adipiscing elit." />
-								<img class="Thumb" src="images/special-img3.jpg" alt="Lorem ipsum dolor sit amet, consectetur adipiscing elit." title="Lorem ipsum dolor sit amet, consectetur adipiscing elit." />
-                                <span class="Title">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</span>
-                                <span class="Caption"></span>
-                                <span class="Media"></span>
-                                <span class="LightboxMedia"></span>
-                                <span class="Link"></span>
-                                <span class="Target">_blank</span>
-                            </li>
-                            <li>
-                                <img class="Image" src="images/special-img1-1.jpg" alt="Lorem ipsum dolor sit amet, consectetur adipiscing elit." title="Lorem ipsum dolor sit amet, consectetur adipiscing elit." />
-                                <img class="Thumb" src="images/special-img1.jpg" alt="Lorem ipsum dolor sit amet, consectetur adipiscing elit." title="Lorem ipsum dolor sit amet, consectetur adipiscing elit." />
-                                <span class="Title">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</span>
-								<span class="Caption"></span>
-                                <span class="Media"></span>
-                                <span class="LightboxMedia"></span>
-                                <span class="Link"></span>
-                                <span class="Target">_blank</span>
-                            </li>
-                            <li>
-                                <img class="Image" src="images/special-img2-2.jpg" alt="Lorem ipsum dolor sit amet, consectetur adipiscing elit." title="Lorem ipsum dolor sit amet, consectetur adipiscing elit." />
-                                <img class="Thumb" src="images/special-img2.jpg" alt="Lorem ipsum dolor sit amet, consectetur adipiscing elit." title="Lorem ipsum dolor sit amet, consectetur adipiscing elit." />
-								<span class="Title">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</span>
-                                <span class="Caption"></span>
-                                <span class="Media"></span>
-                                <span class="LightboxMedia"></span>
-								<span class="Link"></span>
-                                <span class="Target">_blank</span>
-                            </li>
+								<a href="#"><i class="fa fa-twitter"></i>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accus.
+								<i>http//example.com</i></a>
+								<span>About 15 minutes ago<span>
+							</span></span></li>
 							<li>
-                                <img class="Image" src="images/special-img3-3.jpg" alt="Lorem ipsum dolor sit amet, consectetur adipiscing elit." title="Lorem ipsum dolor sit amet, consectetur adipiscing elit." />
-                                <img class="Thumb" src="images/special-img6.jpg" alt="Lorem ipsum dolor sit amet, consectetur adipiscing elit." title="Lorem ipsum dolor sit amet, consectetur adipiscing elit." />
-                                <span class="Title">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</span>
-                                <span class="Caption"></span>
-								<span class="Media"></span>
-                                <span class="LightboxMedia"></span>
-								<span class="Link"></span>
-                                <span class="Target">_blank</span>
-							</li>
-							<li>
-                                <img class="Image" src="images/special-img2-2.jpg" alt="Lorem ipsum dolor sit amet, consectetur adipiscing elit." title="Lorem ipsum dolor sit amet, consectetur adipiscing elit." />
-								<img class="Thumb" src="images/special-img2.jpg" alt="Lorem ipsum dolor sit amet, consectetur adipiscing elit." title="Lorem ipsum dolor sit amet, consectetur adipiscing elit." />
-                                <span class="Title">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</span>
-                                <span class="Caption"></span>
-                                <span class="Media"></span>
-								<span class="LightboxMedia"></span>
-								<span class="Link"></span>
-                                <span class="Target">_blank</span>
-							</li>
-                        </ul>                                   
-                    </div>
-				</div>
-           
-		</div>
-		<div class="clearfix"></div>
-	</div>
-</section>
-<!-- specialities -->
-<!-- info section -->
-<section class="info-agileinfo">
-	<div class="container">
-		<h3 class="text-center">Plus d'Information</h3>
-		<div class="col-lg-8 col-md-8 info-w3ls1">
-			<div class="info-agile1" data-aos="flip-up">
-				<div class="col-lg-6 col-md-6 col-sm-6 info-w3-agile1">
-					<div class="hover01 column">
-						<div>
-							<figure><img src="images/info-img1.jpg" alt="" class="img-responsive"></figure>
-						</div>
-					</div>	
-				</div>
-				<div class="col-lg-6 col-md-6 col-sm-6 info-w3-agile1">
-					<div class="agileits-w3layouts">
-						<h4>Lorem ipsum dolor sit amet.</h4>
-						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam sit amet vulputate ex. Mauris felis dui, venenatis auctor iaculis posuere, aliquam in augue. Ut feugiat non arcu in bibendum.</p>
+								<a href="#"> <i class="fa fa-twitter"></i>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit. 
+								<i>http//example.com</i></a>
+								<span>About a day ago<span>
+							</span></span></li>
+						</ul>
 					</div>
+					<div class="col-md-3 w3l-footer two">
+						<h3>Keep Connected</h3>
+						<ul>
+							<li><a class="fb" href="#"><i class="fa fa-facebook"></i>Like us on Facebook</a></li>
+							<li><a class="fb1" href="#"><i class="fa fa-twitter"></i>Follow us on Twitter</a></li>
+							<li><a class="fb2" href="#"><i class="fa fa-google-plus"></i>Add us on Google Plus</a></li>
+							<li><a class="fb3" href="#"><i class="fa fa-dribbble"></i>Follow us on Dribbble</a></li>
+							<li><a class="fb4" href="#"><i class="fa fa-pinterest-p"></i>Follow us on Pinterest</a></li>
+						</ul>
+					</div>
+					<div class="col-md-3 w3l-footer three">
+						<h3>Contact Information</h3>
+						<ul>
+							<li><i class="fa fa-map-marker"></i><p>The company name <span>Lorem ipsum dolor,</span>Polo Street (Yellow Door). </p><div class="clearfix"></div> </li>
+							<li><i class="fa fa-phone"></i><p>1234567890</p> <div class="clearfix"></div> </li>
+							<li><i class="fa fa-envelope-o"></i><a href="mailto:info@example.com">info@example.com</a> <div class="clearfix"></div></li>
+						</ul>
+					</div>
+					<div class="clearfix"></div>
 				</div>
-				<div class="clearfix"></div>
 			</div>
-			<div class="info-agile2" data-aos="flip-down">
-				<div class="col-lg-6 col-md-6 col-sm-6 info-w3-agile1">
-					<div class="agileits-w3layouts">
-						<h4>Morbi sed varius ipsum eget.</h4>
-						<p>In hac habitasse platea dictumst. Vestibulum tellus magna, scelerisque id ultricies sit amet, porttitor id elit. Nullam iaculis aliquet arcu, ac vehicula ipsum mollis at.</p>
+			<div class="copy-right-grids">
+				<div class="container">
+					<div class="copy-left">
+							<p class="footer-gd">© 2017 . All Rights Reserved | Design by <a href="https://w3layouts.com/" target="_blank">W3layouts</a></p>
 					</div>
+					<div class="clearfix"></div>
 				</div>
-				<div class="col-lg-6 col-md-6 col-sm-6 info-w3-agile1">
-					<div class="hover01 column">
-						<div>
-							<figure><img src="images/info-img3.jpg" alt="" class="img-responsive"></figure>
-						</div>
-					</div>
-				</div>
-				<div class="clearfix"></div>
 			</div>
-		</div>
-		<div class="col-lg-4 col-md-4 info-w3ls2">
-			<div class="info-agile3" data-aos="flip-left">
-				<div class="col-lg-12 col-md-12 col-sm-12 info-w3-agile2">
-					<div class="hover01 column">
-						<div>
-							<figure><img src="images/info-img2.jpg" alt="" class="img-responsive"></figure>
-						</div>
-					</div>
-				</div>	
-				<div class="col-lg-12 col-md-12 col-sm-12 info-w3-agile2">
-					<div class="agileits-w3layouts">
-						<h4>Phasellus pharetra magna.</h4>
-						<p>Aliquam eget suscipit lorem, a vehicula neque. Duis a ultricies dui, non dapibus diam. Cras libero lacus, volutpat vitae euismod at, pellentesque sit amet leo. Proin nec viverra metus.</p>
-					</div>
-				</div>
-				<div class="clearfix"></div>	
-			</div>
-		</div>	
-		<div class="clearfix"></div>
-	</div>
-</section>
-<!-- /info section -->
-<!-- gallery -->
-<section class="gallery-w3ls" id="gallery">
-	<div class="container">
-		<h3 class="text-center">Notre Gallerie</h3>
-		<div class="content">
-			<div class="chroma-gallery mygallery">
-				<img src="images/gallery-img1.jpg" alt="Click" data-largesrc="images/gallery-img1-1.jpg" class="img-responsive">
-				<img src="images/gallery-img2.jpg" alt="Click" data-largesrc="images/gallery-img2-2.jpg" class="img-responsive">
-				<img src="images/gallery-img3.jpg" alt="Click" data-largesrc="images/gallery-img3-3.jpg" class="img-responsive">
-				<img src="images/gallery-img4.jpg" alt="Click" data-largesrc="images/gallery-img4-4.jpg" class="img-responsive">
-				<img src="images/gallery-img5.jpg" alt="Click" data-largesrc="images/gallery-img5-5.jpg" class="img-responsive">
-				<img src="images/gallery-img6.jpg" alt="Click" data-largesrc="images/gallery-img6-6.jpg" class="img-responsive">
-				<img src="images/gallery-img7.jpg" alt="Click" data-largesrc="images/gallery-img7-7.jpg" class="img-responsive">
-				<img src="images/gallery-img8.jpg" alt="Click" data-largesrc="images/gallery-img8-8.jpg" class="img-responsive">
-				<img src="images/gallery-img9.jpg" alt="Click" data-largesrc="images/gallery-img9-9.jpg" class="img-responsive">			 	
-			</div>	
-		</div>
-	</div>
-</section>
-<!-- /gallery -->
-<!-- team -->
-<section class="team-w3ls" id="team">
-	<div class="container">
-		<h3 class="text-center">Notre</h3>
-		<div class="col-lg-6 col-md-6 col-sm-12 team-info1" data-aos="zoom-in">
-			<div class="team-agileits">
-				<div class="col-xs-4 team-w3-agile1">
-					<div class="hover01 column">
-						<div>
-							<figure><img src="images/team-img1.jpg" alt="" class="img-responsive"></figure>
-						</div>
-					</div>	
-					<ul class="social-icons1">
-						<li><a href="#"><i class="fa fa-facebook"></i></a></li>
-						<li><a href="#"><i class="fa fa-twitter"></i></a></li>
-						<li><a href="#"><i class="fa fa-google-plus"></i></a></li>
-					</ul>
-				</div>
-				<div class="col-xs-8 team-w3-agile2">
-					<h4>Elizabeth</h4>
-					<p class="team-agile1">Founder</p>
-					<p class="team-agile2">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum mollis imperdiet sem. Nunc eget urna eu libero vulputate lacinia.</p>
-				</div>
-				<div class="clearfix"></div>
-			</div>	
-		</div>
-		<div class="col-lg-6 col-md-6 col-sm-12 team-info1" data-aos="zoom-in">
-			<div class="team-agileits">
-				<div class="col-xs-4 team-w3-agile1">
-					<div class="hover01 column">
-						<div>
-							<figure><img src="images/team-img2.jpg" alt="" class="img-responsive"></figure>
-						</div>
-					</div>
-					<ul class="social-icons1">
-						<li><a href="#"><i class="fa fa-facebook"></i></a></li>
-						<li><a href="#"><i class="fa fa-twitter"></i></a></li>
-						<li><a href="#"><i class="fa fa-google-plus"></i></a></li>
-					</ul>
-				</div>
-				<div class="col-xs-8 team-w3-agile2">
-					<h4>Johnny Cage</h4>
-					<p class="team-agile1">Chairman</p>
-					<p class="team-agile2">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum mollis imperdiet sem. Nunc eget urna eu libero vulputate lacinia.</p>
-				</div>
-				<div class="clearfix"></div>
-			</div>
-		</div>	
-		<div class="col-lg-6 col-md-6 col-sm-12 team-info2" data-aos="zoom-in">
-			<div class="team-agileits">
-				<div class="col-xs-4 team-w3-agile1">
-					<div class="hover01 column">
-						<div>
-							<figure><img src="images/team-img3.jpg" alt="" class="img-responsive"></figure>
-						</div>
-					</div>
-					<ul class="social-icons1">
-						<li><a href="#"><i class="fa fa-facebook"></i></a></li>
-						<li><a href="#"><i class="fa fa-twitter"></i></a></li>
-						<li><a href="#"><i class="fa fa-google-plus"></i></a></li>
-					</ul>
-				</div>
-				<div class="col-xs-8 team-w3-agile2">
-					<h4>Kate Winslet</h4>
-					<p class="team-agile1">Manager</p>
-					<p class="team-agile2">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum mollis imperdiet sem. Nunc eget urna eu libero vulputate lacinia.</p>
-				</div>
-				<div class="clearfix"></div>
-			</div>
-		</div>	
-		<div class="col-lg-6 col-md-6 col-sm-12 team-info2" data-aos="zoom-in">
-			<div class="team-agileits">
-				<div class="col-xs-4 team-w3-agile1">
-					<div class="hover01 column">
-						<div>
-							<figure><img src="images/team-img4.jpg" alt="" class="img-responsive"></figure>
-						</div>
-					</div>
-					<ul class="social-icons1">
-						<li><a href="#"><i class="fa fa-facebook"></i></a></li>
-						<li><a href="#"><i class="fa fa-twitter"></i></a></li>
-						<li><a href="#"><i class="fa fa-google-plus"></i></a></li>
-					</ul>
-				</div>
-				<div class="col-xs-8 team-w3-agile2">
-					<h4>Britney Spears</h4>
-					<p class="team-agile1">Director</p>
-					<p class="team-agile2">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum mollis imperdiet sem. Nunc eget urna eu libero vulputate lacinia.</p>
-				</div>
-				<div class="clearfix"></div>
-			</div>
-		</div>	
-		<div class="clearfix"></div>
-	</div>
-</section>
-<!-- /team -->
-<!-- map -->
-<div class="map" data-aos="zoom-in">
-	<iframe class="googlemaps" src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d380510.6741687111!2d-88.01234121699822!3d41.83390417061058!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sin!4v1455598377120" style="border:0" allowfullscreen></iframe>
-</div>
-<!-- /map -->
-<!-- contact -->
-<section class="contact-w3ls" id="contact">
-	<div class="container">
-		<div class="col-lg-6 col-md-6 col-sm-6 contact-w3-agile1" data-aos="flip-right">
-			<h3>Connect With Us :-</h3>
-			<p class="contact-agile1"><strong>Phone :</strong> 123.456.7890</p>
-			<p class="contact-agile1"><strong>Email :</strong> <a href="mailto:name@example.com">name@example.com</a></p>
-			<p class="contact-agile1"><strong>Address :</strong> 3481 Melrose Place,Beverly Hills, Chicago 90210.</p>
-			<ul class="social-icons2">
-				<li><a href="#"><i class="fa fa-facebook"></i></a></li>
-				<li><a href="#"><i class="fa fa-twitter"></i></a></li>
-				<li><a href="#"><i class="fa fa-linkedin"></i></a></li>
-				<li><a href="#"><i class="fa fa-google-plus"></i></a></li>
-			</ul>
-		</div>
-		<div class="col-lg-6 col-md-6 col-sm-6 contact-w3-agile2" data-aos="flip-left">
-			<div class="contact-agileits">
-				<h4>Contact </h4>
-				<p class="contact-agile2">Sign Up For Our News Letters</p>
-				<form action="#" method="post" name="sentMessage" id="contactForm" novalidate>
-					<div class="control-group form-group">
-                        <div class="controls">
-                            <label class="contact-p1">Full Name:</label>
-                            <input type="text" class="form-control" name="name" id="name" required data-validation-required-message="Please enter your name.">
-                            <p class="help-block"></p>
-                        </div>
-                    </div>	
-                    <div class="control-group form-group">
-                        <div class="controls">
-                            <label class="contact-p1">Phone Number:</label>
-                            <input type="tel" class="form-control" name="phone" id="phone" required data-validation-required-message="Please enter your phone number.">
-							<p class="help-block"></p>
-						</div>
-                    </div>
-                    <div class="control-group form-group">
-                        <div class="controls">
-                            <label class="contact-p1">Email Address:</label>
-                            <input type="email" class="form-control" name="email" id="email" required data-validation-required-message="Please enter your email address.">
-							<p class="help-block"></p>
-						</div>
-                    </div>
-                    <div id="success"></div>
-                    <!-- For success/fail messages -->
-                    <button type="submit" class="btn btn-primary">Send</button>	
-				</form>            
-			</div>
-		</div>
-		<div class="clearfix"></div>
-	</div>
-</section>
-<!-- /contact -->
-<!-- footer -->
-<div class="footer">
-	<div class="container">
-		<p class="text-center">© 2017 immo_Tunis. All Rights Reserved | Design by <a href="https://w3layouts.com/" target="_blank">W3layouts</a></p>
-	</div>
-</div>
-<!-- /footer -->
-<!-- back to top -->
-<a href="#0" class="cd-top">Top</a>
-<!-- /back to top -->
-<!-- js files -->
-<script src="js/jquery.min.js"></script>
-<script src="js/bootstrap.min.js"></script>
-<script src="js/smoothscroll.js"></script>
-<script src="js/jquery.easing.min.js"></script>
-<script src="js/grayscale.js"></script>
-<!-- js for back to top -->
-<script src="js/top.js"></script>
-<!-- /js for back to top -->
-<!-- contact form -->
-<script src="js/jqBootstrapValidation.js"></script>
-<script src="js/contact_me.js"></script>	
-<!-- /contact form -->	
-<!-- js for gallery -->
-<script src="js/modernizr-chrg.min.js"></script>
-<script src="js/masonry.min.js"></script>
-<script src="js/chromagallery.js"></script>
-<script type="text/javascript">
-	$(document).ready(function() 
-	{
-		$(".mygallery").chromaGallery();
-	});
-</script>
-<!-- /js for gallery -->
-<!-- js for specialities -->
-<script type="text/JavaScript" src="js/jquery-ui.min.js"></script>
-<script type="text/JavaScript" src="js/jquery.dop.ThumbnailScroller.js"></script>
-
-        <script type="text/JavaScript">
-            $(document).ready(function(){
-                
-                $('#scrollerContainer3').DOPThumbnailScroller({'ID': '3',
-                                                               'SettingsDataType': 'HTML',
-                                                               'ContentDataType': 'HTML'});
- 
-            
-            });
-        </script>  
-<!-- banner slider -->
-<script src="js/jquery.pogo-slider.min.js"></script>
-<script src="js/main.js"></script>
-<!-- /banner slider -->
-<script src='js/aos.js'></script>
-<script src="js/index.js"></script>
-<!-- /js files -->
-</body>
+		</footer>
+		<!-- //footer -->
+		
+	<script type="text/javascript" src="js/jquery-2.1.4.min.js"></script><!-- Required-js -->
+	<script src="js/bootstrap.min.js"></script><!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+	
+	<!-- banner slider-js -->
+	<script src='js/jquery.js'></script><!-- Required-js -->
+	<script src="js/jquery.cycle.all.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/jquery.maximage.js" type="text/javascript" charset="utf-8"></script>		
+	<script type="text/javascript">
+		$(function(){
+			$('#maximage').maximage({
+				cycleOptions: {
+					fx: 'fade',
+					speed: 1000, // Has to match the speed for CSS transitions in jQuery.maximage.css (lines 30 - 33)
+					timeout: 0,
+					prev: '#arrow_left',
+					next: '#arrow_right',
+					pause: 1,
+					before: function(last,current){
+						if(!$.browser.msie){
+							// Start HTML5 video when you arrive
+							if($(current).find('video').length > 0) $(current).find('video')[0].play();
+						}
+					},
+					after: function(last,current){
+						if(!$.browser.msie){
+							// Pauses HTML5 video when you leave it
+							if($(last).find('video').length > 0) $(last).find('video')[0].pause();
+						}
+					}
+				},
+				onFirstImageLoaded: function(){
+					jQuery('#cycle-loader').hide();
+					jQuery('#maximage').fadeIn('fast');
+				}
+			});
+	
+			// Helper function to Fill and Center the HTML5 Video
+			jQuery('video,object').maximage('maxcover');
+	
+			// To show it is dynamic html text
+			jQuery('.in-slide-content').delay(1200).fadeIn();
+		});
+	</script>	
+	<!-- //banner slider-js -->
+	
+	<!-- login popop responsive tabs -->
+		<script src="js/easyResponsiveTabs.js" type="text/javascript"></script>
+		<script type="text/javascript">
+			$(document).ready(function () {
+				$('#horizontalTab').easyResponsiveTabs({
+					type: 'default', //Types: default, vertical, accordion           
+					width: 'auto', //auto or any width like 600px
+					fit: true   // 100% fit in a container
+				});
+			});
+		</script>
+	<!-- //login popop responsive tabs -->
+		
+	<!-- here starts scrolling icon -->
+		<script type="text/javascript">
+			$(document).ready(function() {
+				/*
+					var defaults = {
+					containerID: 'toTop', // fading element id
+					containerHoverID: 'toTopHover', // fading element hover id
+					scrollSpeed: 1200,
+					easingType: 'linear' 
+					};
+				*/
+										
+				$().UItoTop({ easingType: 'easeOutQuart' });
+									
+				});
+		</script>
+		
+		<!-- start-smoth-scrolling -->
+		<script type="text/javascript" src="js/move-top.js"></script>
+		<script type="text/javascript" src="js/easing.js"></script>
+		<script type="text/javascript">
+			jQuery(document).ready(function($) {
+				$(".scroll").click(function(event){		
+					event.preventDefault();
+					$('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
+				});
+			});
+		</script>
+		<!-- /ends-smoth-scrolling -->
+	<!-- //here ends scrolling icon -->
+	
+	</body>
+	<!-- //body -->
 </html>
+<!-- //html -->
