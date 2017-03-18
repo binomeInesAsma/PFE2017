@@ -18,7 +18,7 @@ mysql_select_db("immo");
     <link rel="stylesheet" href="assets/css/owl.carousel.css" type="text/css">
     <link rel="stylesheet" href="assets/css/style.css" type="text/css">
 
-    <title>Zoner | Properties Listing Grid</title>
+    <title>Recherche</title>
 
 </head>
 
@@ -48,25 +48,29 @@ mysql_select_db("immo");
                         <span class="icon-bar"></span>
                     </button>
                     <div class="navbar-brand nav" id="brand">
-                        <a href="index-google-map-fullscreen.html"><img src="assets/img/logo.png" alt="brand"></a>
+                        <a href=""><img src="assets/img/" alt="brand"></a>
                     </div>
                 </div>
                 <nav class="collapse navbar-collapse bs-navbar-collapse navbar-right" role="navigation">
                     <ul class="nav navbar-nav">
-                        <li class="active ><a href="#">Acheter</a>
+					
+					<li class="active "><a href="index.php"><b><FONT color="#4169E1">Acceuil</font></b></a>
                             
                         </li>
-                        <li ><a href="#">Louer</a>
+                        <li  ><a href="index.php"><b><FONT color="#4169E1">Acheter</font></b></a>
                             
                         </li>
-                        <li ><a href="#">Vacances</a>
+                        <li ><a href="index.php"><b><FONT color="#4169E1">Louer</font></b></a>
                             
                         </li>
-                        <li><a href="ajout.php">Proposer vos bien</a></li>
-                        <li ><a href="contact.html">Guide</a>
+                        <li ><a href="index.php"><b><FONT color="#4169E1">Vacances</font></b></a>
                             
                         </li>
-                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="ajout.php"><b><FONT color="#4169E1">Proposer vos bien</font></b></a></li>
+                        <li ><a href="contact.html"><b><FONT color="#4169E1">Guide</font></b></a>
+                            
+                        </li>
+                        <li><a href="contact.html"><b><FONT color="#4169E1">Contact</font></b></a></li>
                     </ul>
                 </nav><!-- /.navbar collapse-->
                 <div class="add-your-property">
@@ -81,8 +85,8 @@ mysql_select_db("immo");
         <!-- Breadcrumb -->
         <div class="container">
             <ol class="breadcrumb">
-                <li><a href="#">Home</a></li>
-                <li class="active">Property Listing</li>
+                <li><a href="#"></a></li>
+                <li class="active">Liste de propriété</li>
             </ol>
         </div>
         <!-- end Breadcrumb -->
@@ -92,17 +96,17 @@ mysql_select_db("immo");
                 <!-- Results -->
                 <div class="col-md-9 col-sm-9">
                     <section id="results">
-                        <header><h1>Properties Listing</h1></header>
+                        <header><h1>Liste de propriété</h1></header>
                         <section id="search-filter">
-                            <figure><h3><i class="fa fa-search"></i>Search Results:</h3>
+                            <figure><h3><i class="fa fa-search"></i>Chercher:</h3>
                                 <span class="search-count">28</span>
                                 <div class="sorting">
                                     <div class="form-group">
                                         <select name="sorting">
-                                            <option value="">Sort By</option>
-                                            <option value="1">Lowest price first</option>
-                                            <option value="2">Highest price first</option>
-                                            <option value="3">Date added</option>
+                                            <option value="">Trier par</option>
+                                            <option value="1">Prix ​​le plus bas en premier</option>
+                                            <option value="2">Prix ​​le plus élevé en premier</option>
+                                            <option value="3">Date ajoutée</option>
                                         </select>
                                     </div><!-- /.form-group -->
                                 </div>
@@ -116,12 +120,14 @@ mysql_select_db("immo");
 				$type=$_POST['type'];
 				$ville=$_POST['ville'];
 				$prix=$_POST['prix'];
-				$sql=mysql_query("select * from immo where objectifs='".$obj."' and type='".$type."'and ville='".$ville."'and prix='".$prix."'")or die(mysql_error());
+				$beds=$_POST['beds'];
+				$area=$_POST['area'];
+				
+				$sql=mysql_query("select * from immo where objectifs='".$obj."' and type='".$type."'and ville='".$ville."'and prix>='".$prix."'and beds='".$beds."' and area>='".$area."'")or die(mysql_error());
 				while($a=mysql_fetch_array($sql)){?>
                             <div class="col-md-4 col-sm-4">
                                 <div class="property equal-height">
-                                    <figure class="tag status">For <?php echo $a['objectifs'];?></figure>
-                                    <figure class="type" title="Apartment"><img src="assets/img/<?php echo $a['file'];?>" alt=""></figure>
+                                    <figure class="tag status"> <?php echo $a['objectifs'];?></figure>
                                     <a href="property-detail.html">
                                         <div class="property-image">
                                             <img alt="" src="assets/img/<?php echo $a['file'];?>">
@@ -134,12 +140,12 @@ mysql_select_db("immo");
                                             </div>
                                             <ul class="additional-info">
                                                 <li>
-                                                    <header>Area:</header>
+                                                    <header>Surface:</header>
                                                     <figure><?php echo $a['area'];?>m<sup>2</sup></figure>
                                                 </li>
                                                 <li>
-                                                    <header>Beds:</header>
-                                                    <figure><?php echo $a['bads'];?></figure>
+                                                    <header>Chambre:</header>
+                                                    <figure><?php echo $a['beds'];?></figure>
                                                 </li>
                                                 <li>
                                                     <header>Baths:</header>
@@ -156,228 +162,13 @@ mysql_select_db("immo");
                             </div><!-- /.col-md-3 --><?php } ?>
                             
                         </div><!-- /.row-->
-                        <div class="row">
-                            <div class="col-md-4 col-sm-4">
-                                <div class="property">
-                                    <figure class="tag status">For Sale</figure>
-                                    <figure class="ribbon">Sold</figure>
-                                    <a href="property-detail.html">
-                                        <div class="property-image">
-                                            <img alt="" src="assets/img/properties/property-02.jpg">
-                                        </div>
-                                        <div class="overlay">
-                                            <div class="info">
-                                                <div class="tag price">$ 18,000</div>
-                                                <h3>2506 B Street</h3>
-                                                <figure>New Brighton, MN 55112</figure>
-                                            </div>
-                                            <ul class="additional-info">
-                                                <li>
-                                                    <header>Area:</header>
-                                                    <figure>280m<sup>2</sup></figure>
-                                                </li>
-                                                <li>
-                                                    <header>Beds:</header>
-                                                    <figure>3</figure>
-                                                </li>
-                                                <li>
-                                                    <header>Baths:</header>
-                                                    <figure>2</figure>
-                                                </li>
-                                                <li>
-                                                    <header>Garages:</header>
-                                                    <figure>1</figure>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </a>
-                                </div><!-- /.property -->
-                            </div><!-- /.col-md-3 -->
-                            <div class="col-md-4 col-sm-4">
-                                <div class="property">
-                                    <figure class="type" title="Single Family"><img src="assets/img/property-types/single-family.png" alt=""></figure>
-                                    <a href="property-detail.html">
-                                        <div class="property-image">
-                                            <img alt="" src="assets/img/properties/property-12.jpg">
-                                        </div>
-                                        <div class="overlay">
-                                            <div class="info">
-                                                <div class="tag price">$ 136,000</div>
-                                                <h3>3990 Late Avenue</h3>
-                                                <figure>Kingfisher, OK 73750</figure>
-                                            </div>
-                                            <ul class="additional-info">
-                                                <li>
-                                                    <header>Area:</header>
-                                                    <figure>30m<sup>2</sup></figure>
-                                                </li>
-                                                <li>
-                                                    <header>Beds:</header>
-                                                    <figure>1</figure>
-                                                </li>
-                                                <li>
-                                                    <header>Baths:</header>
-                                                    <figure>1</figure>
-                                                </li>
-                                                <li>
-                                                    <header>Garages:</header>
-                                                    <figure>0</figure>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </a>
-                                </div><!-- /.property -->
-                            </div><!-- /.col-md-3 -->
-                            <div class="col-md-4 col-sm-4">
-                                <div class="property">
-                                    <figure class="tag status">For Rent</figure>
-                                    <figure class="type" title="Apartment"><img src="assets/img/property-types/apartment.png" alt=""></figure>
-                                    <a href="property-detail.html">
-                                        <div class="property-image">
-                                            <img alt="" src="assets/img/properties/property-05.jpg">
-                                        </div>
-                                        <div class="overlay">
-                                            <div class="info">
-                                                <div class="tag price">$ 12,680</div>
-                                                <h3>297 Marie Street</h3>
-                                                <figure>Towson, MD 21204 </figure>
-                                            </div>
-                                            <ul class="additional-info">
-                                                <li>
-                                                    <header>Area:</header>
-                                                    <figure>240m<sup>2</sup></figure>
-                                                </li>
-                                                <li>
-                                                    <header>Beds:</header>
-                                                    <figure>3</figure>
-                                                </li>
-                                                <li>
-                                                    <header>Baths:</header>
-                                                    <figure>1</figure>
-                                                </li>
-                                                <li>
-                                                    <header>Garages:</header>
-                                                    <figure>1</figure>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </a>
-                                </div><!-- /.property -->
-                            </div><!-- /.col-md-3 -->
-                        </div><!-- /.row-->
-                        <div class="row">
-                            <div class="col-md-4 col-sm-4">
-                                <div class="property">
-                                    <figure class="tag status">For Sale</figure>
-                                    <a href="property-detail.html">
-                                        <div class="property-image">
-                                            <img alt="" src="assets/img/properties/property-13.jpg">
-                                        </div>
-                                        <div class="overlay">
-                                            <div class="info">
-                                                <div class="tag price">$ 13,000</div>
-                                                <h3>2663 West Side Avenue</h3>
-                                                <figure>Fort Lee, NJ 07024</figure>
-                                            </div>
-                                            <ul class="additional-info">
-                                                <li>
-                                                    <header>Area:</header>
-                                                    <figure>280m<sup>2</sup></figure>
-                                                </li>
-                                                <li>
-                                                    <header>Beds:</header>
-                                                    <figure>3</figure>
-                                                </li>
-                                                <li>
-                                                    <header>Baths:</header>
-                                                    <figure>2</figure>
-                                                </li>
-                                                <li>
-                                                    <header>Garages:</header>
-                                                    <figure>1</figure>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </a>
-                                </div><!-- /.property -->
-                            </div><!-- /.col-md-3 -->
-                            <div class="col-md-4 col-sm-4">
-                                <div class="property">
-                                    <figure class="type" title="Land"><img src="assets/img/property-types/land.png" alt=""></figure>
-                                    <a href="property-detail.html">
-                                        <div class="property-image">
-                                            <img alt="" src="assets/img/properties/property-04.jpg">
-                                        </div>
-                                        <div class="overlay">
-                                            <div class="info">
-                                                <div class="tag price">$ 189,000</div>
-                                                <h3>1821 Pursglove Court</h3>
-                                                <figure>Dayton, OH 45429 </figure>
-                                            </div>
-                                            <ul class="additional-info">
-                                                <li>
-                                                    <header>Area:</header>
-                                                    <figure>30m<sup>2</sup></figure>
-                                                </li>
-                                                <li>
-                                                    <header>Beds:</header>
-                                                    <figure>1</figure>
-                                                </li>
-                                                <li>
-                                                    <header>Baths:</header>
-                                                    <figure>1</figure>
-                                                </li>
-                                                <li>
-                                                    <header>Garages:</header>
-                                                    <figure>0</figure>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </a>
-                                </div><!-- /.property -->
-                            </div><!-- /.col-md-3 -->
-                            <div class="col-md-4 col-sm-4">
-                                <div class="property">
-                                    <figure class="ribbon">Sold</figure>
-                                    <a href="property-detail.html">
-                                        <div class="property-image">
-                                            <img alt="" src="assets/img/properties/property-07.jpg">
-                                        </div>
-                                        <div class="overlay">
-                                            <div class="info">
-                                                <div class="tag price">$ 45,730</div>
-                                                <h3>1380 Sundown Lane</h3>
-                                                <figure>Austin, TX 78748</figure>
-                                            </div>
-                                            <ul class="additional-info">
-                                                <li>
-                                                    <header>Area:</header>
-                                                    <figure>240m<sup>2</sup></figure>
-                                                </li>
-                                                <li>
-                                                    <header>Beds:</header>
-                                                    <figure>3</figure>
-                                                </li>
-                                                <li>
-                                                    <header>Baths:</header>
-                                                    <figure>1</figure>
-                                                </li>
-                                                <li>
-                                                    <header>Garages:</header>
-                                                    <figure>1</figure>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </a>
-                                </div><!-- /.property -->
-                            </div><!-- /.col-md-3 -->
-                        </div><!-- /.row-->
+                        
                         <section id="advertising">
                             <a href="submit.html">
                                 <div class="banner">
                                     <div class="wrapper">
-                                        <span class="title">Do you want your property to be listed here?</span>
-                                        <span class="submit">Submit it now! <i class="fa fa-plus-square"></i></span>
+                                        <span class="title">Voulez-vous que votre propriété soit énumérée ici?</</span>
+                                        <span class="submit">Envoyez-le maintenant!<i class="fa fa-plus-square"></i></span>
                                     </div>
                                 </div><!-- /.banner-->
                             </a>
@@ -615,13 +406,14 @@ mysql_select_db("immo");
                 <div class="col-md-3 col-sm-3">
                     <section id="sidebar">
                         <aside id="edit-search">
-                            <header><h3>Search Properties</h3></header>
+                            <header><h3>Chercher Properties</h3></header>
                             <form role="form" id="form-sidebar" class="form-search" action="properties-listing.html">
                                 <div class="form-group">
                                     <select name="type">
                                         <option value="">Status</option>
-                                        <option value="1">Rent</option>
-                                        <option value="2">Sale</option>
+                                        <option value="1">vente</option>
+                                        <option value="2">Location</option>
+										<option value="3">Vacances</option>
                                     </select>
                                 </div><!-- /.form-group -->
                                 <div class="form-group">

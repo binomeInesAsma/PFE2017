@@ -1,0 +1,68 @@
+
+<html>
+
+<?php
+
+// Get values from the form
+$name=$_POST['name'];
+$city=$_POST['city'];
+$phone=$_POST['phone'];
+$email=$_POST['email'];
+$monmessage=$_POST['monmessage'];
+ 
+$to = "votre-email@gmail.com";
+$subject = "Mon Contact Form";
+$message = " Name: " . $name . "\r\n City: " . $city . "\r\n Phone: " . $phone . "\r\n Email: " . $email . "\r\n Monmessage: " . $monmessage;
+ 
+ 
+$from = "Blueseodesign";
+$headers = "From:" . $from . "\r\n";
+$headers .= "Content-type: text/plain; charset=UTF-8" . "\r\n"; 
+ 
+if(@mail($to,$subject,$message,$headers))
+{
+  print "<script>document.location.href='http://mon-site/merci.htm';</script>";
+}else{
+  echo "Erreur! Veuillez Remplir les Champs Requis.";
+}
+
+
+?>
+
+
+<div class="wrapper">  
+    <div id="notreformulaire">
+    <form name="form1" id="formulairedecontact" method="post" action="envoyer.php">
+    	
+        <label>
+		<span>Nom*:</span>
+        <input type="text" placeholder="Entrez votre nom" name="name" id="name" required autofocus>
+        </label><br>
+        
+        <label>
+		<span>Ville*:</span>    
+		<input type="text" placeholder="Entrez votre ville" name="city" id="city" required>
+        </label><br>
+        
+        <label>
+		<span>Telephone:</span>
+        <input type="tel" placeholder="Votre numero de telephone" name="phone" id="phone">
+        </label><br>
+        
+        <label>
+		<span>Email*:</span>
+        <input type="email" placeholder="Votre-email@gmail.com" name="email" id="email" required>
+      	</label><br>
+      
+	    <label>
+		<span>Message:</span>
+		<textarea name="monmessage" id="monmessage" rows="4" cols="50"></textarea>
+		
+      	</label><br>
+		
+		<input class="sendButton" type="submit" name="Submit" value="Envoyer">
+			
+	</form>
+	</div>
+   </div>
+   </html>

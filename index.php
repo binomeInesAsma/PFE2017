@@ -21,12 +21,82 @@ mysql_select_db("immo");
     <link rel="stylesheet" href="assets/css/owl.carousel.css" type="text/css">
     <link rel="stylesheet" href="assets/css/owl.transitions.css" type="text/css">
     <link rel="stylesheet" href="assets/css/style.css" type="text/css">
+<meta charset="utf-8" />
+        <style>	
+	
+	/* Style the tab */
+div.tab {
+    overflow: hidden;
+    border: 1px solid #ccc;
+    background-color: #f1f1f1;
+}
 
+/* Style the buttons inside the tab */
+div.tab button {
+    background-color: inherit;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    transition: 0.3s;
+}
+
+/* Change background color of buttons on hover */
+div.tab button:hover {
+    background-color: #ddd;
+}
+
+/* Create an active/current tablink class */
+div.tab button.active {
+    background-color: #ccc;
+}
+
+/* Style the tab content */
+.tabcontent {
+    display: none;
+    padding: 6px 12px;
+    border: 1px solid #ccc;
+    border-top: none;
+}
+
+
+        </style>
+
+
+
+<script language="javascript">
+function openCity(evt, cityName) {
+    // Declare all variables
+    var i, tabcontent, tablinks;
+
+    // Get all elements with class="tabcontent" and hide them
+    tabcontent = document.getElementsByClassName("tabcontent");
+    for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+    }
+
+    // Get all elements with class="tablinks" and remove the class "active"
+    tablinks = document.getElementsByClassName("tablinks");
+    for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].className = tablinks[i].className.replace(" active", "");
+    }
+
+    // Show the current tab, and add an "active" class to the button that opened the tab
+    document.getElementById(cityName).style.display = "block";
+    evt.currentTarget.className += " active";
+}
+
+
+
+
+</script>
+	
     <title>Immo</title>
 
 </head>
 
-<body class="page-homepage navigation-fixed-top page-slider horizontal-search-float" id="page-top" data-spy="scroll" data-target=".navigation" data-offset="90">
+<body onload="openCity(event, 'Acheter')"class="page-homepage navigation-fixed-top page-slider horizontal-search-float" id="page-top" data-spy="scroll" data-target=".navigation" data-offset="90">
 <!-- Wrapper -->
 <div class="wrapper">
 
@@ -50,27 +120,30 @@ mysql_select_db("immo");
                         <span class="icon-bar"></span>
                     </button>
                     <div class="navbar-brand nav" id="brand">
-                        <a href="index-google-map-fullscreen.html"><img src="assets/img/logo.png" alt="brand"></a>
+                        <img src="assets/img/" alt="brand"></a>
                     </div>
                 </div>
                 <nav class="collapse navbar-collapse bs-navbar-collapse navbar-right" role="navigation">
                     <ul class="nav navbar-nav">
-                        <li class="active "><a href="index.php"><b>Acheter</b></a>
-                            
-                        </li>	
-                        <li ><a href="index.php"><b>Louer</b></a>
+					<li class="active "><a href="index.php"><b><FONT color="#4169E1">Acceuil</font></b></a>
                             
                         </li>
-                        <li ><a href="index.php"><b>Vacances</b></a>
+                        <li><a href="Acheter.php"><b><FONT color="#4169E1">Acheter</font></b></a>
+                            
+                        </li>	
+                        <li ><a href="Louer.php"><b><FONT color="#4169E1">Louer</font></b></a>
+                            
+                        </li>
+                        <li ><a href="Vacances.php"><b><FONT color="#4169E1">Vacances</font></b></a>
                             
                         </li>
                         <li 
                         </li>
-                        <li><a href="ajout.php"><b>Proposer vos bien</b></a></li>
-                        <li ><a href="contact.html"><b>Guide</b></a>
+                        <li><a href="ajout.php"><b><FONT color="#4169E1">Proposer vos bien</font></b></a></li>
+                        <li ><a href="contact.html"><b><FONT color="#4169E1">Guide</font></b></a>
                             
                         </li>
-                        <li><a href="contact.html"><b>Contact</b></a></li>
+                        <li><a href="contact.html"><b><FONT color="#4169E1">Contact</font></b></a></li>
                     </ul>
                 </nav><!-- /.navbar collapse-->
                 <div class="add-your-property">
@@ -127,12 +200,285 @@ mysql_select_db("immo");
         </div>
     </div>
     <!-- end Slider -->
+	
+
 
     <div class="search-box-wrapper">
         <div class="search-box-inner">
             <div class="container">
                 <div class="search-box map">
-                    <form  class="form-map form-search clearfix" action="./search.php" method="post">
+                    <div class="tab">
+  <button class="tablinks" onclick="openCity(event, 'Acheter')"><b><FONT size="4"color="#4169E1">Acheter</font></b></button>
+  <button class="tablinks" onclick="openCity(event, 'Louer')"><b><FONT size="4"color="#4169E1">Louer</font></b></button>
+  <button class="tablinks" onclick="openCity(event, 'Vacances')"><b><FONT size="4"color="#4169E1">Vacances</font></b></button>
+  <button class="tablinks" onclick="openCity(event, 'Terrain')"><b><FONT size="4"color="#4169E1">Terrain</font></b></button>
+  <button class="tablinks" onclick="openCity(event, 'Commerce')"><b><FONT size="4"color="#4169E1">Commerce</font></b></button>
+  <button class="tablinks" onclick="openCity(event, 'Bureau')"><b><FONT size="4"color="#4169E1">Bureau</font></b></button>
+</div>
+
+<div id="Acheter" class="tabcontent" >
+ 
+ <form  class="form-map form-search clearfix" action="./search.php" method="post">
+                        <div class="row">
+                            <div class="col-md-2 col-sm-4">
+                                <div class="form-group">
+                                    <select name="type">
+											<option readonly>Type</option>
+											<?php $type=mysql_query("select * from type");
+											
+											while($t=mysql_fetch_array($type)){?>
+                                                
+                                                <option value="<?php echo $t['NomT'];?>"><?php echo $t['NomT'];?></option>
+                                                <?php } ?>
+											</select>
+                                </div><!-- /.form-group -->
+                            </div>
+                            <div class="col-md-2 col-sm-4">
+                                <div class="form-group">
+                                     <select name="ville">
+											<option readonly>Ville</option>
+											<?php $ville=mysql_query("select * from ville");
+											
+											while($v=mysql_fetch_array($ville)){?>
+                                                
+                                                <option value="<?php echo $v['NomVille'];?>"><?php echo $v['NomVille'];?></option>
+                                                <?php } ?>
+                                                
+                                                
+												
+												
+                                            </select>
+                                </div><!-- /.form-group -->
+                            </div>
+                            <div class="col-md-2 col-sm-4">
+                                <div class="form-group">
+                                    <select name="prix">
+											<option readonly>Prix</option>
+											<?php $prix=mysql_query("select * from prix");
+											
+											while($p=mysql_fetch_array($prix)){?>
+                                                
+                                                <option value="<?php echo $p['Nomp'];?>"><?php echo $p['Nomp'];?> TND</option>
+                                                <?php } ?>
+                                                
+                                            </select>
+                                </div><!-- /.form-group -->
+                            </div>
+                            <div class="col-md-2 col-sm-4">
+                                <div class="form-group">
+                                    <select name="beds">
+											<option readonly>Piéce</option>
+											<?php $m=mysql_query("select * from piece");
+											
+											while($pi=mysql_fetch_array($m)){?>
+                                                
+                                                <option value="<?php echo $pi['NomPe'];?>"> <?php echo  $pi['NomPe'];?></option>
+                                                <?php } ?>
+                                               
+                                            </select>
+                                </div><!-- /.form-group -->
+                            </div>
+                            <div class="col-md-2 col-sm-4">
+                                <div class="form-group">
+                                    <select name="area">
+											<option readonly>Surface</option>
+											<?php $s=mysql_query("select * from surface");
+											
+											while($sr=mysql_fetch_array($s)){?>
+                                                
+                                                <option value="<?php echo $sr['Noms'];?>"><?php echo  $sr['Noms'];?>m² </option>
+                                                <?php } ?>
+                                                
+                                            </select>
+                                </div>
+                            </div>
+                            <div class="col-md-2 col-sm-4">
+                                <div class="form-group">
+                                    <button type="submit" class="btn btn-default">Rechercher </button>
+                                </div><!-- /.form-group -->
+                            </div>
+                        </div>
+                    </form><!-- /#form-map -->
+					</div>
+
+
+<div id="Louer" class="tabcontent">
+ 
+   <form  class="form-map form-search clearfix" action="./search.php" method="post">
+                        <div class="row">
+                            <div class="col-md-2 col-sm-4">
+                                <div class="form-group">
+                                    <select name="type">
+											<option readonly>Type</option>
+											<?php $type=mysql_query("select * from type");
+											
+											while($t=mysql_fetch_array($type)){?>
+                                                
+                                                <option value="<?php echo $t['NomT'];?>"><?php echo $t['NomT'];?></option>
+                                                <?php } ?>
+											</select>
+                                </div><!-- /.form-group -->
+                            </div>
+                            <div class="col-md-2 col-sm-4">
+                                <div class="form-group">
+                                     <select name="ville">
+											<option readonly>Ville</option>
+											<?php $ville=mysql_query("select * from ville");
+											
+											while($v=mysql_fetch_array($ville)){?>
+                                                
+                                                <option value="<?php echo $v['NomVille'];?>"><?php echo $v['NomVille'];?></option>
+                                                <?php } ?>
+                                                
+                                                
+												
+												
+                                            </select>
+                                </div><!-- /.form-group -->
+                            </div>
+                            <div class="col-md-2 col-sm-4">
+                                <div class="form-group">
+                                    <select name="prix">
+											<option readonly>Prix</option>
+											<?php $prix=mysql_query("select * from prix");
+											
+											while($p=mysql_fetch_array($prix)){?>
+                                                
+                                                <option value="<?php echo $p['Nomp'];?>"><?php echo $p['Nomp'];?> TND</option>
+                                                <?php } ?>
+                                                
+                                            </select>
+                                </div><!-- /.form-group -->
+                            </div>
+                            <div class="col-md-2 col-sm-4">
+                                <div class="form-group">
+                                    <select name="beds">
+											<option readonly>Piéce</option>
+											<?php $m=mysql_query("select * from piece");
+											
+											while($pi=mysql_fetch_array($m)){?>
+                                                
+                                                <option value="<?php echo $pi['NomPe'];?>"> <?php echo  $pi['NomPe'];?></option>
+                                                <?php } ?>
+                                               
+                                            </select>
+                                </div><!-- /.form-group -->
+                            </div>
+                            <div class="col-md-2 col-sm-4">
+                                <div class="form-group">
+                                    <select name="area">
+											<option readonly>Surface</option>
+											<?php $s=mysql_query("select * from surface");
+											
+											while($sr=mysql_fetch_array($s)){?>
+                                                
+                                                <option value="<?php echo $sr['Noms'];?>"><?php echo  $sr['Noms'];?>m² </option>
+                                                <?php } ?>
+                                                
+                                            </select>
+                                </div>
+                            </div>
+                            <div class="col-md-2 col-sm-4">
+                                <div class="form-group">
+                                    <button type="submit" class="btn btn-default">Rechercher </button>
+                                </div><!-- /.form-group -->
+                            </div>
+                        </div>
+                    </form><!-- /#form-map -->
+					</div>
+
+
+<div id="Vacances" class="tabcontent">
+  
+  
+
+
+				  <form  class="form-map form-search clearfix" action="./search.php" method="post">
+                        <div class="row">
+                            <div class="col-md-2 col-sm-4">
+                                <div class="form-group">
+                                    <select name="type">
+											<option readonly>Type</option>
+											<?php $type=mysql_query("select * from type");
+											
+											while($t=mysql_fetch_array($type)){?>
+                                                
+                                                <option value="<?php echo $t['NomT'];?>"><?php echo $t['NomT'];?></option>
+                                                <?php } ?>
+											</select>
+											<input type="hidden" name="obj" value="Vacances">
+                                </div><!-- /.form-group -->
+                            </div>
+                            <div class="col-md-2 col-sm-4">
+                                <div class="form-group">
+                                     <select name="ville">
+											<option readonly>Ville</option>
+											<?php $ville=mysql_query("select * from ville");
+											
+											while($v=mysql_fetch_array($ville)){?>
+                                                
+                                                <option value="<?php echo $v['NomVille'];?>"><?php echo $v['NomVille'];?></option>
+                                                <?php } ?>
+                                                
+                                                
+												
+												
+                                            </select>
+                                </div><!-- /.form-group -->
+                            </div>
+                            <div class="col-md-2 col-sm-4">
+                                <div class="form-group">
+                                    <select name="prix">
+											<option readonly>Prix</option>
+											<?php $prix=mysql_query("select * from prix");
+											
+											while($p=mysql_fetch_array($prix)){?>
+                                                
+                                                <option value="<?php echo $p['Nomp'];?>"><?php echo $p['Nomp'];?> TND</option>
+                                                <?php } ?>
+                                                
+                                            </select>
+                                </div><!-- /.form-group -->
+                            </div>
+                            <div class="col-md-2 col-sm-4">
+                                <div class="form-group">
+                                    <select name="beds">
+											<option readonly>Piéce</option>
+											<?php $m=mysql_query("select * from piece");
+											
+											while($pi=mysql_fetch_array($m)){?>
+                                                
+                                                <option value="<?php echo $pi['NomPe'];?>"> <?php echo  $pi['NomPe'];?></option>
+                                                <?php } ?>
+                                               
+                                            </select>
+                                </div><!-- /.form-group -->
+                            </div>
+                            <div class="col-md-2 col-sm-4">
+                                <div class="form-group">
+                                    <select name="area">
+											<option readonly>Surface</option>
+											<?php $s=mysql_query("select * from surface");
+											
+											while($sr=mysql_fetch_array($s)){?>
+                                                
+                                                <option value="<?php echo $sr['Noms'];?>"><?php echo  $sr['Noms'];?>m² </option>
+                                                <?php } ?>
+                                                
+                                            </select>
+                                </div>
+                            </div>
+                            <div class="col-md-2 col-sm-4">
+                                <div class="form-group">
+                                    <button type="submit" class="btn btn-default">Rechercher </button>
+                                </div><!-- /.form-group -->
+                            </div>
+                        </div>
+                    </form><!-- /#form-map -->
+					</div>
+					
+					<div id="Terrain" class="tabcontent">
+   <form  class="form-map form-search clearfix" action="./search.php" method="post">
                         <div class="row">
                             <div class="col-md-2 col-sm-4">
                                 <div class="form-group">
@@ -178,20 +524,7 @@ mysql_select_db("immo");
                                             </select>
                                 </div><!-- /.form-group -->
                             </div>
-                            <div class="col-md-2 col-sm-4">
-                                <div class="form-group">
-                                    <select name="form-sale-property-type">
-											<option readonly>Piéce</option>
-											<?php $m=mysql_query("select * from piece");
-											
-											while($pi=mysql_fetch_array($m)){?>
-                                                
-                                                <option value="<?php echo $pi['NomPe'];?>"> <?php echo  $pi['NomPe'];?></option>
-                                                <?php } ?>
-                                               
-                                            </select>
-                                </div><!-- /.form-group -->
-                            </div>
+                            
                             <div class="col-md-2 col-sm-4">
                                 <div class="form-group">
                                     <select name="form-sale-price">
@@ -213,6 +546,125 @@ mysql_select_db("immo");
                             </div>
                         </div>
                     </form><!-- /#form-map -->
+  
+</div>
+<div id="Commerce" class="tabcontent">
+  <form  class="form-map form-search clearfix" action="./search.php" method="post">
+                        <div class="row">
+                            <div class="col-md-2 col-sm-4">
+                                <div class="form-group">
+                                    <select name="form-sale-country">
+											<option readonly>Commerce</option>
+											<?php $type=mysql_query("select * from type");
+											
+											while($t=mysql_fetch_array($type)){?>
+                                                
+                                                <option value="<?php echo $t['NomT'];?>"><?php echo $t['NomT'];?></option>
+                                                <?php } ?>
+											</select>
+                                </div><!-- /.form-group -->
+                            </div>
+                            <div class="col-md-2 col-sm-4">
+                                <div class="form-group">
+                                     <select name="form-sale-city">
+											<option readonly>Ville</option>
+											<?php $ville=mysql_query("select * from ville");
+											
+											while($v=mysql_fetch_array($ville)){?>
+                                                
+                                                <option value="<?php echo $v['NomVille'];?>"><?php echo $v['NomVille'];?></option>
+                                                <?php } ?>
+                                                
+                                                
+												
+												
+                                            </select>
+                                </div><!-- /.form-group -->
+                            </div>
+                            
+                            
+                            <div class="col-md-2 col-sm-4">
+                                <div class="form-group">
+                                    <select name="form-sale-price">
+											<option readonly>Surface</option>
+											<?php $s=mysql_query("select * from surface");
+											
+											while($sr=mysql_fetch_array($s)){?>
+                                                
+                                                <option value="<?php echo $sr['Noms'];?>"><?php echo  $sr['Noms'];?>m² </option>
+                                                <?php } ?>
+                                                
+                                            </select>
+                                </div>
+                            </div>
+                            <div class="col-md-2 col-sm-4">
+                                <div class="form-group">
+                                    <button type="submit" class="btn btn-default">Rechercher </button>
+                                </div><!-- /.form-group -->
+                            </div>
+                        </div>
+                    </form><!-- /#form-map -->
+  
+</div>
+
+		<div id="Bureau" class="tabcontent">
+ <form  class="form-map form-search clearfix" action="./search.php" method="post">
+                        <div class="row">
+                            <div class="col-md-2 col-sm-4">
+                                <div class="form-group">
+                                    <select name="form-sale-country">
+											<option readonly>Bureau</option>
+											<?php $type=mysql_query("select * from type");
+											
+											while($t=mysql_fetch_array($type)){?>
+                                                
+                                                <option value="<?php echo $t['NomT'];?>"><?php echo $t['NomT'];?></option>
+                                                <?php } ?>
+											</select>
+                                </div><!-- /.form-group -->
+                            </div>
+                            <div class="col-md-2 col-sm-4">
+                                <div class="form-group">
+                                     <select name="form-sale-city">
+											<option readonly>Ville</option>
+											<?php $ville=mysql_query("select * from ville");
+											
+											while($v=mysql_fetch_array($ville)){?>
+                                                
+                                                <option value="<?php echo $v['NomVille'];?>"><?php echo $v['NomVille'];?></option>
+                                                <?php } ?>
+                                                
+                                                
+												
+												
+                                            </select>
+                                </div><!-- /.form-group -->
+                            </div>
+                            
+                            
+                            <div class="col-md-2 col-sm-4">
+                                <div class="form-group">
+                                    <select name="form-sale-price">
+											<option readonly>Surface</option>
+											<?php $s=mysql_query("select * from surface");
+											
+											while($sr=mysql_fetch_array($s)){?>
+                                                
+                                                <option value="<?php echo $sr['Noms'];?>"><?php echo  $sr['Noms'];?>m² </option>
+                                                <?php } ?>
+                                                
+                                            </select>
+                                </div>
+                            </div>
+                            <div class="col-md-2 col-sm-4">
+                                <div class="form-group">
+                                    <button type="submit" class="btn btn-default">Rechercher </button>
+                                </div><!-- /.form-group -->
+                            </div>
+                        </div>
+                    </form><!-- /#form-map -->
+  
+</div>
                 </div><!-- /.search-box -->
             </div><!-- /.container -->
         </div><!-- /.search-box-inner -->
@@ -238,7 +690,7 @@ mysql_select_db("immo");
 				<?php $sql=mysql_query("select * from immo where etat=1")or die(mysql_error());
 				while($a=mysql_fetch_array($sql)){
 					$id=$a['id'];
-					echo $id;
+					
 					?>
                     <div class="col-md-3 col-sm-6">
                         <div class="property">
@@ -292,270 +744,7 @@ mysql_select_db("immo");
                 </a>
             </div>
         </aside><!-- /#adveritsing-->
-        <section id="new-properties" class="block">
-            <div class="container">
-                <header class="section-title">
-                    <h2>Nouvelles propriétés pour vous</h2>
-                    <a href="properties-listing.html" class="link-arrow">Toutes les propriétés</a>
-                </header>
-                <div class="row">
-                    <div class="col-md-3 col-sm-6">
-                        <div class="property">
-                            <a href="property-detail.html">
-                                <div class="property-image">
-                                    <img alt="" src="assets/img/properties/property-09.jpg">
-                                </div>
-								
-								
-								
-								
-                                
-                            </a>
-                        </div><!-- /.property -->
-                    </div><!-- /.col-md-3 -->
-                    <div class="col-md-3 col-sm-6">
-                        <div class="property">
-                            <a href="property-detail.html">
-                                <div class="property-image">
-                                    <img alt="" src="assets/img/properties/property-03.jpg">
-                                </div>
-                                <div class="overlay">
-                                    <div class="info">
-                                        <div class="tag price">350 000 TND</div>
-                                        <h3>Terrain</h3>
-                                        <figure>Doral, FL 33178 </figure>
-                                    </div>
-                                    <ul class="additional-info">
-                                        <li>
-                                            <header>Surface:</header>
-                                            <figure>240m<sup>2</sup></figure>
-                                        </li>
-                                        <li>
-                                            <header>Chambre:</header>
-                                            <figure>3</figure>
-                                        </li>
-                                        <li>
-                                            <header>Baths:</header>
-                                            <figure>1</figure>
-                                        </li>
-                                        <li>
-                                            <header>Garages:</header>
-                                            <figure>1</figure>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </a>
-                        </div><!-- /.property -->
-                    </div><!-- /.col-md-3 -->
-                    <div class="col-md-3 col-sm-6">
-                        <div class="property">
-                            <a href="property-detail.html">
-                                <div class="property-image">
-                                    <img alt="" src="assets/img/properties/property-06.jpg">
-                                </div>
-                                <div class="overlay">
-                                    <div class="info">
-                                        <div class="tag price">42 000 TND</div>
-                                        <h3>Appartement</h3>
-                                        <figure></figure>
-                                    </div>
-                                    <ul class="additional-info">
-                                        <li>
-                                            <header>Surface:</header>
-                                            <figure>240m<sup>2</sup></figure>
-                                        </li>
-                                        <li>
-                                            <header>Chambre:</header>
-                                            <figure>3</figure>
-                                        </li>
-                                        <li>
-                                            <header>Baths:</header>
-                                            <figure>1</figure>
-                                        </li>
-                                        <li>
-                                            <header>Garages:</header>
-                                            <figure>1</figure>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </a>
-                        </div><!-- /.property -->
-                    </div><!-- /.col-md-3 -->
-                    <div class="col-md-3 col-sm-6">
-                        <div class="property">
-                            <a href="property-detail.html">
-                                <div class="property-image">
-                                    <img alt="" src="assets/img/properties/property-01.jpg">
-                                </div>
-                                <div class="overlay">
-                                    <div class="info">
-                                        <div class="tag price">580 000 TND</div>
-                                        <h3>Grand-Villa</h3>
-                                        <figure></figure>
-                                    </div>
-                                    <ul class="additional-info">
-                                        <li>
-                                            <header>Surface:</header>
-                                            <figure>240m<sup>2</sup></figure>
-                                        </li>
-                                        <li>
-                                            <header>Chambre:</header>
-                                            <figure>10</figure>
-                                        </li>
-                                        <li>
-                                            <header>Baths:</header>
-                                            <figure>3</figure>
-                                        </li>
-                                        <li>
-                                            <header>Garages:</header>
-                                            <figure>2</figure>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </a>
-                        </div><!-- /.property -->
-                    </div><!-- /.col-md-3 -->
-                </div><!-- /.row-->
-                <div class="row">
-                    <div class="col-md-3 col-sm-6">
-                        <div class="property">
-                            <a href="property-detail.html">
-                                <div class="property-image">
-                                    <img alt="" src="assets/img/properties/property-02.jpg">
-                                </div>
-                                <div class="overlay">
-                                    <div class="info">
-                                        <div class="tag price">150 000 TND</div>
-                                        <h3>Maison</h3>
-                                        <figure></figure>
-                                    </div>
-                                    <ul class="additional-info">
-                                        <li>
-                                            <header>Surface:</header>
-                                            <figure>280m<sup>2</sup></figure>
-                                        </li>
-                                        <li>
-                                            <header>Chambre:</header>
-                                            <figure>3</figure>
-                                        </li>
-                                        <li>
-                                            <header>Baths:</header>
-                                            <figure>2</figure>
-                                        </li>
-                                        <li>
-                                            <header>Garages:</header>
-                                            <figure>1</figure>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </a>
-                        </div><!-- /.property -->
-                    </div><!-- /.col-md-3 -->
-                    <div class="col-md-3 col-sm-6">
-                        <div class="property">
-                            <a href="property-detail.html">
-                                <div class="property-image">
-                                    <img alt="" src="assets/img/properties/property-12.jpg">
-                                </div>
-                                <div class="overlay">
-                                    <div class="info">
-                                        <div class="tag price">125 000 TND</div>
-                                        <h3>Terrain</h3>
-                                        <figure></figure>
-                                    </div>
-                                    <ul class="additional-info">
-                                        <li>
-                                            <header>Surface:</header>
-                                            <figure>30m<sup>2</sup></figure>
-                                        </li>
-                                        <li>
-                                            <header>Chambre:</header>
-                                            <figure></figure>
-                                        </li>
-                                        <li>
-                                            <header>Baths:</header>
-                                            <figure></figure>
-                                        </li>
-                                        <li>
-                                            <header>Garages:</header>
-                                            <figure>0</figure>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </a>
-                        </div><!-- /.property -->
-                    </div><!-- /.col-md-3 -->
-                    <div class="col-md-3 col-sm-6">
-                        <div class="property">
-                            <a href="property-detail.html">
-                                <div class="property-image">
-                                    <img alt="" src="assets/img/properties/property-05.jpg">
-                                </div>
-                                <div class="overlay">
-                                    <div class="info">
-                                        <div class="tag price">58 000 TND</div>
-                                        <h3>Bureau</h3>
-                                        <figure> </figure>
-                                    </div>
-                                    <ul class="additional-info">
-                                        <li>
-                                            <header>Surface:</header>
-                                            <figure>240m<sup>2</sup></figure>
-                                        </li>
-                                        <li>
-                                            <header>Chambre:</header>
-                                            <figure></figure>
-                                        </li>
-                                        <li>
-                                            <header>Baths:</header>
-                                            <figure>1</figure>
-                                        </li>
-                                        <li>
-                                            <header>Garages:</header>
-                                            <figure>1</figure>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </a>
-                        </div><!-- /.property -->
-                    </div><!-- /.col-md-3 -->
-                    <div class="col-md-3 col-sm-6">
-                        <div class="property">
-                            <a href="property-detail.html">
-                                <div class="property-image">
-                                    <img alt="" src="assets/img/properties/property-10.jpg">
-                                </div>
-                                <div class="overlay">
-                                    <div class="info">
-                                        <div class="tag price">120 000 TND</div>
-                                        <h3>Terrain</h3>
-                                        <figure></figure>
-                                    </div>
-                                    <ul class="additional-info">
-                                        <li>
-                                            <header>Surface:</header>
-                                            <figure>240m<sup>2</sup></figure>
-                                        </li>
-                                        <li>
-                                            <header>Chambre:</header>
-                                            <figure>0</figure>
-                                        </li>
-                                        <li>
-                                            <header>Baths:</header>
-                                            <figure>0</figure>
-                                        </li>
-                                        <li>
-                                            <header>Garages:</header>
-                                            <figure>1</figure>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </a>
-                        </div><!-- /.property -->
-                    </div><!-- /.col-md-3 -->
-                </div><!-- /.row-->
-            </div><!-- /.container-->
-        </section><!-- /#new-properties-->
+        
         
             <aside id="footer-thumbnails" class="footer-thumbnails"></aside><!-- /#footer-thumbnails -->
             <aside id="footer-copyright">

@@ -26,8 +26,9 @@ $garages=$_POST['garages'];
 $address=$_POST['address'];
 $email=$_POST['email'];
 $tele=$_POST['tele'];
-$sql=mysql_query("insert into immo(ville,type,objectifs,beds,baths,area,garages,address,file,email,tele)
-values('".$ville."','".$type."','".$objectifs."','".$beds."','".$bath."','".$area."','".$garages."','".$address."','".basename($_FILES["file"]["name"])."','".$email."','".$tele."')")or die(mysql_error());
+$prix=$_POST['prix'];
+$sql=mysql_query("insert into immo(ville,type,objectifs,beds,baths,area,garages,address,file,email,tele,prix)
+values('".$ville."','".$type."','".$objectifs."','".$beds."','".$bath."','".$area."','".$garages."','".$address."','".basename($_FILES["file"]["name"])."','".$email."','".$tele."','".$prix."')")or die(mysql_error());
 header("location:./index.php");
         
     } else {
@@ -86,30 +87,35 @@ header("location:./index.php");
                         <span class="icon-bar"></span>
                     </button>
                     <div class="navbar-brand nav" id="brand">
-                        <a href="index-google-map-fullscreen.html"><img src="assets/img/logo.png" alt="brand"></a>
+                        <a href="#"><img src="assets/img/" alt="brand"></a>
                     </div>
                 </div>
                 <nav class="collapse navbar-collapse bs-navbar-collapse navbar-right" role="navigation">
                     <ul class="nav navbar-nav">
-                        <li class="active "><a href="index.php">Acheter</a>
+					
+					<li class="active "><a href="index.php"><b><FONT color="#4169E1">Acceuil</font></b></a>
                             
                         </li>
-                        <li ><a href="index.php">Louer</a>
+                        <li ><a href="Acheter.php"><b><FONT color="#4169E1">Acheter</font></b></a>
+                            
+                        </li>
+                        <li ><a href="Louer.php"><b><FONT color="#4169E1">Louer</font></b></a>
                            
                         </li>
-                        <li ><a href="index.php">Vacances</a>
+                        <li ><a href="Vacances.php"><b><FONT color="#4169E1">Vacances</font></b></a>
                             
                                 
                         </li>
-                        <li ><a href="ajout.php">Proposer vos bien</a>
+                        <li ><a href="ajout.php"><b><FONT color="#4169E1">Proposer vos bien</font></b></a>
                             
                         </li>
-                        <li><a href="contact.html">Guide</a></li>
-                        <
-                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="contact.html"><b><FONT color="#4169E1">Guide</font></b></a></li>
+                        
+                        <li><a href="contact.html"><b><FONT color="#4169E1">Contact</font></b></a></li>
                     </ul>
                 </nav><!-- /.navbar collapse-->
                 <div class="add-your-property">
+				
                     <a href="ajout.php" class="btn btn-default"><i class="fa fa-plus"></i><span class="text">Ajouter votre proprieté</span></a>
                 </div>
             </header><!-- /.navbar -->
@@ -120,10 +126,10 @@ header("location:./index.php");
     <div id="page-content">
         <!-- Breadcrumb -->
         <div class="container">
-            <ol class="breadcrumb">
+            
+                <img alt="" src="assets/img/is.jpg" width="1200" height="300" >
                 
-                <li class="active">Ajouter votre proprieté</li>
-            </ol>
+            
         </div>
         <!-- end Breadcrumb -->
 
@@ -152,48 +158,81 @@ header("location:./index.php");
                                                     <div class="form-group">
                                                         <label for="submit-location">Ville</label>
                                                         <select  id="submit-location" name="ville">
-                                                            <option value="New York">Tunis</option>
-                                                            <option value="2">Bizert</option>
-                                                            <option value="3">Nabeul</option>
-                                                            <option value="4">sousse</option>
-                                                            <option value="5">Mahdia</option>
+                                                            <option value="Tunis">Tunis</option>
+                                                            <option value="Bizert">Bizert</option>
+                                                            <option value="Nabeul">Nabeul</option>
+                                                            <option value="sousse">sousse</option>
+                                                            <option value="Mahdia">Mahdia</option>
+															 <option value="Zaghouan">Zaghouan</option>
+																 <option value="Ben Arrous">Ben Arrous</option>
+															 <option value="Monastir">Monastir</option>
+															  <option value="Beja">Beja</option>
+															   <option value="El kef">El kef</option>
+															    <option value="Siliana">Siliana</option>
+																 <option value="Jandouba">Jandouba</option>
+																 <option value="Kassrine">Kassrine</option>
+																 <option value="Kairouan">Kairaouan</option>
+																 <option value="Sidi bou zid">Sidi bou zid</option>
+																 <option value="Sfax">Sfax</option>
+																 <option value="Gabes">Gabes</option>
+																 <option value="Gafsa">Gafsa</option>
+																 <option value="Kbeli">Kbeli</option>
+																 <option value="Touzer">Touzer</option>
+																 <option value="Djerba">Djerba</option>
+																 <option value="Mednine">Mednine</option>
+																 <option value="Tataouin">Tataouin</option>
+																
+																 
+				
+																 
+																 
                                                         </select>
-                                                    </div></div></div>
-                                                    <div class="row">
+                                                    </div></div>
+                                                    
                                                         <div class="col-md-6 col-sm-6">
                                                             <div class="form-group">
                                                                 <label for="submit-property-type">Type</label>
                                                                <select name="type" id="submit-property-type">
                                                                     <option value="Apartment">Appartment</option>
-                                                                    <option value="2">Maison</option>
-                                                                    <option value="3">Terrain</option>
-                                                                    <option value="4">Bureau</option>
-                                                                    <option value="5">Commerce</option>
+                                                                    <option value="Maison">Maison</option>
+                                                                    <option value="Terrain">Terrain</option>
+                                                                    <option value="Bureau">Bureau</option>
+                                                                    <option value="Commerce">Commerce</option>
                                                                 </select>
                                                             </div><!-- /.form-group -->
                                                         </div><!-- /.col-md-6 -->
+														</div>
+														<div class="row">
+														
                                                         <div class="col-md-6 col-sm-6">
                                                             <div class="form-group">
                                                                 <label for="submit-status">Status</label>
-                                                                <select name="objectifs" id="submit-status">
+                                                                <select name="objectifs" id="objectifs">
                                                                     <option value="Sale">Vente</option>
-                                                                    <option value="2">Location</option>
+                                                                    <option value="Location">Location</option>
+																	<option value="Vacances">Vacances</option>
                                                                 </select>
                                                             </div><!-- /.form-group -->
                                                         <!-- /.col-md-6 -->
                                                     </div><!-- /.row -->
-													</div>
+													 <div class="col-md-6 col-sm-6">
+                                                            <div class="form-group">
+                                                                <label for="submit-garages">Prix</label>
+                                                                <input type="number" class="form-control" id="prix" name="prix" pattern="\d*" required>
+                                                           
+														   </div><!-- /.form-group -->
+                                                        </div><!-- /.col-md-6 -->
                                                     <div class="row">
                                                         <div class="col-md-6 col-sm-6">
                                                             <div class="form-group">
                                                                 <label for="submit-Beds">Chambre</label>
-                                                                <input type="number" class="form-control" id="submit-Beds" name="Beds" pattern="\d*" required>
+                                                                <input type="number" class="form-control" id="beds" name="beds" pattern="\d*" required>
                                                             </div><!-- /.form-group -->
                                                         </div><!-- /.col-md-6 -->
                                                         <div class="col-md-6 col-sm-6">
                                                             <div class="form-group">
                                                                 <label for="submit-Baths">Baths</label>
-                                                                <input type="number" class="form-control" id="submit-Baths" name="Baths" pattern="\d*" required>
+                                                                <input type="number" class="form-control" id="baths" name="baths" pattern="\d*" required>
                                                             </div><!-- /.form-group -->
                                                         </div><!-- /.col-md-6 -->
                                                     </div><!-- /.row -->
@@ -202,7 +241,7 @@ header("location:./index.php");
                                                             <div class="form-group">
                                                                 <label for="submit-area">Surface</label>
                                                                 <div class="input-group">
-                                                                    <input type="number" class="form-control" id="submit-area" name="area" pattern="\d*" required>
+                                                                    <input type="number" class="form-control" id="area" name="area" pattern="\d*" required>
                                                                     <span class="input-group-addon">m<sup>2</sup></span>
                                                                 </div>
                                                             </div><!-- /.form-group -->
@@ -210,7 +249,7 @@ header("location:./index.php");
                                                         <div class="col-md-6 col-sm-6">
                                                             <div class="form-group">
                                                                 <label for="submit-garages">Garages</label>
-                                                                <input type="number" class="form-control" id="submit-garages" name="garages" pattern="\d*" required>
+                                                                <input type="number" class="form-control" id="garages" name="garages" pattern="\d*" required>
                                                             </div><!-- /.form-group -->
                                                         </div><!-- /.col-md-6 -->
                                                     </div><!-- /.row -->

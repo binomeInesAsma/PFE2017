@@ -1,0 +1,264 @@
+<section id="new-properties" class="block">
+            <div class="container">
+                <header class="section-title">
+                    <h2>Nouvelles propriétés pour vous</h2>
+                    <a href="properties-listing.html" class="link-arrow">Toutes les propriétés</a>
+                </header>
+                <div class="row">
+                    <div class="col-md-3 col-sm-6">
+                        <div class="property">
+                            <a href="property-detail.html">
+                                <div class="property-image">
+                                    <img alt="" src="assets/img/properties/property-09.jpg">
+                                </div>
+								
+								
+								
+								
+                                
+                            </a>
+                        </div><!-- /.property -->
+                    </div><!-- /.col-md-3 -->
+                    <div class="col-md-3 col-sm-6">
+                        <div class="property">
+                            <a href="property-detail.html">
+                                <div class="property-image">
+                                    <img alt="" src="assets/img/properties/property-03.jpg">
+                                </div>
+                                <div class="overlay">
+                                    <div class="info">
+                                        <div class="tag price">350 000 TND</div>
+                                        <h3>Terrain</h3>
+                                        <figure>Doral, FL 33178 </figure>
+                                    </div>
+                                    <ul class="additional-info">
+                                        <li>
+                                            <header>Surface:</header>
+                                            <figure>240m<sup>2</sup></figure>
+                                        </li>
+                                        <li>
+                                            <header>Chambre:</header>
+                                            <figure>3</figure>
+                                        </li>
+                                        <li>
+                                            <header>Baths:</header>
+                                            <figure>1</figure>
+                                        </li>
+                                        <li>
+                                            <header>Garages:</header>
+                                            <figure>1</figure>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </a>
+                        </div><!-- /.property -->
+                    </div><!-- /.col-md-3 -->
+                    <div class="col-md-3 col-sm-6">
+                        <div class="property">
+                            <a href="property-detail.html">
+                                <div class="property-image">
+                                    <img alt="" src="assets/img/properties/property-06.jpg">
+                                </div>
+                                <div class="overlay">
+                                    <div class="info">
+                                        <div class="tag price">42 000 TND</div>
+                                        <h3>Appartement</h3>
+                                        <figure></figure>
+                                    </div>
+                                    <ul class="additional-info">
+                                        <li>
+                                            <header>Surface:</header>
+                                            <figure>240m<sup>2</sup></figure>
+                                        </li>
+                                        <li>
+                                            <header>Chambre:</header>
+                                            <figure>3</figure>
+                                        </li>
+                                        <li>
+                                            <header>Baths:</header>
+                                            <figure>1</figure>
+                                        </li>
+                                        <li>
+                                            <header>Garages:</header>
+                                            <figure>1</figure>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </a>
+                        </div><!-- /.property -->
+                    </div><!-- /.col-md-3 -->
+                    <div class="col-md-3 col-sm-6">
+                        <div class="property">
+                            <a href="property-detail.html">
+                                <div class="property-image">
+                                    <img alt="" src="assets/img/properties/property-01.jpg">
+                                </div>
+                                <div class="overlay">
+                                    <div class="info">
+                                        <div class="tag price">580 000 TND</div>
+                                        <h3>Grand-Villa</h3>
+                                        <figure></figure>
+                                    </div>
+                                    <ul class="additional-info">
+                                        <li>
+                                            <header>Surface:</header>
+                                            <figure>240m<sup>2</sup></figure>
+                                        </li>
+                                        <li>
+                                            <header>Chambre:</header>
+                                            <figure>10</figure>
+                                        </li>
+                                        <li>
+                                            <header>Baths:</header>
+                                            <figure>3</figure>
+                                        </li>
+                                        <li>
+                                            <header>Garages:</header>
+                                            <figure>2</figure>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </a>
+                        </div><!-- /.property -->
+                    </div><!-- /.col-md-3 -->
+                </div><!-- /.row-->
+                <div class="row">
+                    <div class="col-md-3 col-sm-6">
+                        <div class="property">
+                            <a href="property-detail.html">
+                                <div class="property-image">
+                                    <img alt="" src="assets/img/properties/property-02.jpg">
+                                </div>
+                                <div class="overlay">
+                                    <div class="info">
+                                        <div class="tag price">150 000 TND</div>
+                                        <h3>Maison</h3>
+                                        <figure></figure>
+                                    </div>
+                                    <ul class="additional-info">
+                                        <li>
+                                            <header>Surface:</header>
+                                            <figure>280m<sup>2</sup></figure>
+                                        </li>
+                                        <li>
+                                            <header>Chambre:</header>
+                                            <figure>3</figure>
+                                        </li>
+                                        <li>
+                                            <header>Baths:</header>
+                                            <figure>2</figure>
+                                        </li>
+                                        <li>
+                                            <header>Garages:</header>
+                                            <figure>1</figure>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </a>
+                        </div><!-- /.property -->
+                    </div><!-- /.col-md-3 -->
+                    <div class="col-md-3 col-sm-6">
+                        <div class="property">
+                            <a href="property-detail.html">
+                                <div class="property-image">
+                                    <img alt="" src="assets/img/properties/property-12.jpg">
+                                </div>
+                                <div class="overlay">
+                                    <div class="info">
+                                        <div class="tag price">125 000 TND</div>
+                                        <h3>Terrain</h3>
+                                        <figure></figure>
+                                    </div>
+                                    <ul class="additional-info">
+                                        <li>
+                                            <header>Surface:</header>
+                                            <figure>30m<sup>2</sup></figure>
+                                        </li>
+                                        <li>
+                                            <header>Chambre:</header>
+                                            <figure></figure>
+                                        </li>
+                                        <li>
+                                            <header>Baths:</header>
+                                            <figure></figure>
+                                        </li>
+                                        <li>
+                                            <header>Garages:</header>
+                                            <figure>0</figure>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </a>
+                        </div><!-- /.property -->
+                    </div><!-- /.col-md-3 -->
+                    <div class="col-md-3 col-sm-6">
+                        <div class="property">
+                            <a href="property-detail.html">
+                                <div class="property-image">
+                                    <img alt="" src="assets/img/properties/property-05.jpg">
+                                </div>
+                                <div class="overlay">
+                                    <div class="info">
+                                        <div class="tag price">58 000 TND</div>
+                                        <h3>Bureau</h3>
+                                        <figure> </figure>
+                                    </div>
+                                    <ul class="additional-info">
+                                        <li>
+                                            <header>Surface:</header>
+                                            <figure>240m<sup>2</sup></figure>
+                                        </li>
+                                        <li>
+                                            <header>Chambre:</header>
+                                            <figure></figure>
+                                        </li>
+                                        <li>
+                                            <header>Baths:</header>
+                                            <figure>1</figure>
+                                        </li>
+                                        <li>
+                                            <header>Garages:</header>
+                                            <figure>1</figure>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </a>
+                        </div><!-- /.property -->
+                    </div><!-- /.col-md-3 -->
+                    <div class="col-md-3 col-sm-6">
+                        <div class="property">
+                            <a href="property-detail.html">
+                                <div class="property-image">
+                                    <img alt="" src="assets/img/properties/property-10.jpg">
+                                </div>
+                                <div class="overlay">
+                                    <div class="info">
+                                        <div class="tag price">120 000 TND</div>
+                                        <h3>Terrain</h3>
+                                        <figure></figure>
+                                    </div>
+                                    <ul class="additional-info">
+                                        <li>
+                                            <header>Surface:</header>
+                                            <figure>240m<sup>2</sup></figure>
+                                        </li>
+                                        <li>
+                                            <header>Chambre:</header>
+                                            <figure>0</figure>
+                                        </li>
+                                        <li>
+                                            <header>Baths:</header>
+                                            <figure>0</figure>
+                                        </li>
+                                        <li>
+                                            <header>Garages:</header>
+                                            <figure>1</figure>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </a>
+                        </div><!-- /.property -->
+                    </div><!-- /.col-md-3 -->
+                </div><!-- /.row-->
+            </div><!-- /.container-->
+        </section><!-- /#new-properties-->
