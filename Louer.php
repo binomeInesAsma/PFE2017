@@ -67,10 +67,10 @@ mysql_select_db("immo");
                             
                         </li>
                         <li><a href="ajout.php"><b><FONT color="#4169E1">Proposer vos bien</font></b></a></li>
-                        <li ><a href="contact.html"><b><FONT color="#4169E1">Guide</font></b></a>
+                        <li ><a href="contact.php"><b><FONT color="#4169E1">Guide</font></b></a>
                             
                         </li>
-                        <li><a href="contact.html"><b><FONT color="#4169E1">Contact</font></b></a></li>
+                        <li><a href="contact.php"><b><FONT color="#4169E1">Contact</font></b></a></li>
                     </ul>
                 </nav><!-- /.navbar collapse-->
                 <div class="add-your-property">
@@ -92,7 +92,7 @@ mysql_select_db("immo");
 				<?php $sql=mysql_query("select * from immo where objectifs='Location' and etat=1")or die(mysql_error());
 				while($a=mysql_fetch_array($sql)){
 					$id=$a['id'];
-					echo $id;
+					
 					?>
                     <div class="col-md-3 col-sm-6">
                         <div class="property">

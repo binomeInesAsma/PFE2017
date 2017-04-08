@@ -109,9 +109,9 @@ header("location:./index.php");
                         <li ><a href="ajout.php"><b><FONT color="#4169E1">Proposer vos bien</font></b></a>
                             
                         </li>
-                        <li><a href="contact.html"><b><FONT color="#4169E1">Guide</font></b></a></li>
+                        <li><a href="contact.php"><b><FONT color="#4169E1">Guide</font></b></a></li>
                         
-                        <li><a href="contact.html"><b><FONT color="#4169E1">Contact</font></b></a></li>
+                        <li><a href="contact.php"><b><FONT color="#4169E1">Contact</font></b></a></li>
                     </ul>
                 </nav><!-- /.navbar collapse-->
                 <div class="add-your-property">
@@ -259,7 +259,7 @@ header("location:./index.php");
                                                                 
                                                                 <div class="input-group">
                                                                      <label for="submit-garages">Email</label>
-                                                                <input type="email" class="form-control" id="submit-garages" name="tele"  required>
+                                                                <input type="email" class="form-control" id="submit-garages" name="email"  required>
                                                                 </div>
                                                             </div><!-- /.form-group -->
                                                         </div><!-- /.col-md-6 -->

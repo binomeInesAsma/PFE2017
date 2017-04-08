@@ -1,12 +1,19 @@
-<!DOCTYPE html>
 <?php
-require("connexion.php");
-if(isset($_GET['id']))
-{$sql=mysql_query("Delete from contact where id='".$_GET['id']."'");}
+mysql_connect("localhost","root","");
+mysql_select_db("immo");
 
-$sql="select*from contact";
-$req=mysql_query($sql);
+if(isset($_POST['email'])||isset($_POST['nom'])||isset($_POST['message'])){
+$email=$_POST['email'];
+$nom=$_POST['nom'];
+
+$message=$_POST['message'];
+
+$sql=mysql_query("insert into messagerie(email,nom,message,id)values('".$email."','".$nom."','".$message."')")or die(mysql_error());
+header("location:./index.php");}
+
 ?>
+<!DOCTYPE html>
+
 <html lang="en-US">
 <head>
     <meta charset="UTF-8"/>
@@ -60,7 +67,7 @@ $req=mysql_query($sql);
 					<li class="active "><a href="index.php"><b><FONT color="#4169E1">Acceuil</font></b></a>
                             
                         </li>
-                        <li class="active "><a href="Acheter.php"><b><FONT color="#4169E1">Acheter</font></b></a>
+                        <li ><a href="Acheter.php"><b><FONT color="#4169E1">Acheter</font></b></a>
                            
                         </li>
                         <li ><a href="Louer.php"><b><FONT color="#4169E1">Louer</font></b></a>
@@ -101,58 +108,7 @@ $req=mysql_query($sql);
                 <div class="col-md-9 col-sm-9">
                     <section id="agent-detail">
 					<img alt="" src="assets/img/is.jpg" width="1200" height="300" >
-                        <header><h1>Contacter-Nous</h1></header>
-                        <section id="contact-information">
-                            <div class="row">
-                                <div class="col-md-4 col-sm-5">
-                                    <section id="address">
-                                        <header><h3>Address</h3></header>
-                                        <address>
-                                            <strong>Nom de lentreprise</strong><br>
-                                            4877 Spruce Drive<br>
-                                            West Newton, PA 15089
-                                        </address>
-                                        +1 (734) 123-4567<br>
-                                        <a href="#">hello@example.com</a><br>
-                                        <strong>skype: </strong>your.company
-                                    </section><!-- /#address -->
-                                    <section id="social">
-                                        <header><h3>Social Profiles</h3></header>
-                                        <div class="agent-social">
-                                            <a href="#" class="fa fa-twitter btn btn-grey-dark"></a>
-                                            <a href="#" class="fa fa-facebook btn btn-grey-dark"></a>
-                                            <a href="#" class="fa fa-linkedin btn btn-grey-dark"></a>
-                                        </div>
-                                    </section><!-- /#social -->
-                                </div><!-- /.col-md-4 -->
-                                <div class="col-md-8 col-sm-7">
-                                    <header><h3>Où nous sommes</h3></header>
-                                    <div id="map" style="width:80%;height:300px;"></div>  <script type='text/javascript'>
-    //<![CDATA[
-      
-  var map = null;
-  //  Call this function when the page has been loaded
-  function initialize()
-  {
-    var mapOptions = {
-      center: new google.maps.LatLng(36.8321, 10.23047),
-      zoom: 14,
-      mapTypeId: google.maps.MapTypeId.ROADMAP,
-      panControl: false,
-      zoomControlOptions: { position: google.maps.ControlPosition.RIGHT_CENTER },
-      streetViewControl: 1
-    };
-    map = new google.maps.Map(document.getElementById("map"), mapOptions);
-    marker_809 = new google.maps.Marker({
-      position: new google.maps.LatLng(36.8321, 10.23047),
-      map: map
-    });  }
-window.onload = function(){initialize()};
-    //]]>
-  </script>
-                                </div><!-- /.col-md-8 -->
-                            </div><!-- /.row -->
-                        </section><!-- /#agent-info -->
+                        
                         <hr class="thick">
                         <section id="form">
                             <header><h3>Envoyer un Message</h3></header>
@@ -167,6 +123,7 @@ window.onload = function(){initialize()};
                                     <div class="col-md-6">
                                         <div class="form-group">
                                             <label for="form-contact-email"> Email<em>*</em></label>
+											<input type="hidden" name="id"  value="<?php echo $id;?>">
                                             <input type="email" class="form-control" id="form-contact-email" name="form-contact-email" required>
                                         </div><!-- /.form-group -->
                                     </div><!-- /.col-md-6 -->

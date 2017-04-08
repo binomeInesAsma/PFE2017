@@ -231,7 +231,7 @@ function openCity(evt, cityName) {
                                                 <option value="<?php echo $t['NomT'];?>"><?php echo $t['NomT'];?></option>
                                                 <?php } ?>
 											</select>
-											<input type="hidden" name="obj" value="Sale">
+											<input type="hidden" name="obj" value="Acheter">
                                 </div><!-- /.form-group -->
                             </div>
                             <div class="col-md-2 col-sm-4">
@@ -293,13 +293,11 @@ function openCity(evt, cityName) {
                                             </select>
                                 </div>
                             </div>
-							
                             <div class="col-md-2 col-sm-4">
                                 <div class="form-group">
                                     <button type="submit" class="btn btn-default">Rechercher </button>
                                 </div><!-- /.form-group -->
                             </div>
-							 
                         </div>
                     </form><!-- /#form-map -->
 					</div>

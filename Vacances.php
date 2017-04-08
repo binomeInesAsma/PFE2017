@@ -54,10 +54,10 @@ mysql_select_db("immo");
                 </div>
                 <nav class="collapse navbar-collapse bs-navbar-collapse navbar-right" role="navigation">
                     <ul class="nav navbar-nav">
-					<li ><a href="index.php"><b><FONT color="#4169E1">Acceuil</font></b></a>
+					<li class="active "><a href="index.php"><b><FONT color="#4169E1">Acceuil</font></b></a>
                             
                         </li>
-                        <li class="active "><a href="Acheter.php"><b><FONT color="#4169E1">Acheter</font></b></a>
+                        <li ><a href="Acheter.php"><b><FONT color="#4169E1">Acheter</font></b></a>
                             
                         </li>
                         <li ><a href="Louer.php"><b><FONT color="#4169E1">Louer</font></b></a>
@@ -67,10 +67,10 @@ mysql_select_db("immo");
                             
                         </li>
                         <li><a href="ajout.php"><b><FONT color="#4169E1">Proposer vos bien</font></b></a></li>
-                        <li ><a href="contact.html"><b><FONT color="#4169E1">Guide</font></b></a>
+                        <li ><a href="contact.php"><b><FONT color="#4169E1">Guide</font></b></a>
                             
                         </li>
-                        <li><a href="contact.html"><b><FONT color="#4169E1">Contact</font></b></a></li>
+                        <li><a href="contact.php"><b><FONT color="#4169E1">Contact</font></b></a></li>
                     </ul>
                 </nav><!-- /.navbar collapse-->
                 <div class="add-your-property">
@@ -92,7 +92,7 @@ mysql_select_db("immo");
 				<?php $sql=mysql_query("select * from immo where objectifs='Vacances' and etat=1")or die(mysql_error());
 				while($a=mysql_fetch_array($sql)){
 					$id=$a['id'];
-					echo $id;
+					
 					?>
                     <div class="col-md-3 col-sm-6">
                         <div class="property">

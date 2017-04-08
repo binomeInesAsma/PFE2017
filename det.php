@@ -1,8 +1,17 @@
-<!DOCTYPE html>
 <?php 
 mysql_connect("localhost","root","");
 mysql_select_db("immo");
+if(isset($_POST['email'])||isset($_POST['nom'])||isset($_POST['message'])){
+$email=$_POST['email'];
+$nom=$_POST['nom'];
+$idd=$_POST['id'];
+$message=$_POST['message'];
+
+$sql=mysql_query("insert into contact(email,nom,message,id_immo)values('".$email."','".$nom."','".$message."','".$idd."')")or die(mysql_error());
+header("location:./index.php");}
 ?>
+<!DOCTYPE html>
+
 <html lang="en-US">
 <head>
     <meta charset="UTF-8"/>
@@ -69,9 +78,9 @@ mysql_select_db("immo");
                         <li ><a href="ajout.php"><b><FONT color="#4169E1">Proposer vos bien</font></b></a>
                            
                         </li>
-                        <li><a href="contact.html"><b><FONT color="#4169E1">Guide</font></b></a></li>
+                        <li><a href="contact.php"><b><FONT color="#4169E1">Guide</font></b></a></li>
                         
-                        <li><a href="contact.html"><b><FONT color="#4169E1">Contact</font></b></a></li>
+                        <li><a href="contact.php"><b><FONT color="#4169E1">Contact</font></b></a></li>
                     </ul>
                 </nav><!-- /.navbar collapse-->
                 <div class="add-your-property">
@@ -174,15 +183,41 @@ mysql_select_db("immo");
                             <div class="col-md-12 col-sm-12">
                                 <section id="contact-agent">
                                     <header><h2>Contact Agent</h2></header>
-                                    <div class="row">
-                                        <section class="agent-form">
-                                            <div class="col-md-7 col-sm-12">
-                                                <aside class="agent-info clearfix">
-                                                    <figure><a href="contact.html"><img alt="" src="assets/img/agent-01.jpg"></a></figure>
-                                                    <div class="agent-contact-info">
-                                                        
-                                    </div><!-- /.row -->
-									</section>
+                                    
+                                        
+                        <section id="form">
+                            
+                            <form action="det.php"  method="post"  class="clearfix">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label for="form-contact-name"> Nom<em>*</em></label>
+                                            <input type="text" class="form-control" id="form-contact-name" name="nom" required>
+                                        </div><!-- /.form-group -->
+                                    </div><!-- /.col-md-6 -->
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label for="form-contact-email"> Email<em>*</em></label>
+											<input type="hidden" name="id"  value="<?php echo $id;?>">
+                                            <input type="email" class="form-control" id="form-contact-email" name="email" required>
+                                        </div><!-- /.form-group -->
+                                    </div><!-- /.col-md-6 -->
+                                </div><!-- /.row -->
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <label for="form-contact-message"> Message<em>*</em></label>
+                                            <textarea class="form-control" id="form-contact-message" rows="8" name="message" required></textarea>
+                                        </div><!-- /.form-group -->
+                                    </div><!-- /.col-md-12 -->
+                                </div><!-- /.row -->
+                                <div class="form-group clearfix">
+                                    <button type="submit" class="btn pull-right btn-default" id="form-contact-submit">Envoyer Message</button>
+                                </div><!-- /.form-group -->
+                                <div id="form-status"></div>
+                            </form><!-- /#form-contact -->
+                        </section>
+                    </section><!-- /#agent-detail -->
                                 </section><!-- /#contact-agent --><br>
                                 <hr class="thick">
                                 
