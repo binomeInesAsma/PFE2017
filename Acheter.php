@@ -51,16 +51,16 @@ mysql_select_db("immo");
                     </button>
                     <div class="navbar-brand nav" id="brand" >
 					
-                        <img src="assets/img/" alt="brand"></a>
+                        <img src="assets/img/images (13).jpg" alt="brand"></a>
                     </div>
                 </div>
                 <nav class="collapse navbar-collapse bs-navbar-collapse navbar-right" role="navigation">
                     <ul class="nav navbar-nav">
 					
-					<li class="active "><a href="index.php"><b><FONT color="#4169E1">Acceuil</font></b></a>
+					<li ><a href="Acceuil.php"><b><FONT color="#4169E1">Acceuil</font></b></a>
                             
                         </li>
-                        <li ><a href="Acheter.php"><b><FONT color="#4169E1">Acheter</font></b></a>
+                        <li class="active "><a href="Acheter.php"><b><FONT color="#4169E1">Acheter</font></b></a>
                             
                         </li>
                         <li ><a href="Louer.php"><b><FONT color="#4169E1">Louer</font></b></a>
@@ -89,18 +89,14 @@ mysql_select_db("immo");
     <section id="price-drop" class="block">
             <div class="container">
                 <header class="section-title">
-				<div>
 				
-				<img alt="" src="assets/img/is.jpg" width="1200" height="300" >
-				
-				</div>
                     <h2><b><FONT color="#4169E1">Proprietés A Vendre</font></b></h2>
-                    <a href="properties-listing.html" class="link-arrow"></a>
+                 
                 </header>
 				
                 <div class="row">
 				
-				<?php $sql=mysql_query("select * from immo where objectifs='Sale' and etat=1")or die(mysql_error());
+				<?php $sql=mysql_query("select * from immo where objectifs='Vente' and etat=1")or die(mysql_error());
 				while($a=mysql_fetch_array($sql)){
 					$id=$a['id'];
 					
@@ -127,7 +123,7 @@ mysql_select_db("immo");
                                             <figure><?php echo $a['beds'];?></figure>
                                         </li>
                                         <li>
-                                            <header>Baths:</header>
+                                            <header>Sale de bain:</header>
                                             <figure><?php echo $a['baths'];?></figure>
                                         </li>
                                         <li>

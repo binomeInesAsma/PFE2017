@@ -8,7 +8,7 @@ $idd=$_POST['id'];
 $message=$_POST['message'];
 
 $sql=mysql_query("insert into contact(email,nom,message,id_immo)values('".$email."','".$nom."','".$message."','".$idd."')")or die(mysql_error());
-header("location:./index.php");}
+header("location:./Acceuil.php");}
 ?>
 <!DOCTYPE html>
 
@@ -57,13 +57,13 @@ header("location:./index.php");}
                         <span class="icon-bar"></span>
                     </button>
                     <div class="navbar-brand nav" id="brand">
-                        <img src="assets/img/" alt="brand"></a>
+                        <img src="assets/img/images (13).jpg" alt="brand"></a>
                     </div>
                 </div>
                 <nav class="collapse navbar-collapse bs-navbar-collapse navbar-right" role="navigation">
                     <ul class="nav navbar-nav">
                        
-					<li class="active "><a href="index.php"><b><FONT color="#4169E1">Acceuil</font></b></a>
+					<li class="active "><a href="Acceuil.php"><b><FONT color="#4169E1">Acceuil</font></b></a>
                             
                         </li>
                         <li ><a href="Acheter.php"><b><FONT color="#4169E1">Acheter</font></b></a>
@@ -112,8 +112,8 @@ header("location:./index.php");}
                 <div class="col-md-9 col-sm-9">
                     <section id="property-detail">
                         <header class="property-title">
-                            <h1><?php echo $a['ville'];?></h1>
-                            <figure><?php echo $a['address'];?></figure>
+                            <h1><?php echo $a['Gouvernorat'];?></h1>
+    
                             <span class="actions">
                                 <!--<a href="#" class="fa fa-print"></a>-->
                                 <a href="#" class="bookmark" data-bookmark-state="empty"><span class="title-add">Ajouter au signet</span><span class="title-added">Added</span></a>
@@ -146,8 +146,16 @@ header("location:./index.php");}
                                 <section id="quick-summary" class="clearfix">
                                     <header><h2></h2></header>
                                     <dl>
-                                        <dt>Ville</dt>
-                                            <dd><?php echo $a['ville'];?></dd>
+                                       
+											<dt>Gouvernorat:</dt>
+                                            <dd><?php echo $a['Gouvernorat'];?></dd><br>
+											
+											<dt>Delegation:</dt>
+                                            <dd><?php echo $a['Delegation'];?></dd><br>
+											
+											<dt>Localite:</dt>
+                                            <dd><?php echo $a['Localite'];?></dd>
+											
                                         <dt>Prix</dt>
                                             <dd><span class="tag price"><?php echo $a['prix'];?>DT</span></dd>
                                         <dt> Type:</dt>
@@ -158,7 +166,7 @@ header("location:./index.php");}
                                             <dd><?php echo $a['area'];?> m<sup>2</sup></dd>
                                         <dt>Chambre:</dt>
                                             <dd><?php echo $a['beds'];?></dd>
-                                        <dt>Baths:</dt>
+                                        <dt>Sale de bain:</dt>
                                             <dd><?php echo $a['baths'];?></dd>
                                         <dt>Garages:</dt>
                                             <dd><?php echo $a['garages'];?></dd>
@@ -200,6 +208,13 @@ header("location:./index.php");}
                                             <label for="form-contact-email"> Email<em>*</em></label>
 											<input type="hidden" name="id"  value="<?php echo $id;?>">
                                             <input type="email" class="form-control" id="form-contact-email" name="email" required>
+                                        </div><!-- /.form-group -->
+                                    </div><!-- /.col-md-6 -->
+									<div class="col-md-6">
+                                        <div class="form-group">
+                                            <label for="form-contact-email"> Téléphone<em>*</em></label>
+											<input type="hidden" name="id"  value="<?php echo $id;?>">
+                                            <input type="number" class="form-control" id="form-contact-email" name="tele" required>
                                         </div><!-- /.form-group -->
                                     </div><!-- /.col-md-6 -->
                                 </div><!-- /.row -->
@@ -247,43 +262,12 @@ header("location:./index.php");}
                         <div class="col-md-3 col-sm-3">
                             <article>
                                 <h3>About Us</h3>
-                                <p>Vel fermentum ipsum. Suspendisse quis molestie odio. Interdum et malesuada fames ac ante ipsum
-                                    primis in faucibus. Quisque aliquet a metus in aliquet. Praesent ut turpis posuere, commodo odio
-                                    id, ornare tortor
-                                </p>
+                               
                                 <hr>
-                                <a href="#" class="link-arrow">Read More</a>
+                               
                             </article>
                         </div><!-- /.col-sm-3 -->
-                        <div class="col-md-3 col-sm-3">
-                            <article>
-                                <h3>Recent Properties</h3>
-                                <div class="property small">
-                                    <a href="property-detail.html">
-                                        <div class="property-image">
-                                            <img alt="" src="assets/img/properties/property-06.jpg">
-                                        </div>
-                                    </a>
-                                    <div class="info">
-                                        <a href="property-detail.html"><h4>2186 Rinehart Road</h4></a>
-                                        <figure>Doral, FL 33178 </figure>
-                                        <div class="tag price">$ 72,000</div>
-                                    </div>
-                                </div><!-- /.property -->
-                                <div class="property small">
-                                    <a href="property-detail.html">
-                                        <div class="property-image">
-                                            <img alt="" src="assets/img/properties/property-09.jpg">
-                                        </div>
-                                    </a>
-                                    <div class="info">
-                                        <a href="property-detail.html"><h4>2479 Murphy Court</h4></a>
-                                        <figure>Minneapolis, MN 55402</figure>
-                                        <div class="tag price">$ 36,000</div>
-                                    </div>
-                                </div><!-- /.property -->
-                            </article>
-                        </div><!-- /.col-sm-3 -->
+                        
                         <div class="col-md-3 col-sm-3">
                             <article>
                                 <h3>Contact</h3>

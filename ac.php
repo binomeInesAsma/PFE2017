@@ -29,30 +29,33 @@ mysql_select_db("immo");
 	
 	
  <script>
-function showUser() {
-    
-        var str=document.getElementById("ville").value;
+       $(function()
+       {$('#ville').change(function(){
+          code=$('#ville').val();
+        
+         $.ajax({
+             type:'POST',
+             url:'dele.php',
+             data:'code='+code,
+             success:function(data)
+             {
+                 alert(data);
+                     $('#id_del').html(' <option value ="'+data+'">'+data+'</option>');
+             }
+         });
+           
+           
+       });     
       
-        if (window.XMLHttpRequest) {
-            // code for IE7+, Firefox, Chrome, Opera, Safari
-            xmlhttp = new XMLHttpRequest();
-        } else {
-            // code for IE6, IE5
-            xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
-        }
-        xmlhttp.onreadystatechange = function() {
-            if (this.readyState == 4 && this.status == 200) {
-				
-                document.getElementById("delegation").innerHTML= this.responseText;
-            }
-        };
-        xmlhttp.open("GET","dele.php?code="+str,true);
-        xmlhttp.send();
-    
-}
-</script>
-
-
+         
+            
+            
+    } 
+	); 
+        
+        
+        
+        </script>
         
 <meta charset="utf-8" />
         <style>	
@@ -153,7 +156,7 @@ function openCity(evt, cityName) {
                         <span class="icon-bar"></span>
                     </button>
                     <div class="navbar-brand nav" id="brand">
-                        <img src="assets/img/images (13).jpg" alt="brand" width="300" height="70"></a>
+                        <img src="assets/img/images (13).jpg" alt="brand"></a>
                     </div>
                 </div>
                 <nav class="collapse navbar-collapse bs-navbar-collapse navbar-right" role="navigation">
@@ -185,13 +188,53 @@ function openCity(evt, cityName) {
             </header><!-- /.navbar -->
         </div><!-- /.container -->
     </div><!-- /.navigation -->
-	
- 
-   
-   <!-- Slider -->
-    <div id="slider"  ><img alt="" src="assets/img/b.jpg" width="1500" height="700" ></div>
-                
-       
+
+    <!-- Slider -->
+    <div id="slider" class="loading has-parallax" width="1200" height="300">
+        <div id="loading-icon"><i class="fa fa-cog fa-spin"></i></div>
+        <div class="owl-carousel homepage-slider carousel-full-width">
+            <div class="slide">
+                <div class="container">
+                    <div class="overlay">
+                        <div class="info">
+                            
+                            <h3></h3>
+                            <figure></figure>
+                        </div>
+                        <hr>
+                        
+                    </div>
+                </div>
+                <img alt="" src="assets/img/a672423842a272c8df44444e946aff68.jpg"width="1200" height="300">
+            </div>
+            <div class="slide">
+                <div class="container">
+                    <div class="overlay">
+                        <div class="info">
+                           
+                            <h3></h3>
+                            <figure></figure>
+                        </div>
+                        <hr>
+                        
+                    </div>
+                </div>
+                <img alt="" src="assets/img/dc2b63dd7c510437611988b6f179f2c0.jpg"width="1200" height="300" >
+            </div>
+            <div class="slide">
+                <div class="container">
+                    <div class="overlay">
+                        <div class="info">
+                            
+                        </div>
+                        <hr>
+                        
+                    </div>
+                </div>
+                <img alt="" src="assets/img/villa-luxe-super-cannes-06-6.jpg" width="1200" height="300" >
+            </div>
+        </div>
+    </div>
     <!-- end Slider -->
 	
 
@@ -272,30 +315,45 @@ function openCity(evt, cityName) {
                                             </select>
                                 </div>
                             </div>
-                           
+                            <div class="col-md-2 col-sm-4">
+                                <div class="form-group">
+                                    <button type="submit" class="btn btn-default">Rechercher </button>
+                                </div><!-- /.form-group -->
+                            </div>
 							
                         </div>
 						<div class="row">
-						
 						<div class="col-md-2 col-sm-4">
                                 <div class="form-group">
-                                     <select name="ville" id="ville" onchange="showUser();">
+                                     <select name="ville">
+											<option readonly>Pays</option>
+											<option>Tunisie</option>
+                                           
+                                            </select>
+								</div>
+							</div>
+						<div class="col-md-2 col-sm-4">
+                                <div class="form-group">
+                                     <select name="ville" id="ville">
 											<option readonly>Gouvernorat</option>
 											<?php $ville=mysql_query("select * from Gouvernorat ");
 											
 											while($v=mysql_fetch_array($ville)){?>
                                                 
-                                                <option value="<?php echo $v['id_gov'];?>"><?php echo $v['Nom'];?></option>
+                                                <option value="<?php echo $v['Nom'];?>"><?php echo $v['Nom'];?></option>
                                                 <?php } ?>
                                            
                                             </select>
 								</div>
 							</div>
 											<div class="col-md-2 col-sm-4">
-											<div class="form-group" id="delegation">
-                                     <select name="dele" >
-											<option >Délégation</option>
+											<div class="form-group">
+                                     <select name="delegation" id="delegation">
+											<option readonly>Délégation</option>
 											
+                                                
+                                                
+												
 												
                                             </select></div>
 											</div>
@@ -309,11 +367,6 @@ function openCity(evt, cityName) {
 												
                                             </select></div>
 											</div>
-											 <div class="col-md-2 col-sm-4">
-                                <div class="form-group">
-                                    <button type="submit" class="btn btn-default">Rechercher </button>
-                                </div><!-- /.form-group -->
-                            </div>
 											</div>
                     </form><!-- /#form-map -->
 					</div>
@@ -380,10 +433,22 @@ function openCity(evt, cityName) {
                                             </select>
                                 </div>
                             </div>
-                            
+                            <div class="col-md-2 col-sm-4">
+                                <div class="form-group">
+                                    <button type="submit" class="btn btn-default">Rechercher </button>
+                                </div><!-- /.form-group -->
+                            </div>
                         </div>
 						<div class="row">
-						
+						<div class="col-md-2 col-sm-4">
+                                <div class="form-group">
+                                     <select name="ville">
+											<option readonly>Pays</option>
+											
+                                           
+                                            </select>
+								</div>
+							</div>
 						<div class="col-md-2 col-sm-4">
                                 <div class="form-group">
                                      <select name="ville">
@@ -392,7 +457,7 @@ function openCity(evt, cityName) {
 											
 											while($v=mysql_fetch_array($ville)){?>
                                                 
-                                                <option value="<?php echo $v['id_gov'];?>"><?php echo $v['Nom'];?></option>
+                                                <option value="<?php echo $v['Nom'];?>"><?php echo $v['Nom'];?></option>
                                                 <?php } ?>
                                            
                                             </select>
@@ -400,13 +465,9 @@ function openCity(evt, cityName) {
 							</div>
 											<div class="col-md-2 col-sm-4">
 											<div class="form-group">
-                                     <select name="dele">
-											<option >Délégation</option>
+                                     <select name="ville">
+											<option readonly>Délégation</option>
 											
-                                                
-                                                
-												
-												
                                             </select></div>
 											</div>
 											<div class="col-md-2 col-sm-4">
@@ -415,15 +476,11 @@ function openCity(evt, cityName) {
 											<option readonly>Localité</option>
 											
                                                 
+                                                
 												
 												
                                             </select></div>
 											</div>
-											<div class="col-md-2 col-sm-4">
-                                <div class="form-group">
-                                    <button type="submit" class="btn btn-default">Rechercher </button>
-                                </div><!-- /.form-group -->
-                            </div>
 											</div>
                     </form><!-- /#form-map -->
 					</div>
@@ -493,19 +550,31 @@ function openCity(evt, cityName) {
                                             </select>
                                 </div>
                             </div>
-                           
+                            <div class="col-md-2 col-sm-4">
+                                <div class="form-group">
+                                    <button type="submit" class="btn btn-default">Rechercher </button>
+                                </div><!-- /.form-group -->
+                            </div>
                         </div>
 						<div class="row">
-						
+						<div class="col-md-2 col-sm-4">
+                                <div class="form-group">
+                                     <select name="ville">
+											<option readonly>Pays</option>
+											
+                                           
+                                            </select>
+								</div>
+							</div>
 						<div class="col-md-2 col-sm-4">
                                 <div class="form-group">
                                      <select name="ville">
 											<option readonly>Gouvernorat</option>
-											<?php $ville=mysql_query("select * from ville");
+											<?php $ville=mysql_query("select * from Gouvernorat");
 											
 											while($v=mysql_fetch_array($ville)){?>
                                                 
-                                                <option value="<?php echo $v['NomVille'];?>"><?php echo $v['NomVille'];?></option>
+                                                <option value="<?php echo $v['Nom'];?>"><?php echo $v['Nom'];?></option>
                                                 <?php } ?>
                                            
                                             </select>
@@ -513,8 +582,8 @@ function openCity(evt, cityName) {
 							</div>
 											<div class="col-md-2 col-sm-4">
 											<div class="form-group">
-                                     <select name="dele">
-											<option >Délégation</option>
+                                     <select name="ville">
+											<option readonly>Délégation</option>
 											
                                                 
                                                 
@@ -533,11 +602,6 @@ function openCity(evt, cityName) {
 												
                                             </select></div>
 											</div>
-											 <div class="col-md-2 col-sm-4">
-                                <div class="form-group">
-                                    <button type="submit" class="btn btn-default">Rechercher </button>
-                                </div><!-- /.form-group -->
-                            </div>
 											</div>
                     </form><!-- /#form-map -->
 					</div>
@@ -589,10 +653,22 @@ function openCity(evt, cityName) {
                                             </select>
                                 </div>
                             </div>
-                           
+                            <div class="col-md-2 col-sm-4">
+                                <div class="form-group">
+                                    <button type="submit" class="btn btn-default">Rechercher </button>
+                                </div><!-- /.form-group -->
+                            </div>
                         </div>
 						<div class="row">
-						
+						<div class="col-md-2 col-sm-4">
+                                <div class="form-group">
+                                     <select name="ville">
+											<option readonly>Pays</option>
+											
+                                           
+                                            </select>
+								</div>
+							</div>
 						<div class="col-md-2 col-sm-4">
                                 <div class="form-group">
                                      <select name="ville">
@@ -609,8 +685,8 @@ function openCity(evt, cityName) {
 							</div>
 											<div class="col-md-2 col-sm-4">
 											<div class="form-group">
-                                     <select name="dele">
-											<option >Délégation</option>
+                                     <select name="ville">
+											<option readonly>Délégation</option>
 											
                                                 
                                                 
@@ -629,11 +705,6 @@ function openCity(evt, cityName) {
 												
                                             </select></div>
 											</div>
-											 <div class="col-md-2 col-sm-4">
-                                <div class="form-group">
-                                    <button type="submit" class="btn btn-default">Rechercher </button>
-                                </div><!-- /.form-group -->
-                            </div>
 											</div>
                     </form><!-- /#form-map -->
   
@@ -674,12 +745,26 @@ function openCity(evt, cityName) {
                             </div>
                             
                         
-						
+						<div class="row">
+						<div class="col-md-2 col-sm-4">
+                                <div class="form-group">
+                                     <select name="ville">
+											<option readonly>Pays</option>
+											
+                                           
+                                            </select>
+								</div>
+							</div>
+							<div class="col-md-2 col-sm-4">
+                                <div class="form-group">
+                                    <button type="submit" class="btn btn-default">Rechercher </button>
+                                </div><!-- /.form-group -->
+                            </div></div>
 						<div class="col-md-2 col-sm-4">
                                 <div class="form-group">
                                      <select name="ville">
 											<option readonly>Gouvernorat</option>
-											<?php $ville=mysql_query("select * from Gouvernorat ");
+											<?php $ville=mysql_query("select * from Gouvernorat");
 											
 											while($v=mysql_fetch_array($ville)){?>
                                                 
@@ -691,8 +776,8 @@ function openCity(evt, cityName) {
 							</div>
 											<div class="col-md-2 col-sm-4">
 											<div class="form-group">
-                                     <select name="dele">
-											<option >Délégation</option>
+                                     <select name="ville">
+											<option readonly>Délégation</option>
 											
                                                 
                                                 
@@ -711,11 +796,6 @@ function openCity(evt, cityName) {
 												
                                             </select></div>
 											</div>
-											<div class="col-md-2 col-sm-4">
-                                <div class="form-group">
-                                    <button type="submit" class="btn btn-default">Rechercher </button>
-                                </div><!-- /.form-group -->
-                            </div>
 											</div>
                     </form><!-- /#form-map -->
   
@@ -757,10 +837,22 @@ function openCity(evt, cityName) {
                             </div>
                             
                         
-						
-						
+						<div class="row">
+						<div class="col-md-2 col-sm-4">
+                                <div class="form-group">
+                                     <select name="ville">
+											<option readonly>Pays</option>
+											<
+                                           
+                                            </select>
+								</div>
+							</div>
 							
-							
+							<div class="col-md-2 col-sm-4">
+                                <div class="form-group">
+                                    <button type="submit" class="btn btn-default">Rechercher </button>
+                                </div><!-- /.form-group -->
+                            </div></div>
 						<div class="col-md-2 col-sm-4">
                                 <div class="form-group">
                                      <select name="ville">
@@ -777,7 +869,7 @@ function openCity(evt, cityName) {
 							</div>
 											<div class="col-md-2 col-sm-4">
 											<div class="form-group">
-                                     <select name="dele">
+                                     <select name="ville">
 											<option readonly>Délégation</option>
 											
                                                 
@@ -797,11 +889,6 @@ function openCity(evt, cityName) {
 												
                                             </select></div>
 											</div>
-											<div class="col-md-2 col-sm-4">
-                                <div class="form-group">
-                                    <button type="submit" class="btn btn-default">Rechercher </button>
-                                </div><!-- /.form-group -->
-                            </div>
 											</div>
                     </form><!-- /#form-map -->
   
@@ -843,7 +930,7 @@ function openCity(evt, cityName) {
                                     <div class="info">
                                         <div class="tag price"><?php echo $a['prix'];?> DT</div>
                                         <h3><?php echo $a['type'];?></h3>
-                                        <h3><?php echo $a['Gouvernorat'];?></h3>
+                                        <figure><?php echo $a['Gouvernorat'];?></figure>
                                     </div>
                                     <ul class="additional-info">
                                         <li>
@@ -862,6 +949,7 @@ function openCity(evt, cityName) {
                                             <header>Garages:</header>
                                             <figure><?php echo $a['garages'];?></figure>
                                         </li>
+										
                                     </ul>
                                 </div>
                             </a>

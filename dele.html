@@ -1,0 +1,13 @@
+<?php 
+mysql_connect("localhost","root","");
+mysql_select_db("immo");
+
+
+$sql=mysql_query("select * from delegation where id_gov=$_POST["code"]");
+$tab;
+$i=0;
+while($d=mysql_fetch_array($sql))
+{$tab[$i];}
+
+echo $tab;
+?>

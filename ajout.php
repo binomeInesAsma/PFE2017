@@ -16,20 +16,22 @@ if ($uploadOk == 0) {
 		$gov=$_POST['details'];
 
 $image=basename($_FILES["file"]["name"]);
-$ville=$_POST['ville'];
+
+$Gouvernorat=$_POST['Gouvernorat'];
+$Delegation=$_POST['Delegation'];
+$Localite=$_POST['Localite'];
 $type=$_POST['type'];
 $objectifs=$_POST['objectifs'];
 $beds=$_POST['beds'];
 $bath=$_POST['baths'];
 $area=$_POST['area'];
 $garages=$_POST['garages'];
-$address=$_POST['address'];
 $email=$_POST['email'];
 $tele=$_POST['tele'];
 $prix=$_POST['prix'];
-$sql=mysql_query("insert into immo(ville,type,objectifs,beds,baths,area,garages,address,file,email,tele,prix)
-values('".$ville."','".$type."','".$objectifs."','".$beds."','".$bath."','".$area."','".$garages."','".$address."','".basename($_FILES["file"]["name"])."','".$email."','".$tele."','".$prix."')")or die(mysql_error());
-header("location:./index.php");
+$sql=mysql_query("insert into immo(Gouvernorat,Delegation,Localite,type,objectifs,beds,baths,area,garages,file,email,tele,prix)
+values('".$Gouvernorat."','".$Delegation."','".$Localite."','".$type."','".$objectifs."','".$beds."','".$bath."','".$area."','".$garages."','".basename($_FILES["file"]["name"])."','".$email."','".$tele."','".$prix."')")or die(mysql_error());
+header("location:./Acceuil.php");
         
     } else {
         echo "Sorry, there was an error uploading your file.";
@@ -56,7 +58,29 @@ header("location:./index.php");
     <link rel="stylesheet" href="assets/css/owl.carousel.css" type="text/css">
     <link rel="stylesheet" href="assets/css/fileinput.min.css" type="text/css">
     <link rel="stylesheet" href="assets/css/style.css" type="text/css">
-
+<script>
+function showUser() {
+    
+        var str=document.getElementById("ville").value;
+      
+        if (window.XMLHttpRequest) {
+            // code for IE7+, Firefox, Chrome, Opera, Safari
+            xmlhttp = new XMLHttpRequest();
+        } else {
+            // code for IE6, IE5
+            xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+        }
+        xmlhttp.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+				
+                document.getElementById("delegation").innerHTML= this.responseText;
+            }
+        };
+        xmlhttp.open("GET","dele.php?code="+str,true);
+        xmlhttp.send();
+    
+}
+</script>
     <title>Ajouter votre proprieté</title>
 
 </head>
@@ -87,13 +111,13 @@ header("location:./index.php");
                         <span class="icon-bar"></span>
                     </button>
                     <div class="navbar-brand nav" id="brand">
-                        <a href="#"><img src="assets/img/" alt="brand"></a>
+                        <a href="#"><img src="assets/img/images (13).jpg" alt="brand"></a>
                     </div>
                 </div>
                 <nav class="collapse navbar-collapse bs-navbar-collapse navbar-right" role="navigation">
                     <ul class="nav navbar-nav">
 					
-					<li class="active "><a href="index.php"><b><FONT color="#4169E1">Acceuil</font></b></a>
+					<li ><a href="Acceuil.php"><b><FONT color="#4169E1">Acceuil</font></b></a>
                             
                         </li>
                         <li ><a href="Acheter.php"><b><FONT color="#4169E1">Acheter</font></b></a>
@@ -106,7 +130,7 @@ header("location:./index.php");
                             
                                 
                         </li>
-                        <li ><a href="ajout.php"><b><FONT color="#4169E1">Proposer vos bien</font></b></a>
+                        <li class="active "><a href="ajout.php"><b><FONT color="#4169E1">Proposer vos bien</font></b></a>
                             
                         </li>
                         <li><a href="contact.php"><b><FONT color="#4169E1">Guide</font></b></a></li>
@@ -127,7 +151,7 @@ header("location:./index.php");
         <!-- Breadcrumb -->
         <div class="container">
             
-                <img alt="" src="assets/img/is.jpg" width="1200" height="300" >
+              
                 
             
         </div>
@@ -154,44 +178,40 @@ header("location:./index.php");
                                                 <section id="summary">
                                                     <header></header>
 													<div class="row">
-                                                        <div class="col-md-6 col-sm-6">
+                                                        
+													<div class="col-md-6 col-sm-6">
                                                     <div class="form-group">
-                                                        <label for="submit-location">Ville</label>
-                                                        <select  id="submit-location" name="ville">
-                                                            <option value="Tunis">Tunis</option>
-                                                            <option value="Bizert">Bizert</option>
-                                                            <option value="Nabeul">Nabeul</option>
-                                                            <option value="sousse">sousse</option>
-                                                            <option value="Mahdia">Mahdia</option>
-															 <option value="Zaghouan">Zaghouan</option>
-																 <option value="Ben Arrous">Ben Arrous</option>
-															 <option value="Monastir">Monastir</option>
-															  <option value="Beja">Beja</option>
-															   <option value="El kef">El kef</option>
-															    <option value="Siliana">Siliana</option>
-																 <option value="Jandouba">Jandouba</option>
-																 <option value="Kassrine">Kassrine</option>
-																 <option value="Kairouan">Kairaouan</option>
-																 <option value="Sidi bou zid">Sidi bou zid</option>
-																 <option value="Sfax">Sfax</option>
-																 <option value="Gabes">Gabes</option>
-																 <option value="Gafsa">Gafsa</option>
-																 <option value="Kbeli">Kbeli</option>
-																 <option value="Touzer">Touzer</option>
-																 <option value="Djerba">Djerba</option>
-																 <option value="Mednine">Mednine</option>
-																 <option value="Tataouin">Tataouin</option>
-																
-																 
-				
-																 
-																 
-                                                        </select>
+                                                        <label for="submit-location" ><FONT color="#4169E1">Gouvernorat</font></label>
+                                                       <select name="ville" id="ville" onchange="showUser();">
+											<option readonly>Gouvernorat</option>
+											<?php $ville=mysql_query("select * from Gouvernorat ");
+											
+											while($v=mysql_fetch_array($ville)){?>
+                                                
+                                                <option value="<?php echo $v['id_gov'];?>"><?php echo $v['Nom'];?></option>
+                                                <?php } ?>
+                                           
+                                            </select>
                                                     </div></div>
-                                                    
+													<div class="col-md-6 col-sm-6">
+                                                    <div class="form-group">
+                                                        <label ="dele"><FONT color="#4169E1">Délegation</font></label>
+                                                        <select name="delegation" id ="dele">
+											<option >Délégation</option>
+											<option value="LHAMMA">lhamma</option> </select>
+												
+                                            </select>
+                                                    </div></div>
+													<div class="col-md-6 col-sm-6">
+                                                    <div class="form-group">
+                                                        <label for="submit-location"><FONT color="#4169E1">Localité</font></label>
+                                                        <select  id="submit-location" name="Localite">
+                                                            <option value="Sombat">Sombat</option> </select>
+                                                    </div></div>
+                                           
                                                         <div class="col-md-6 col-sm-6">
                                                             <div class="form-group">
-                                                                <label for="submit-property-type">Type</label>
+                                                                <label for="submit-property-type"><FONT color="#4169E1">Type</font></label>
                                                                <select name="type" id="submit-property-type">
                                                                     <option value="Apartment">Appartment</option>
                                                                     <option value="Maison">Maison</option>
@@ -200,15 +220,15 @@ header("location:./index.php");
                                                                     <option value="Commerce">Commerce</option>
                                                                 </select>
                                                             </div><!-- /.form-group -->
-                                                        </div><!-- /.col-md-6 -->
+                                                        
 														</div>
-														<div class="row">
+														
 														
                                                         <div class="col-md-6 col-sm-6">
                                                             <div class="form-group">
-                                                                <label for="submit-status">Status</label>
+                                                                <label for="submit-status"><FONT color="#4169E1">Status</font></label>
                                                                 <select name="objectifs" id="objectifs">
-                                                                    <option value="Sale">Vente</option>
+                                                                    <option value="Vente">Vente</option>
                                                                     <option value="Location">Location</option>
 																	<option value="Vacances">Vacances</option>
                                                                 </select>
@@ -217,55 +237,59 @@ header("location:./index.php");
                                                     </div><!-- /.row -->
 													 <div class="col-md-6 col-sm-6">
                                                             <div class="form-group">
-                                                                <label for="submit-garages">Prix</label>
+                                                                <label for="submit-garages"><FONT color="#4169E1">Prix</font></label>
                                                                 <input type="number" class="form-control" id="prix" name="prix" pattern="\d*" required>
                                                            
 														   </div><!-- /.form-group -->
-                                                        </div><!-- /.col-md-6 -->
-                                                    <div class="row">
-                                                        <div class="col-md-6 col-sm-6">
+                                                        <!-- /.col-md-6 -->
+                                                    
+                                                        </div>
+														<div class="col-md-6 col-sm-6">
                                                             <div class="form-group">
-                                                                <label for="submit-Beds">Chambre</label>
+                                                                <label for="submit-Beds"><FONT color="#4169E1">Chambre</font></label>
                                                                 <input type="number" class="form-control" id="beds" name="beds" pattern="\d*" required>
-                                                            </div><!-- /.form-group -->
+                                                            <!-- /.form-group -->
                                                         </div><!-- /.col-md-6 -->
-                                                        <div class="col-md-6 col-sm-6">
+														
+														
+                                                        
                                                             <div class="form-group">
-                                                                <label for="submit-Baths">Baths</label>
+                                                                <label for="submit-Baths"><FONT color="#4169E1">Sale de bain</font></label>
                                                                 <input type="number" class="form-control" id="baths" name="baths" pattern="\d*" required>
                                                             </div><!-- /.form-group -->
                                                         </div><!-- /.col-md-6 -->
-                                                    </div><!-- /.row -->
-                                                    <div class="row">
+                                                    <!-- /.row -->
+                                                    
                                                         <div class="col-md-6 col-sm-6">
                                                             <div class="form-group">
-                                                                <label for="submit-area">Surface</label>
+                                                                <label for="submit-area"><FONT color="#4169E1">Surface</font></label>
                                                                 <div class="input-group">
                                                                     <input type="number" class="form-control" id="area" name="area" pattern="\d*" required>
                                                                     <span class="input-group-addon">m<sup>2</sup></span>
                                                                 </div>
                                                             </div><!-- /.form-group -->
-                                                        </div><!-- /.col-md-6 -->
-                                                        <div class="col-md-6 col-sm-6">
+                                                        <!-- /.col-md-6 -->
+														
+                                                        
                                                             <div class="form-group">
-                                                                <label for="submit-garages">Garages</label>
+                                                                <label for="submit-garages"><FONT color="#4169E1">Garages</font></label>
                                                                 <input type="number" class="form-control" id="garages" name="garages" pattern="\d*" required>
                                                             </div><!-- /.form-group -->
                                                         </div><!-- /.col-md-6 -->
-                                                    </div><!-- /.row -->
+                                                    <!-- /.row --></div>
                                                     <div class="row">
                                                         <div class="col-md-6 col-sm-6">
                                                             <div class="form-group">
                                                                 
                                                                 <div class="input-group">
-                                                                     <label for="submit-garages">Email</label>
+                                                                     <label for="submit-garages"><FONT color="#4169E1">Email</font></label>
                                                                 <input type="email" class="form-control" id="submit-garages" name="email"  required>
                                                                 </div>
                                                             </div><!-- /.form-group -->
                                                         </div><!-- /.col-md-6 -->
                                                         <div class="col-md-6 col-sm-6">
                                                             <div class="form-group">
-                                                                <label for="submit-garages">Mobile</label>
+                                                                <label for="submit-garages"><FONT color="#4169E1">Mobile</font></label>
                                                                 <input type="number" class="form-control" id="submit-garages" name="tele" pattern="\d*" required>
                                                            
 														   </div><!-- /.form-group -->
@@ -280,10 +304,7 @@ header("location:./index.php");
                                                         <h2>Placer sur la carte</h2>
                                                         <span class="link-arrow geo-location">Obtenir Ma Position</span>
                                                     </header>
-                                                    <div class="form-group">
-                                                        <label for="address-map">Address</label>
-                                                        <input type="text" class="form-control" id="address-map" name="address">
-                                                    </div><!-- /.form-group -->
+                                                    
                                                     <label for="address-map">Ou faites glisser le marqueur à la position de la propriété</label>
                                                     <div id="map" style="width:100%;height:350px;"></div>  <script type='text/javascript'>
 													//<![CDATA[
@@ -318,8 +339,9 @@ window.onload = function(){initialize()};
                                     <header><h2>Gallery</h2></header>
                                     <div class="center">
                                         <div class="form-group">
-                                            <input id="file-upload" type="file" name="file"class="file" multiple="true" data-show-upload="false" data-show-caption="false" data-show-remove="false" accept="image/jpeg,image/png" data-browse-class="btn btn-default" data-browse-label="Télécharger images">
-                                            <figure class="note"><strong>Hint:</strong> Vous pouvez télécharger toutes les images en même temps!</figure>
+                                            <input id="file-upload" type="file" name="file"  class="file" multiple="true" data-show-upload="false" data-show-caption="false" data-show-remove="false" accept="image/jpeg,image/png,image/jpg" data-browse-class="btn btn-default" data-browse-label="Télécharger images">
+                                            
+                                            <figure class="note"><strong></strong></figure>
                                         </div>
                                     </div>
                                 </section>
@@ -345,7 +367,7 @@ window.onload = function(){initialize()};
                                 <div class="form-group">
                                     <button type="submit" class="btn btn-default large">Envoyer</button>
                                 </div><!-- /.form-group -->
-                                <figure class="note block">En cliquant sur le bouton "Envoyer"  vous acceptez <a href="terms-conditions.html">Termes et conditions</a></figure>
+                                <figure class="note block">En cliquant sur le bouton "Envoyer"  vous acceptez </figure>
                             </div>
                         </div>
                         <div class="col-md-3 col-sm-3">
@@ -376,40 +398,11 @@ window.onload = function(){initialize()};
                                 <p>
                                 </p>
                                 <hr>
-                                <a href="#" class="link-arrow">Lire la suite</a>
+                              
                             </article>
                         </div><!-- /.col-sm-3 -->
                         <div class="col-md-3 col-sm-3">
-                            <article>
-                                <h3>Propriétés récentes</h3>
-                                <div class="property small">
-                                    <a href="property-detail.html">
-                                        <div class="property-image">
-                                            <img alt="" src="assets/img/properties/property-06.jpg">
-                                        </div>
-                                    </a>
-                                    <div class="info">
-                                        <a href="property-detail.html"><h4></h4></a>
-                                        <figure> </figure>
-                                        <div class="tag price"></div>
-                                    </div>
-                                </div><!-- /.property -->
-                                <div class="property small">
-                                    <a href="property-detail.html">
-                                        <div class="property-image">
-                                            <img alt="" src="assets/img/properties/property-09.jpg">
-                                        </div>
-                                    </a>
-                                    <div class="info">
-                                        <a href="property-detail.html"><h4>2479 Murphy Court</h4></a>
-                                        <figure>Minneapolis, MN 55402</figure>
-                                        <div class="tag price">$ 36,000</div>
-                                    </div>
-                                </div><!-- /.property -->
-                            </article>
-                        </div><!-- /.col-sm-3 -->
-                        <div class="col-md-3 col-sm-3">
-                            <article>
+                            
                                 <h3>Contact</h3>
                                 <address>
                                     <strong>Your Company</strong><br>

@@ -49,18 +49,18 @@ mysql_select_db("immo");
                         <span class="icon-bar"></span>
                     </button>
                     <div class="navbar-brand nav" id="brand">
-                        <a href=""><img src="assets/img/" alt="brand"></a>
+                        <a href=""><img src="assets/img/images (13).jpg" alt="brand"></a>
                     </div>
                 </div>
                 <nav class="collapse navbar-collapse bs-navbar-collapse navbar-right" role="navigation">
                     <ul class="nav navbar-nav">
-					<li class="active "><a href="index.php"><b><FONT color="#4169E1">Acceuil</font></b></a>
+					<li ><a href="Acceuil.php"><b><FONT color="#4169E1">Acceuil</font></b></a>
                             
                         </li>
                         <li ><a href="Acheter.php"><b><FONT color="#4169E1">Acheter</font></b></a>
                             
                         </li>
-                        <li ><a href="Louer.php"><b><FONT color="#4169E1">Louer</font></b></a>
+                        <li class="active "><a href="Louer.php"><b><FONT color="#4169E1">Louer</font></b></a>
                             
                         </li>
                         <li ><a href="Vacances.php"><b><FONT color="#4169E1">Vacances</font></b></a>
@@ -84,9 +84,9 @@ mysql_select_db("immo");
     <section id="price-drop" class="block">
             <div class="container">
                 <header class="section-title">
-				<img alt="" src="assets/img/is.jpg" width="1200" height="300" >
+
                     <h2><b><FONT color="#4169E1">Proprietés A Louer</font></b></h2>
-                    <a href="properties-listing.html" class="link-arrow"></a>
+                  
                 </header>
                 <div class="row">
 				<?php $sql=mysql_query("select * from immo where objectifs='Location' and etat=1")or die(mysql_error());
@@ -112,11 +112,11 @@ mysql_select_db("immo");
                                             <figure><?php echo $a['area'];?>m<sup>2</sup></figure>
                                         </li>
                                         <li>
-                                            <header>Beds:</header>
+                                            <header>Chambre:</header>
                                             <figure><?php echo $a['beds'];?></figure>
                                         </li>
                                         <li>
-                                            <header>Baths:</header>
+                                            <header>Sale de bain:</header>
                                             <figure><?php echo $a['baths'];?></figure>
                                         </li>
                                         <li>

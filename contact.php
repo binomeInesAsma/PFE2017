@@ -2,14 +2,15 @@
 mysql_connect("localhost","root","");
 mysql_select_db("immo");
 
-if(isset($_POST['email'])||isset($_POST['nom'])||isset($_POST['message'])){
+if(isset($_POST['email'])||isset($_POST['nom'])||isset($_POST['message'])||isset($_POST['tele'])){
 $email=$_POST['email'];
 $nom=$_POST['nom'];
 $idd=$_POST['id'];
 $message=$_POST['message'];
+$tele=$_POST['tele'];
 
-$sql=mysql_query("insert into messagerie(email,nom,message,id)values('".$email."','".$nom."','".$message."','".$idd."')")or die(mysql_error());
-header("location:./index.php");}
+$sql=mysql_query("insert into messagerie(email,nom,message,id,tele)values('".$email."','".$nom."','".$message."','".$idd."','".$tele."')")or die(mysql_error());
+header("location:./Acceuil.php");}
 
 ?>
 <!DOCTYPE html>
@@ -59,12 +60,12 @@ header("location:./index.php");}
                         <span class="icon-bar"></span>
                     </button>
                     <div class="navbar-brand nav" id="brand">
-                        <a href="index-google-map-fullscreen.html"><img src="assets/img/logo.png" alt="brand"></a>
+                        <a href="index-google-map-fullscreen.html"><img src=" assets/img/images (13).jpg" alt="brand"></a>
                     </div>
                 </div>
                 <nav class="collapse navbar-collapse bs-navbar-collapse navbar-right" role="navigation">
                     <ul class="nav navbar-nav">
-					<li class="active "><a href="index.php"><b><FONT color="#4169E1">Acceuil</font></b></a>
+					<li ><a href="Acceuil.php"><b><FONT color="#4169E1">Acceuil</font></b></a>
                             
                         </li>
                         <li ><a href="Acheter.php"><b><FONT color="#4169E1">Acheter</font></b></a>
@@ -81,7 +82,7 @@ header("location:./index.php");}
                         <li ><a href="contact.php"><b><FONT color="#4169E1">Guide</font></b></a>
                             
                         </li>
-                        <li><a href="contact.php"><b><FONT color="#4169E1">Contact</font></b></a></li>
+                        <li class="active "><a href="contact.php"><b><FONT color="#4169E1">Contact</font></b></a></li>
                     </ul>
                 </nav><!-- /.navbar collapse-->
                 <div class="add-your-property">
@@ -96,8 +97,8 @@ header("location:./index.php");}
         <!-- Breadcrumb -->
         <div class="container">
             <ol class="breadcrumb">
-                <li><a href="#">Home</a></li>
-                <li class="active">Contact</li>
+                <li><a href="#"></a></li>
+                <li class="active"></li>
             </ol>
         </div>
         <!-- end Breadcrumb -->
@@ -107,12 +108,13 @@ header("location:./index.php");}
                 <!-- Contact -->
                 <div class="col-md-9 col-sm-9">
                     <section id="agent-detail">
-					<img alt="" src="assets/img/is.jpg" width="1200" height="300" >
-                        
+					
+                        <h1>Contactez_Nous</h1>
+						 <b>Téléphone : <span dir="ltr">+216 54099448 </span></b>
                         <hr class="thick">
                         <section id="form">
                             <header><h3>Envoyer un Message</h3></header>
-                            <form role="form" id="form-contact" method="post"  class="clearfix">
+                            <form   method="post"  class="clearfix">
                                 <div class="row">
                                     <div class="col-md-6">
                                         <div class="form-group">
@@ -127,7 +129,15 @@ header("location:./index.php");}
                                             <input type="email" class="form-control" id="form-contact-email" name="email" required>
                                         </div><!-- /.form-group -->
                                     </div><!-- /.col-md-6 -->
+									
                                 </div><!-- /.row -->
+								<div class="col-md-6">
+                                        <div class="form-group">
+                                            <label for="form-contact-tele"> Téléphone<em>*</em></label>
+											<input type="hidden" name="id"  value="<?php echo $id;?>">
+                                            <input type="number" class="form-control" id="form-contact-tele" name="tele" required>
+                                        </div><!-- /.form-group -->
+                                    </div><!-- /.col-md-6 -->
                                 <div class="row">
                                     <div class="col-md-12">
                                         <div class="form-group">
@@ -147,66 +157,7 @@ header("location:./index.php");}
                 <!-- end Contact -->
 
                 <!-- sidebar --><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-                <div class="col-md-3 col-sm-3">
-                    <section id="sidebar">
-                        <aside id="edit-search">
-                            <header><h3>Chercher Properties</h3></header>
-                            <form role="form" id="form-sidebar" class="form-search" action="properties-listing.html">
-                                <div class="form-group">
-                                    <select name="type">
-                                        <option value="">Status</option>
-                                        <option value="1">vente</option>
-                                        <option value="2">Location</option>
-                                    </select>
-                                </div><!-- /.form-group -->
-                                <div class="form-group">
-                                    <select name="country">
-                                        <option value="">Country</option>
-                                        <option value="1">France</option>
-                                        <option value="2">Great Britain</option>
-                                        <option value="3">Spain</option>
-                                        <option value="4">Russia</option>
-                                        <option value="5">United States</option>
-                                    </select>
-                                </div><!-- /.form-group -->
-                                <div class="form-group">
-                                    <select name="city">
-                                        <option value="">City</option>
-                                        <option value="1">New York</option>
-                                        <option value="2">Los Angeles</option>
-                                        <option value="3">Chicago</option>
-                                        <option value="4">Houston</option>
-                                        <option value="5">Philadelphia</option>
-                                    </select>
-                                </div><!-- /.form-group -->
-                                <div class="form-group">
-                                    <select name="district">
-                                        <option value="">District</option>
-                                        <option value="1">Manhattan</option>
-                                        <option value="2">The Bronx</option>
-                                        <option value="3">Brooklyn</option>
-                                        <option value="4">Queens</option>
-                                        <option value="5">Staten Island</option>
-                                    </select>
-                                </div><!-- /.form-group -->
-                                <div class="form-group">
-                                    <select name="property-type">
-                                        <option value="">Property Type</option>
-                                        <option value="1">Apartment</option>
-                                        <option value="2">Condominium</option>
-                                        <option value="3">Cottage</option>
-                                        <option value="4">Flat</option>
-                                        <option value="5">House</option>
-                                    </select>
-                                </div><!-- /.form-group -->
-                                <div class="form-group">
-                                    <div class="price-range">
-                                        <input id="price-input" type="text" name="price" value="1000;299000">
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <button type="submit" class="btn btn-default">Search Now</button>
-                                </div><!-- /.form-group -->
+                
                             </form><!-- /#form-map -->
                         </aside><!-- /#edit-search -->
                         

@@ -48,13 +48,13 @@ mysql_select_db("immo");
                         <span class="icon-bar"></span>
                     </button>
                     <div class="navbar-brand nav" id="brand">
-                        <a href=""><img src="assets/img/" alt="brand"></a>
+                        <a href=""><img src="assets/img/images (13).jpg" alt="brand"></a>
                     </div>
                 </div>
                 <nav class="collapse navbar-collapse bs-navbar-collapse navbar-right" role="navigation">
                     <ul class="nav navbar-nav">
 					
-					<li class="active "><a href="index.php"><b><FONT color="#4169E1">Acceuil</font></b></a>
+					<li class="active "><a href="Acceuil.php"><b><FONT color="#4169E1">Acceuil</font></b></a>
                             
                         </li>
                         <li  ><a href="index.php"><b><FONT color="#4169E1">Acheter</font></b></a>
@@ -115,15 +115,39 @@ mysql_select_db("immo");
                         <section id="properties">
                         <div class="row">
 						<?php 
-				
+				if(isset($_POST['beds'])
 				$obj=$_POST['obj'];
 				$type=$_POST['type'];
-				$ville=$_POST['ville'];
+				
+				$Gouvernorat=$_POST['Gouvernorat'];
+				$Delegation=$_POST['Delegation'];
+				$Localite=$_POST['Localite'];
 				$prix=$_POST['prix'];
 				$beds=$_POST['beds'];
 				$area=$_POST['area'];
 				
-				$sql=mysql_query("select * from immo where objectifs='".$obj."' and type='".$type."'and ville='".$ville."'and prix>='".$prix."'and beds>='".$beds."' and area>='".$area."'")or die(mysql_error());
+				
+				$sql=mysql_query("select * from immo where objectifs='".$obj."' and type='".$type."'and Gouvernorat='".$Gouvernorat."' and Delegation='".$Delegation."' and Localite='".$Localite."' and prix>='".$prix."'and beds>='".$beds."' and area>='".$area."'")
+				or die(mysql_error());}else{
+		
+		if($_POST['prix']){
+			$obj=$_POST['obj'];
+				$type=$_POST['type'];
+			
+				$Gouvernorat=$_POST['Gouvernorat'];
+				$Delegation=$_POST['Delegation'];
+				$Localite=$_POST['Localite'];
+				$prix=$_POST['prix'];
+				$area=$_POST['area'];
+				$sql=mysql_query("select * from immo where objectifs='".$obj."' and type='".$type."'and Gouvernorat='".$Gouvernorat."' and Delegation='".$Delegation."' and Localite='".$Localite."' and prix>='".$prix."' and area>='".$area."'")or die(mysql_error());}
+				else{$obj=$_POST['obj'];
+				$type=$_POST['type'];
+			
+				$Gouvernorat=$_POST['Gouvernorat'];
+				$Delegation=$_POST['Delegation'];
+				$Localite=$_POST['Localite'];
+				$area=$_POST['area'];
+				$sql=mysql_query("select * from immo where objectifs='".$obj."' and type='".$type."'and Gouvernorat='".$Gouvernorat."' and Delegation='".$Delegation."' and Localite='".$Localite."'and area>='".$area."'")or die(mysql_error());}}
 				while($a=mysql_fetch_array($sql)){?>
                             <div class="col-md-4 col-sm-4">
                                 <div class="property equal-height">
@@ -136,7 +160,7 @@ mysql_select_db("immo");
                                             <div class="info">
                                                 <div class="tag price"><?php echo $a['prix'];?>DT</div>
                                                 <h3><?php echo $a['ville'];?></h3>
-                                                <figure><?php echo $a['address'];?></figure>
+                                                <figure><?php echo $a['Gouvernorat'];?></figure>
                                             </div>
                                             <ul class="additional-info">
                                                 <li>
@@ -148,7 +172,7 @@ mysql_select_db("immo");
                                                     <figure><?php echo $a['beds'];?></figure>
                                                 </li>
                                                 <li>
-                                                    <header>Baths:</header>
+                                                    <header>Sale de bain:</header>
                                                     <figure><?php echo $a['baths'];?></figure>
                                                 </li>
                                                 <li>
