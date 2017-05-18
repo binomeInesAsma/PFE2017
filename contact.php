@@ -42,8 +42,8 @@ header("location:./Acceuil.php");}
         <div class="secondary-navigation">
             <div class="container">
                 <div class="contact">
-                    <figure><strong>Phone:</strong>+216 12345678</figure>
-                    <figure><strong>Email:</strong>Immo@example.com</figure>
+                    figure><strong>Phone:</strong>+216 54099448</figure>
+                    <figure><strong>Email:</strong>KRAIEM Immo@gmail.com</figure>
                 </div>
                 <div class="user-area">
                     
@@ -59,8 +59,8 @@ header("location:./Acceuil.php");}
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <div class="navbar-brand nav" id="brand">
-                        <a href="index-google-map-fullscreen.html"><img src=" assets/img/images (13).jpg" alt="brand"></a>
+                    <div class="navbar-brand nav" id="brand"width="300" height="70">
+                        <a href="index-google-map-fullscreen.html"><img src=" assets/img/bbb.jpg" alt="brand"width="300" height="100"></a>
                     </div>
                 </div>
                 <nav class="collapse navbar-collapse bs-navbar-collapse navbar-right" role="navigation">
@@ -122,6 +122,8 @@ header("location:./Acceuil.php");}
                                             <input type="text" class="form-control" id="form-contact-name" name="nom" required>
                                         </div><!-- /.form-group -->
                                     </div><!-- /.col-md-6 -->
+									</div>
+									 <div class="row">
                                     <div class="col-md-6">
                                         <div class="form-group">
                                             <label for="form-contact-email"> Email<em>*</em></label>
@@ -131,6 +133,7 @@ header("location:./Acceuil.php");}
                                     </div><!-- /.col-md-6 -->
 									
                                 </div><!-- /.row -->
+								 <div class="row">
 								<div class="col-md-6">
                                         <div class="form-group">
                                             <label for="form-contact-tele"> Téléphone<em>*</em></label>
@@ -138,6 +141,7 @@ header("location:./Acceuil.php");}
                                             <input type="number" class="form-control" id="form-contact-tele" name="tele" required>
                                         </div><!-- /.form-group -->
                                     </div><!-- /.col-md-6 -->
+									</div>
                                 <div class="row">
                                     <div class="col-md-12">
                                         <div class="form-group">
@@ -169,78 +173,7 @@ header("location:./Acceuil.php");}
     </div>
     <!-- end Page Content -->
     <!-- Page Footer -->
-    <footer id="page-footer">
-        <div class="inner">
-            <aside id="footer-main">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-3 col-sm-3">
-                            <article>
-                                <h3>About Us</h3>
-                                <p>Vel fermentum ipsum. Suspendisse quis molestie odio. Interdum et malesuada fames ac ante ipsum
-                                    primis in faucibus. Quisque aliquet a metus in aliquet. Praesent ut turpis posuere, commodo odio
-                                    id, ornare tortor
-                                </p>
-                                <hr>
-                                <a href="#" class="link-arrow">Read More</a>
-                            </article>
-                        </div><!-- /.col-sm-3 -->
-                        <div class="col-md-3 col-sm-3">
-                            <article>
-                                <h3>Recent Properties</h3>
-                                <div class="property small">
-                                    <a href="property-detail.html">
-                                        <div class="property-image">
-                                            <img alt="" src="assets/img/properties/property-06.jpg">
-                                        </div>
-                                    </a>
-                                    <div class="info">
-                                        <a href="property-detail.html"><h4>2186 Rinehart Road</h4></a>
-                                        <figure>Doral, FL 33178 </figure>
-                                        <div class="tag price">$ 72,000</div>
-                                    </div>
-                                </div><!-- /.property -->
-                                <div class="property small">
-                                    <a href="property-detail.html">
-                                        <div class="property-image">
-                                            <img alt="" src="assets/img/properties/property-09.jpg">
-                                        </div>
-                                    </a>
-                                    <div class="info">
-                                        <a href="property-detail.html"><h4>2479 Murphy Court</h4></a>
-                                        <figure>Minneapolis, MN 55402</figure>
-                                        <div class="tag price">$ 36,000</div>
-                                    </div>
-                                </div><!-- /.property -->
-                            </article>
-                        </div><!-- /.col-sm-3 -->
-                        <div class="col-md-3 col-sm-3">
-                            <article>
-                                <h3>Contact</h3>
-                                <address>
-                                    <strong>Your Company</strong><br>
-                                    4877 Spruce Drive<br>
-                                    West Newton, PA 15089
-                                </address>
-                                +1 (734) 123-4567<br>
-                                <a href="#">hello@example.com</a>
-                            </article>
-                        </div><!-- /.col-sm-3 -->
-                        <div class="col-md-3 col-sm-3">
-                            <article>
-                                <h3>Useful Links</h3>
-                                <ul class="list-unstyled list-links">
-                                    <li><a href="#">All Properties</a></li>
-                                    <li><a href="#">Privacy Policy</a></li>
-                                    <li><a href="#">Login and Register Account</a></li>
-                                    <li><a href="#">FAQ</a></li>
-                                    <li><a href="#">Terms and Conditions</a></li>
-                                </ul>
-                            </article>
-                        </div><!-- /.col-sm-3 -->
-                    </div><!-- /.row -->
-                </div><!-- /.container -->
-            </aside><!-- /#footer-main -->
+   
             <aside id="footer-thumbnails" class="footer-thumbnails"></aside><!-- /#footer-thumbnails -->
             <aside id="footer-copyright">
                 <div class="container">

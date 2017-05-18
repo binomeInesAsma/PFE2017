@@ -31,8 +31,8 @@ mysql_select_db("immo");
         <div class="secondary-navigation">
             <div class="container">
                 <div class="contact">
-                    <figure><strong>Phone:</strong>+216 12345678</figure>
-                    <figure><strong>Email:</strong>Immo@example.com</figure>
+                    figure><strong>Phone:</strong>+216 54099448</figure>
+                    <figure><strong>Email:</strong>KRAIEM Immo@gmail.com</figure>
                 </div>
                 <div class="user-area">
                     
@@ -49,7 +49,7 @@ mysql_select_db("immo");
                         <span class="icon-bar"></span>
                     </button>
                     <div class="navbar-brand nav" id="brand">
-                        <a href=""><img src="assets/img/images (13).jpg" alt="brand"></a>
+                        <a href=""><img src="assets/img/bbb.jpg" alt="brand"width="300" height="100"></a>
                     </div>
                 </div>
                 <nav class="collapse navbar-collapse bs-navbar-collapse navbar-right" role="navigation">
@@ -98,13 +98,26 @@ mysql_select_db("immo");
                         <div class="property">
                             <a href="det.php?id=<?php echo $id ;?>">
                                 <div class="property-image">
-                                    <img alt="" src="assets/img/<?php echo $a['file'];?>" width="440" height="330">
+                                   <?php
+								$sqll=mysql_query("select * from im where idimmo='".$id."'  ");
+								$i=1;
+								while($aa=mysql_fetch_array($sqll)){ 
+								if($i==1)
+								{
+								
+								?>
+					              
+                                    <img alt="" src="./uploads/<?php echo $aa['file'];;?>" width="440" height="330">
+								<?php }$i++;} ?>
                                 </div>
                                 <div class="overlay">
                                     <div class="info">
                                         <div class="tag price"><?php echo $a['prix'];?> DT</div>
                                         <h3><?php echo $a['type'];?></h3>
-                                        <figure><?php echo $a['ville'];?></figure>
+                                        <figure><?php $del=mysql_query("select * from Gouvernorat where id_gov='".$a['ville']."'");
+								            while($deleg=mysql_fetch_array($del)){?>
+								           <?php  echo $deleg["Nom"]		;?>
+								               <?php } ?></figure>
                                     </div>
                                     <ul class="additional-info">
                                         <li>
@@ -132,4 +145,5 @@ mysql_select_db("immo");
                 </div><!-- /.row-->
             </div><!-- /.container -->
         </section><!-- /#price-drop -->
+		
 						</html>

@@ -6,8 +6,9 @@ $email=$_POST['email'];
 $nom=$_POST['nom'];
 $idd=$_POST['id'];
 $message=$_POST['message'];
+$tele=$_POST['tele'];
 
-$sql=mysql_query("insert into contact(email,nom,message,id_immo)values('".$email."','".$nom."','".$message."','".$idd."')")or die(mysql_error());
+$sql=mysql_query("insert into contact(email,nom,message,tele,id_immo)values('".$email."','".$nom."','".$message."','".$tele."','".$idd."')")or die(mysql_error());
 header("location:./Acceuil.php");}
 ?>
 <!DOCTYPE html>
@@ -39,8 +40,8 @@ header("location:./Acceuil.php");}
         <div class="secondary-navigation">
             <div class="container">
                 <div class="contact">
-                    <figure><strong>Phone:</strong>+216 12345678</figure>
-                    <figure><strong>Email:</strong>Immo@example.com</figure>
+                    <figure><strong>Phone:</strong>+216 54099448</figure>
+                    <figure><strong>Email:</strong>KRAIEM Immo@gmail.com</figure>
                 </div>
                 <div class="user-area">
                     
@@ -57,13 +58,13 @@ header("location:./Acceuil.php");}
                         <span class="icon-bar"></span>
                     </button>
                     <div class="navbar-brand nav" id="brand">
-                        <img src="assets/img/images (13).jpg" alt="brand"></a>
+                        <img src="assets/img/bbb.jpg" alt="brand"width="300" height="100"></a>
                     </div>
                 </div>
                 <nav class="collapse navbar-collapse bs-navbar-collapse navbar-right" role="navigation">
                     <ul class="nav navbar-nav">
                        
-					<li class="active "><a href="Acceuil.php"><b><FONT color="#4169E1">Acceuil</font></b></a>
+					<li  "><a href="Acceuil.php"><b><FONT color="#4169E1">Acceuil</font></b></a>
                             
                         </li>
                         <li ><a href="Acheter.php"><b><FONT color="#4169E1">Acheter</font></b></a>
@@ -112,33 +113,26 @@ header("location:./Acceuil.php");}
                 <div class="col-md-9 col-sm-9">
                     <section id="property-detail">
                         <header class="property-title">
-                            <h1><?php echo $a['Gouvernorat'];?></h1>
+                            <h1><?php $del=mysql_query("select * from Gouvernorat where id_gov='".$a['ville']."'");
+								            while($deleg=mysql_fetch_array($del)){?>
+								           <?php  echo $deleg["Nom"]		;?>
+								               <?php } ?></h1>
     
-                            <span class="actions">
-                                <!--<a href="#" class="fa fa-print"></a>-->
-                                <a href="#" class="bookmark" data-bookmark-state="empty"><span class="title-add">Ajouter au signet</span><span class="title-added">Added</span></a>
-                            </span>
+                            
                         </header>
                         <section id="property-gallery">
                             <div class="owl-carousel property-carousel">
-                                <div class="property-slide">
-                                    <a href="assets/img/<?php echo $a['file'];?>" class="image-popup">
-                                        <div class="overlay"><h3>Front View</h3></div>
-                                        <img alt="" src="assets/img/<?php echo $a['file'];?>">
-                                    </a>
-                                </div><!-- /.property-slide -->
-                                <div class="property-slide">
-                                    <a href="assets/img/<?php echo $a['file'];?>"" class="image-popup">
-                                        <div class="overlay"><h3>Bedroom</h3></div>
-                                        <img alt="" src="assets/img/<?php echo $a['file'];?>"">
-                                    </a>
-                                </div><!-- /.property-slide -->
-                                <div class="property-slide">
-                                    <a href="assets/img/<?php echo $a['file'];?>" class="image-popup">
-                                        <div class="overlay"><h3>Bathroom</h3></div>
-                                        <img alt="" src="assets/img/<?php echo $a['file'];?>">
-                                    </a>
-                                </div><!-- /.property-slide -->
+							<?php
+								$sqll=mysql_query("select * from im where idimmo='".$id."'  ");
+								
+								while($aa=mysql_fetch_array($sqll)){ 
+								
+								?>
+					              
+                                    <img alt="" src="./uploads/<?php echo $aa['file'];;?>" width="440" height="330">
+								<?php } ?>
+                                <!-- /.property-slide -->
+                                
                             </div><!-- /.property-carousel -->
                         </section>
                         <div class="row">
@@ -148,16 +142,26 @@ header("location:./Acceuil.php");}
                                     <dl>
                                        
 											<dt>Gouvernorat:</dt>
-                                            <dd><?php echo $a['Gouvernorat'];?></dd><br>
+                                            <dd><?php $del=mysql_query("select * from Gouvernorat where id_gov='".$a['ville']."'");
+								            while($deleg=mysql_fetch_array($del)){?>
+								           <?php  echo $deleg["Nom"]		;?>
+								               <?php } ?></dd><br>
 											
 											<dt>Delegation:</dt>
-                                            <dd><?php echo $a['Delegation'];?></dd><br>
+                                            <dd><?php $del=mysql_query("select * from delegation where id_del='".$a['dele']."'");
+								while($deleg=mysql_fetch_array($del)){?>
+								<?php echo $deleg["Nom"]		;?>
+								<?php } ?></dd><br>
 											
 											<dt>Localite:</dt>
-                                            <dd><?php echo $a['Localite'];?></dd>
+                                            <dd><?php $del=mysql_query("select * from localite where id='".$a['Localite']."'");
+								while($deleg=mysql_fetch_array($del)){?>
+								<?php echo $deleg["Nom"]		;?>
+								<?php } ?></dd><br>
 											
-                                        <dt>Prix</dt>
+                                        <dt>Prix:</dt>
                                             <dd><span class="tag price"><?php echo $a['prix'];?>DT</span></dd>
+											
                                         <dt> Type:</dt>
                                             <dd><?php echo $a['type'];?></dd>
                                         <dt>Status:</dt>
@@ -190,7 +194,7 @@ header("location:./Acceuil.php");}
                             </div><!-- /.col-md-8 -->
                             <div class="col-md-12 col-sm-12">
                                 <section id="contact-agent">
-                                    <header><h2>Contact Agent</h2></header>
+                                    <header><h2>Contacter</h2></header>
                                     
                                         
                         <section id="form">
@@ -212,9 +216,9 @@ header("location:./Acceuil.php");}
                                     </div><!-- /.col-md-6 -->
 									<div class="col-md-6">
                                         <div class="form-group">
-                                            <label for="form-contact-email"> Téléphone<em>*</em></label>
+                                            <label for="form-contact-mobile"> Téléphone<em>*</em></label>
 											<input type="hidden" name="id"  value="<?php echo $id;?>">
-                                            <input type="number" class="form-control" id="form-contact-email" name="tele" required>
+                                            <input type="number" class="form-control" id="form-contact-mobile" name="tele" required>
                                         </div><!-- /.form-group -->
                                     </div><!-- /.col-md-6 -->
                                 </div><!-- /.row -->
@@ -254,56 +258,13 @@ header("location:./Acceuil.php");}
     </div>
     <!-- end Page Content -->
     <!-- Page Footer -->
-    <footer id="page-footer">
-        <div class="inner">
-            <aside id="footer-main">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-3 col-sm-3">
-                            <article>
-                                <h3>About Us</h3>
-                               
-                                <hr>
-                               
-                            </article>
-                        </div><!-- /.col-sm-3 -->
-                        
-                        <div class="col-md-3 col-sm-3">
-                            <article>
-                                <h3>Contact</h3>
-                                <address>
-                                    <strong>Your Company</strong><br>
-                                    4877 Spruce Drive<br>
-                                    West Newton, PA 15089
-                                </address>
-                                +1 (734) 123-4567<br>
-                                <a href="#">hello@example.com</a>
-                            </article>
-                        </div><!-- /.col-sm-3 -->
-                        <div class="col-md-3 col-sm-3">
-                            <article>
-                                <h3>Useful Links</h3>
-                                <ul class="list-unstyled list-links">
-                                    <li><a href="#">All Properties</a></li>
-                                    <li><a href="#">Privacy Policy</a></li>
-                                    <li><a href="#">Login and Register Account</a></li>
-                                    <li><a href="#">FAQ</a></li>
-                                    <li><a href="#">Terms and Conditions</a></li>
-                                </ul>
-                            </article>
-                        </div><!-- /.col-sm-3 -->
-                    </div><!-- /.row -->
-                </div><!-- /.container -->
-            </aside><!-- /#footer-main -->
-            <aside id="footer-thumbnails" class="footer-thumbnails"></aside><!-- /#footer-thumbnails -->
+    <aside id="footer-thumbnails" class="footer-thumbnails"></aside><!-- /#footer-thumbnails -->
             <aside id="footer-copyright">
                 <div class="container">
                     <span>Copyright © 2013. All Rights Reserved.</span>
-                    <span class="pull-right"><a href="#page-top" class="roll">Go to top</a></span>
+                    <span class="pull-right"><a href="#page-top" class="roll">Haut de page</a></span>
                 </div>
             </aside>
-        </div><!-- /.inner -->
-    </footer>
     <!-- end Page Footer -->
 </div>
 

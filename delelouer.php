@@ -3,8 +3,8 @@ mysql_connect("localhost","root","");
 mysql_select_db("immo");
 
 
-$sql=mysql_query("select * from delegation where id_gov='".$_GET["code"]."'");
-$t='<select name="delegation" id="dele" onchange="showU();">
+$sql=mysql_query("select * from Delegation where id_gov='".$_GET["code"]."'");
+$t='<select name="delegation" id="delel" onchange="Louerl();">
 											<option readonly>Délégation</option>';
 while($d=mysql_fetch_array($sql))
 {

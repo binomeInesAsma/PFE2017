@@ -107,17 +107,16 @@ mysql_select_db("immo");
                         <div class="row">
 						<?php 
 				
-				$obj=$_POST['obj'];
+			
 				$type=$_POST['type'];
 				$Gouvernorat=$_POST['ville'];
 				$Delegation=$_POST['delegation'];
 				$Localite=$_POST['localite'];
-				$prix=$_POST['prix'];
-				$beds=$_POST['beds'];
+				
 				$area=$_POST['area'];
 				
 				
-				$sql=mysql_query("select * from immo where objectifs='".$obj."' and type='".$type."'and ville='".$Gouvernorat."' and dele='".$Delegation."' and localite='".$Localite."' and prix>='".$prix."'and beds>='".$beds."' and area>='".$area."'")
+				$sql=mysql_query("select * from immo where type='".$type."'and ville='".$Gouvernorat."' and dele='".$Delegation."' and localite='".$Localite."' and area>='".$area."'")
 				or die(mysql_error());
 				
 				while($a=mysql_fetch_array($sql)){
@@ -128,7 +127,7 @@ mysql_select_db("immo");
                                     <figure class="tag status"> <?php echo $a['objectifs'];?></figure>
                                      <a href="det.php?id=<?php echo $id ;?>">
                                         <div class="property-image">
-                                            <?php
+                                           <?php
 								$sqll=mysql_query("select * from im where idimmo='".$id."'  ");
 								$i=1;
 								while($aa=mysql_fetch_array($sqll)){ 
@@ -195,7 +194,7 @@ mysql_select_db("immo");
                             
                         </div><!-- /.row-->
                         
-                        
+                       
                         
 
                         <!-- Pagination -->
@@ -209,8 +208,7 @@ mysql_select_db("immo");
                 <!-- sidebar -->
                 
                 </div><!-- /.container -->
-            </aside><!-- /#footer-main -->
-            <aside id="footer-thumbnails" class="footer-thumbnails"></aside><!-- /#footer-thumbnails -->
+             <aside id="footer-thumbnails" class="footer-thumbnails"></aside><!-- /#footer-thumbnails -->
             <aside id="footer-copyright">
                 <div class="container">
                     <span>Copyright © 2013. All Rights Reserved.</span>

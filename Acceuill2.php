@@ -392,7 +392,7 @@ function openCity(evt, cityName) {
             <div class="container">
                 <div class="contact">
                     <figure><strong>Phone:</strong>+216 54099448</figure>
-                    <figure><strong>Email:</strong>KRAIEM Immo@gmail.com</figure>
+                    <figure><strong>Email:</strong>Immo@gmail.com</figure>
                 </div>
                 
             </div>
@@ -407,7 +407,7 @@ function openCity(evt, cityName) {
                         <span class="icon-bar"></span>
                     </button>
                     <div class="navbar-brand nav" id="brand">
-                        <img src="assets/img/bbb.jpg" alt="brand" width="300" height="100"></a>
+                        <img src="assets/img/images (13).jpg" alt="brand" width="300" height="70"></a>
                     </div>
                 </div>
                 <nav class="collapse navbar-collapse bs-navbar-collapse navbar-right" role="navigation">
@@ -443,10 +443,23 @@ function openCity(evt, cityName) {
  
    
    <!-- Slider -->
-    <div id="slider"  ><img alt="" src="assets/img/b.jpg" width="1800" height="700" ></div>
+    <div id="slider" class="loading has-parallax" >
+        <div id="loading-icon"><i class="fa fa-cog fa-spin"></i></div>
+        <div class="owl-carousel homepage-slider carousel-full-width">
+   
+    <div id="slider"  >
+	<div class="container">
+     <div class="overlay"></div></div><img alt="" src="assets/img/b.jpg" width="1500" height="1000" ></div>
+	 
+	<div id="slider"  >
+	<div class="container">
+    <div class="overlay"></div></div><img alt="" src="assets/img/a.jpg" width="1500" height="1000" ></div>
 	
+	<div id="slider"  >
+	<div class="container">
+     <div class="overlay"></div></div><img alt="" src="assets/img/c.jpg" width="1500" height="1000" ></div>
                 
-       
+       </div></div>
     <!-- end Slider -->
 	
 
@@ -479,7 +492,7 @@ function openCity(evt, cityName) {
                                                 <option value="<?php echo $t['NomT'];?>"><?php echo $t['NomT'];?></option>
                                                 <?php } ?>
 											</select>
-											<input type="hidden" name="obj" value="Vente">
+											<input type="hidden" name="obj" value="Acheter">
                                 </div><!-- /.form-group -->
                             </div>
                             
@@ -489,11 +502,11 @@ function openCity(evt, cityName) {
                                 <div class="form-group">
                                     <select name="prix">
 											<option readonly>Prix</option>
-											<?php $prix=mysql_query("select * from prixacheter");
+											<?php $prix=mysql_query("select * from prix");
 											
 											while($p=mysql_fetch_array($prix)){?>
                                                 
-                                                <option value="<?php echo $p['nomp'];?>"><?php echo $p['nomp'];?> TND+</option>
+                                                <option value="<?php echo $p['Nomp'];?>"><?php echo $p['Nomp'];?> TND+</option>
                                                 <?php } ?>
                                                 
                                             </select>
@@ -521,7 +534,7 @@ function openCity(evt, cityName) {
 											
 											while($sr=mysql_fetch_array($s)){?>
                                                 
-                                                <option value="<?php echo $sr['Noms'];?>"><?php echo  $sr['Noms'];?>m²+</option>
+                                                <option value="<?php echo $sr['Noms'];?>"><?php echo  $sr['Noms'];?>m² +</option>
                                                 <?php } ?>
                                                 
                                             </select>
@@ -588,7 +601,7 @@ function openCity(evt, cityName) {
                                                 <option value="<?php echo $t['NomT'];?>"><?php echo $t['NomT'];?></option>
                                                 <?php } ?>
 											</select>
-											<input type="hidden" name="obj" value="Location">
+											<input type="hidden" name="obj" value="Louer">
                                 </div><!-- /.form-group -->
                             </div>
                             
@@ -600,7 +613,7 @@ function openCity(evt, cityName) {
 											
 											while($p=mysql_fetch_array($prix)){?>
                                                 
-                                                <option value="<?php echo $p['Nomp'];?>"><?php echo $p['Nomp'];?> TND+</option>
+                                                <option value="<?php echo $p['Nomp'];?>"><?php echo $p['Nomp'];?> TND</option>
                                                 <?php } ?>
                                                 
                                             </select>
@@ -628,7 +641,7 @@ function openCity(evt, cityName) {
 											
 											while($sr=mysql_fetch_array($s)){?>
                                                 
-                                                <option value="<?php echo $sr['Noms'];?>"><?php echo  $sr['Noms'];?>m²+ </option>
+                                                <option value="<?php echo $sr['Noms'];?>"><?php echo  $sr['Noms'];?>m² </option>
                                                 <?php } ?>
                                                 
                                             </select>
@@ -709,7 +722,7 @@ function openCity(evt, cityName) {
 											
 											while($p=mysql_fetch_array($prix)){?>
                                                 
-                                                <option value="<?php echo $p['Nomp'];?>"><?php echo $p['Nomp'];?> TND+</option>
+                                                <option value="<?php echo $p['Nomp'];?>"><?php echo $p['Nomp'];?> TND</option>
                                                 <?php } ?>
                                                 
                                             </select>
@@ -737,7 +750,7 @@ function openCity(evt, cityName) {
 											
 											while($sr=mysql_fetch_array($s)){?>
                                                 
-                                                <option value="<?php echo $sr['Noms'];?>"><?php echo  $sr['Noms'];?>m²+ </option>
+                                                <option value="<?php echo $sr['Noms'];?>"><?php echo  $sr['Noms'];?>m² </option>
                                                 <?php } ?>
                                                 
                                             </select>
@@ -788,7 +801,7 @@ function openCity(evt, cityName) {
 					</div>
 					
 					<div id="Terrain" class="tabcontent">
-   <form  class="form-map form-search clearfix" action="./searchT.php" method="post">
+   <form  class="form-map form-search clearfix" action="./search.php" method="post">
                         <div class="row">
                             <div class="col-md-2 col-sm-4">
                                 <div class="form-group">
@@ -801,7 +814,7 @@ function openCity(evt, cityName) {
                                                 <option value="<?php echo $t['NomT'];?>"><?php echo $t['NomT'];?></option>
                                                 <?php } ?>
 											</select>
-											<input type="hidden" name="obj" value="Vente">
+											<input type="hidden" name="obj" value="sale">
                                 </div><!-- /.form-group -->
                             </div>
                             
@@ -809,11 +822,11 @@ function openCity(evt, cityName) {
                                 <div class="form-group">
                                     <select name="prix">
 											<option readonly>Prix</option>
-											<?php $prix=mysql_query("select * from prixacheter");
+											<?php $prix=mysql_query("select * from prix");
 											
 											while($p=mysql_fetch_array($prix)){?>
                                                 
-                                                <option value="<?php echo $p['nomp'];?>"><?php echo $p['nomp'];?> +TND</option>
+                                                <option value="<?php echo $p['Nomp'];?>"><?php echo $p['Nomp'];?> +TND</option>
                                                 <?php } ?>
                                                 
                                             </select>
@@ -828,7 +841,7 @@ function openCity(evt, cityName) {
 											
 											while($sr=mysql_fetch_array($s)){?>
                                                 
-                                                <option value="<?php echo $sr['Noms'];?>"><?php echo  $sr['Noms'];?>m²+ </option>
+                                                <option value="<?php echo $sr['Noms'];?>"><?php echo  $sr['Noms'];?>m² </option>
                                                 <?php } ?>
                                                 
                                             </select>
@@ -879,7 +892,7 @@ function openCity(evt, cityName) {
   
 </div>
 <div id="Commerce" class="tabcontent">
-  <form  class="form-map form-search clearfix" action="./searchBC.php" method="post">
+  <form  class="form-map form-search clearfix" action="./search.php" method="post">
                         <div class="row">
                             <div class="col-md-2 col-sm-4">
                                 <div class="form-group">
@@ -892,7 +905,7 @@ function openCity(evt, cityName) {
                                                 <option value="<?php echo $t['NomT'];?>"><?php echo $t['NomT'];?></option>
                                                 <?php } ?>
 											</select>
-											<input type="hidden" name="obj" value="">
+											<input type="hidden" name="obj" value="Commerce">
                                 </div><!-- /.form-group -->
                             </div>
                             
@@ -957,7 +970,7 @@ function openCity(evt, cityName) {
 </div>
 
 		<div id="Bureau" class="tabcontent">
- <form  class="form-map form-search clearfix" action="./searchBC.php" method="post">
+ <form  class="form-map form-search clearfix" action="./search.php" method="post">
                         <div class="row">
                             <div class="col-md-2 col-sm-4">
                                 <div class="form-group">
@@ -970,7 +983,7 @@ function openCity(evt, cityName) {
                                                 <option value="<?php echo $t['NomT'];?>"><?php echo $t['NomT'];?></option>
                                                 <?php } ?>
 											</select>
-											<input type="hidden" name="obj" value="">
+											<input type="hidden" name="obj" value="Bureau">
                                 </div><!-- /.form-group -->
                             </div>
                             
@@ -984,7 +997,7 @@ function openCity(evt, cityName) {
 											
 											while($sr=mysql_fetch_array($s)){?>
                                                 
-                                                <option value="<?php echo $sr['Noms'];?>"><?php echo  $sr['Noms'];?>m²+ </option>
+                                                <option value="<?php echo $sr['Noms'];?>"><?php echo  $sr['Noms'];?>m² </option>
                                                 <?php } ?>
                                                 
                                             </select>
@@ -1050,12 +1063,12 @@ function openCity(evt, cityName) {
                     <h1 class="no-bottom-margin no-border"> <a href="#" class="text-underline"></a></h1>
                 </div>
             </div>
-        </section><!-- /#banner --><br><br>
+        </section><!-- /#banner -->
 		<section id="price-drop" class="block">
-            <div class="container">
+            <div class="container"><br><br><br>
                 <header class="section-title">
                     <h2>Proprietés Récentes</h2>
-     
+                   
                 </header>
                 <div class="row">
 				<?php $sql=mysql_query("select * from immo where etat=1")or die(mysql_error());
@@ -1067,26 +1080,13 @@ function openCity(evt, cityName) {
                         <div class="property">
                             <a href="det.php?id=<?php echo $id ;?>">
                                 <div class="property-image">
-								<?php
-								$sqll=mysql_query("select * from im where idimmo='".$id."'  ");
-								$i=1;
-								while($aa=mysql_fetch_array($sqll)){ 
-								if($i==1)
-								{
-								
-								?>
-					              
-                                    <img alt="" src="./uploads/<?php echo $aa['file'];;?>" width="440" height="330">
-								<?php }$i++;} ?>
+                                    <img alt="" src="assets/img/<?php echo $a['file'];?>" width="440" height="330">
                                 </div>
                                 <div class="overlay">
                                     <div class="info">
                                         <div class="tag price"><?php echo $a['prix'];?> DT</div>
                                         <h3><?php echo $a['type'];?></h3>
-                                        <h3><?php $del=mysql_query("select * from Gouvernorat where id_gov='".$a['ville']."'");
-								            while($deleg=mysql_fetch_array($del)){?>
-								           <?php  echo $deleg["Nom"]		;?>
-								               <?php } ?></h3>
+                                        <h3><?php echo $a['Gouvernorat'];?></h3>
                                     </div>
                                     <ul class="additional-info">
                                         <li>
@@ -1128,46 +1128,6 @@ function openCity(evt, cityName) {
                 </a>
             </div>
         </aside><!-- /#adveritsing-->
-		  <footer id="page-footer">
-        <div class="inner">
-            <aside id="footer-main">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-6 ">
-                            <article >
-							
-                                <h3>A propos</h3>
-                                <p>bbbbbbbbbbbbbbbbbbbbbbbbbbb
-								bbbbbbbbbbbbbbbbbbbbbbbbbbbbb
-								bbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
-                                </p>
-                                <hr>
-                              
-                            </article>
-                        </div><!-- /.col-sm-3 -->
-                        <div class="col-md-3 col-sm-3">
-                            
-                                <h3>Contact</h3>
-                                
-                                +216 54099448<br>
-                                <a >KRAIEM Immo@gmail.com</a>
-                            </article>
-                        </div><!-- /.col-sm-3 -->
-                        <div class="col-md-6">
-                            <article>
-                                <h3>Gatégorie</h3>
-                                <ul class="list-unstyled list-links">
-                                    <li><a href="Acheter.php">Acheter</a></li>
-                                    <li><a href="Louer.php">Louer</a></li>
-                                    <li><a href="Vacances.php">Vacances</a></li>
-                                    <li><a href="contact.php">Contact</a></li>
-                                    <li><a href="ajout.php">Proposer vos bien</a></li>
-                                </ul>
-                            </article>
-                        </div><!-- /.col-sm-3 -->
-                    </div><!-- /.row -->
-                </div><!-- /.container -->
-            </aside><!-- /#footer-main -->
         
         
             <aside id="footer-thumbnails" class="footer-thumbnails"></aside><!-- /#footer-thumbnails -->

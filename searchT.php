@@ -107,26 +107,24 @@ mysql_select_db("immo");
                         <div class="row">
 						<?php 
 				
-				$obj=$_POST['obj'];
+				
 				$type=$_POST['type'];
 				$Gouvernorat=$_POST['ville'];
 				$Delegation=$_POST['delegation'];
 				$Localite=$_POST['localite'];
 				$prix=$_POST['prix'];
-				$beds=$_POST['beds'];
-				$area=$_POST['area'];
+			    $area=$_POST['area'];
 				
 				
-				$sql=mysql_query("select * from immo where objectifs='".$obj."' and type='".$type."'and ville='".$Gouvernorat."' and dele='".$Delegation."' and localite='".$Localite."' and prix>='".$prix."'and beds>='".$beds."' and area>='".$area."'")
+				$sql=mysql_query("select * from immo where type='".$type."'and ville='".$Gouvernorat."' and dele='".$Delegation."' and localite='".$Localite."' and prix>='".$prix."'and  area>='".$area."'")
 				or die(mysql_error());
 				
 				while($a=mysql_fetch_array($sql)){
-					$id=$a['id'];
-					?>
+					$id=$a['id'];?>
                             <div class="col-md-4 col-sm-4">
                                 <div class="property equal-height">
                                     <figure class="tag status"> <?php echo $a['objectifs'];?></figure>
-                                     <a href="det.php?id=<?php echo $id ;?>">
+                                        <a href="det.php?id=<?php echo $id ;?>">
                                         <div class="property-image">
                                             <?php
 								$sqll=mysql_query("select * from im where idimmo='".$id."'  ");
@@ -195,7 +193,7 @@ mysql_select_db("immo");
                             
                         </div><!-- /.row-->
                         
-                        
+                       
                         
 
                         <!-- Pagination -->
@@ -208,17 +206,20 @@ mysql_select_db("immo");
 
                 <!-- sidebar -->
                 
-                </div><!-- /.container -->
-            </aside><!-- /#footer-main -->
-            <aside id="footer-thumbnails" class="footer-thumbnails"></aside><!-- /#footer-thumbnails -->
+                </div><!-- /.col-md-3 -->
+                <!-- end Sidebar -->
+            </div><!-- /.row -->
+        </div><!-- /.container -->
+    </div>
+    <!-- end Page Content -->
+    <!-- Page Footer -->
+   <aside id="footer-thumbnails" class="footer-thumbnails"></aside><!-- /#footer-thumbnails -->
             <aside id="footer-copyright">
                 <div class="container">
                     <span>Copyright © 2013. All Rights Reserved.</span>
                     <span class="pull-right"><a href="#page-top" class="roll">Haut de page</a></span>
                 </div>
             </aside>
-        </div><!-- /.inner -->
-    </footer>
     <!-- end Page Footer -->
 </div>
 
