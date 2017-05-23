@@ -42,8 +42,8 @@ header("location:./Acceuil.php");}
         <div class="secondary-navigation">
             <div class="container">
                 <div class="contact">
-                    figure><strong>Phone:</strong>+216 54099448</figure>
-                    <figure><strong>Email:</strong>KRAIEM Immo@gmail.com</figure>
+                    <figure><strong>Phone:</strong>+216 54099448 / +216 20946364</figure>
+                    <figure><strong>Email:</strong>CLIQUEImmo@gmail.com</figure>
                 </div>
                 <div class="user-area">
                     
@@ -60,7 +60,7 @@ header("location:./Acceuil.php");}
                         <span class="icon-bar"></span>
                     </button>
                     <div class="navbar-brand nav" id="brand"width="300" height="70">
-                        <a href="index-google-map-fullscreen.html"><img src=" assets/img/bbb.jpg" alt="brand"width="300" height="100"></a>
+                    <img src=" assets/img/KK.jpg" alt="brand"width="300" height="100"></a>
                     </div>
                 </div>
                 <nav class="collapse navbar-collapse bs-navbar-collapse navbar-right" role="navigation">

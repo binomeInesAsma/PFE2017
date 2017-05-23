@@ -391,8 +391,8 @@ function openCity(evt, cityName) {
         <div class="secondary-navigation">
             <div class="container">
                 <div class="contact">
-                    <figure><strong>Phone:</strong>+216 54099448</figure>
-                    <figure><strong>Email:</strong>KRAIEM Immo@gmail.com</figure>
+                    <figure><strong>Phone:</strong>+216 54099448 / +216 20946364</figure>
+                    <figure><strong>Email:</strong>CLIQUEImmo@gmail.com</figure>
                 </div>
                 
             </div>
@@ -407,7 +407,7 @@ function openCity(evt, cityName) {
                         <span class="icon-bar"></span>
                     </button>
                     <div class="navbar-brand nav" id="brand">
-                        <img src="assets/img/bbb.jpg" alt="brand" width="300" height="100"></a>
+                        <img src="assets/img/CC.jpg" alt="brand" width="300" height="100"></a>
                     </div>
                 </div>
                 <nav class="collapse navbar-collapse bs-navbar-collapse navbar-right" role="navigation">
@@ -1121,7 +1121,7 @@ function openCity(evt, cityName) {
                 <a href="ajout.php">
                     <div class="banner">
                         <div class="wrapper">
-                            <span class="title">Voulez-vous que votre propriété soit énumérée ici?</span>
+                            <span class="title"width="100" height="50">Voulez-vous que votre propriété soit énumérée ici?</span>
                             <span class="submit"> Envoyez-le maintenant! <i class="fa fa-plus-square"></i></span>
                         </div>
                     </div><!-- /.banner-->
@@ -1133,13 +1133,23 @@ function openCity(evt, cityName) {
             <aside id="footer-main">
                 <div class="container">
                     <div class="row">
-                        <div class="col-md-6 ">
+					
+						 <div class="col-md-3 ">
+                            <article >
+							 <div class="navbar-brand nav" id="brand">
+                        <a href="#"><img src="assets/img/KK.jpg" alt="brand"width="250" height="100"></a>
+                    </div>
+                              
+                            </article>
+                        </div><!-- /.col-sm-3 -->
+                        <div class="col-md-3 ">
                             <article >
 							
                                 <h3>A propos</h3>
-                                <p>bbbbbbbbbbbbbbbbbbbbbbbbbbb
-								bbbbbbbbbbbbbbbbbbbbbbbbbbbbb
-								bbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+                                <p>Notre site se spécialise dans la gestion immobilière.
+								   Nous offrons aux divers propriétaires et chercheurs un service de qualité 
+								   jusqu’à la gestion complète de vos investissements immobiliers.
+								   Notre secteur d'activité couvre toute la Tunisie .
                                 </p>
                                 <hr>
                               
@@ -1149,11 +1159,11 @@ function openCity(evt, cityName) {
                             
                                 <h3>Contact</h3>
                                 
-                                +216 54099448<br>
-                                <a >KRAIEM Immo@gmail.com</a>
+                                +216 54099448 / +216 20946364<br>
+                                <a >CLIQUE Immo@gmail.com</a>
                             </article>
                         </div><!-- /.col-sm-3 -->
-                        <div class="col-md-6">
+                        <div class="col-md-3">
                             <article>
                                 <h3>Gatégorie</h3>
                                 <ul class="list-unstyled list-links">

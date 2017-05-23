@@ -32,8 +32,8 @@ mysql_select_db("immo");
         <div class="secondary-navigation">
             <div class="container">
                 <div class="contact">
-                    figure><strong>Phone:</strong>+216 54099448</figure>
-                    <figure><strong>Email:</strong>KRAIEM Immo@gmail.com</figure>
+                    <figure><strong>Phone:</strong>+216 54099448 / +216 20946364</figure>
+                    <figure><strong>Email:</strong>CLIQUEImmo@gmail.com</figure>
                 </div>
                 <div class="user-area">
                     
@@ -51,7 +51,7 @@ mysql_select_db("immo");
                     </button>
                     <div class="navbar-brand nav" id="brand" >
 					
-                        <img src="assets/img/bbb.jpg" alt="brand"width="300" height="100"></a>
+                        <img src="assets/img/KK.jpg" alt="brand"width="300" height="100"></a>
                     </div>
                 </div>
                 <nav class="collapse navbar-collapse bs-navbar-collapse navbar-right" role="navigation">

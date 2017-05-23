@@ -40,8 +40,8 @@ header("location:./Acceuil.php");}
         <div class="secondary-navigation">
             <div class="container">
                 <div class="contact">
-                    <figure><strong>Phone:</strong>+216 54099448</figure>
-                    <figure><strong>Email:</strong>KRAIEM Immo@gmail.com</figure>
+                     <figure><strong>Phone:</strong>+216 54099448 / +216 20946364</figure>
+                    <figure><strong>Email:</strong>CLIQUEImmo@gmail.com</figure>
                 </div>
                 <div class="user-area">
                     
@@ -58,7 +58,7 @@ header("location:./Acceuil.php");}
                         <span class="icon-bar"></span>
                     </button>
                     <div class="navbar-brand nav" id="brand">
-                        <img src="assets/img/bbb.jpg" alt="brand"width="300" height="100"></a>
+                        <img src="assets/img/CC.jpg" alt="brand"width="300" height="100"></a>
                     </div>
                 </div>
                 <nav class="collapse navbar-collapse bs-navbar-collapse navbar-right" role="navigation">
@@ -175,7 +175,7 @@ header("location:./Acceuil.php");}
                                         <dt>Garages:</dt>
                                             <dd><?php echo $a['garages'];?></dd>
                                         
-                                    </dl>
+                                    </dl>clic
                                 </section><!-- /#quick-summary -->
 				</div><!-- /.col-md-4 --><?php } ?>
                             <div class="col-md-8 col-sm-12">
@@ -185,12 +185,7 @@ header("location:./Acceuil.php");}
                                <br>
                                 
                                 
-                                <section id="video-presentation">
-                                    <header><h2>Video Presentation</h2></header>
-                                    <div class="video">
-                                        <iframe src="//player.vimeo.com/video/34741214?title=0&amp;byline=0&amp;portrait=0&amp;color=ffffff" width="500" height="281" ></iframe>
-                                    </div>
-                                </section><!-- /#video-presentation -->
+                                 
                             </div><!-- /.col-md-8 -->
                             <div class="col-md-12 col-sm-12">
                                 <section id="contact-agent">

@@ -1,9 +1,9 @@
 <?php 
 mysql_connect("localhost","root","");
 mysql_select_db("immo");
-if(isset($_POST['file'])){
+
 if(isset($_POST['ville'])){
-	$Gouvernorat=$_POST['ville'];
+$Gouvernorat=$_POST['ville'];
 $Delegation=$_POST['delegation'];
 $Localite=$_POST['localite'];
 $type=$_POST['type'];
@@ -17,12 +17,12 @@ $tele=$_POST['tele'];
 $prix=$_POST['prix'];
 $sql=mysql_query("insert into immo(ville,dele,Localite,type,objectifs,beds,baths,area,garages,email,tele,prix)
 values('".$Gouvernorat."','".$Delegation."','".$Localite."','".$type."','".$objectifs."','".$beds."','".$bath."','".$area."','".$garages."','".$email."','".$tele."','".$prix."')")or die(mysql_error());
-$sql=mysql_query("select * from immo ");
+$sql=mysql_query("select * from immo ")or die(mysql_error());
 $i=0;
-while($d=mysql_fetch_array($sql)){
+ while($d=mysql_fetch_array($sql)){
 	$i++;
 }
-	$valid_formats=array("jpg","png","gif","bmp");
+
 										  $max_file_size=1024*100;
 										  $path="./uploads/";
 										  $count=0;
@@ -32,20 +32,18 @@ while($d=mysql_fetch_array($sql)){
 											  $count++;
 										  
 										  } 
+										  
+										  
+
+										 
+										  
+										 
 										
 
 
 header("location:./Acceuil.php");
-
-	
-	
-	
         
-    } else {
-        echo "Sorry, there was an error uploading your file.";
-    }
-
-}
+    } 
 ?>
 
 
@@ -136,8 +134,8 @@ function showU() {
         <div class="secondary-navigation">
             <div class="container">
                 <div class="contact">
-                    figure><strong>Phone:</strong>+216 54099448</figure>
-                    <figure><strong>Email:</strong>KRAIEM Immo@gmail.com</figure>
+                   <figure><strong>Phone:</strong>+216 54099448 / +216 20946364</figure>
+                    <figure><strong>Email:</strong>CLIQUEImmo@gmail.com</figure>
                 </div>
                 <div class="user-area">
                     
@@ -154,7 +152,7 @@ function showU() {
                         <span class="icon-bar"></span>
                     </button>
                     <div class="navbar-brand nav" id="brand">
-                        <a href="#"><img src="assets/img/bbb.jpg" alt="brand"width="300" height="100"></a>
+                        <a href="#"><img src="assets/img/CC.jpg" alt="brand"width="300" height="100"></a>
                     </div>
                 </div>
                 <nav class="collapse navbar-collapse bs-navbar-collapse navbar-right" role="navigation">
@@ -226,7 +224,7 @@ function showU() {
                                                     <div class="form-group">
                                                         <label for="submit-location" ><FONT color="#4169E1">Gouvernorat</font></label>
                                                        <select name="ville" id="ville" onchange="showUser();">
-											<option readonly>Gouvernorat</option>
+											<option >Gouvernorat</option>
 											<?php $ville=mysql_query("select * from Gouvernorat ");
 											
 											while($v=mysql_fetch_array($ville)){?>
@@ -249,7 +247,7 @@ function showU() {
                                                             <div class="form-group">
                                                                 <label for="submit-status"><FONT color="#4169E1">Status</font></label>
                                                                 <select name="objectifs" id="objectifs">
-																<option readonly>Status</option>
+															
                                                                     <option value="Vente">Vente</option>
                                                                     <option value="Location">Location</option>
 																	<option value="Vacances">Vacances</option>
@@ -261,7 +259,7 @@ function showU() {
 													<div class="col-md-6 col-sm-6">
                                                  
                                                         <label ><FONT color="#4169E1">Délegation</font></label>
-														<div class="form-group"id="delegation"maxlength="29">
+														<div class="form-group"id="delegation"maxlength="29" >
                                                         <select name="dele" id="dele" >
 											            <option >Délégation</option>
 
@@ -271,14 +269,14 @@ function showU() {
                                            
                                                         <div class="col-md-6 col-sm-6">
                                                             <div class="form-group">
-                                                                <label for="submit-property-type"><FONT color="#4169E1">Type</font></label>
+                                                                <label for="submit-property-type" ><FONT color="#4169E1">Type</font></label>
                                                                <select name="type">
-											<option readonly>Type</option>
+											
 											<?php $type=mysql_query("select * from type");
 											
 											while($t=mysql_fetch_array($type)){?>
                                                 
-                                                <option value="<?php echo $t['NomT'];?>"><?php echo $t['NomT'];?></option>
+                                                <option value="<?php echo $t['NomT'];?>" ><?php echo $t['NomT'];?></option>
                                                 <?php } ?>
 											</select>
                                                             </div><!-- /.form-group -->
@@ -342,7 +340,7 @@ function showU() {
                                                         <div class="col-md-6 col-sm-6">
                                                             <div class="form-group">
                                                                 <label for="submit-garages"><FONT color="#4169E1">Mobile</font></label>
-                                                                <input type="number" class="form-control" id="submit-garages" name="tele" pattern="\d*" required>
+                                                                <input type="number" class="form-control" id="submit-garages" name="tele" pattern="\d*"required>
                                                            
 														   </div><!-- /.form-group -->
                                                         </div><!-- /.col-md-6 -->
@@ -364,13 +362,15 @@ function showU() {
                                     <header></header>
                                     <div class="center">
                                         <div class="form-group">
-                                            <input id="file-upload" type="file" name="file[]"  class="file" multiple="true" data-show-upload="false" data-show-caption="false" data-show-remove="false" accept="image/jpeg,image/png,image/jpg" data-browse-class="btn btn-default" data-browse-label="Télécharger images">
+                                            <input id="file-upload" type="file" name="file[]"  class="file" multiple="true" data-show-upload="false" data-show-caption="false" data-show-remove="false" accept="image/jpeg,image/png,image/jpg"  data-browse-class="btn btn-default" data-browse-label="Télécharger images">
                                          
 											<figure class="note"><strong></strong> Vous pouvez télécharger toutes les images en même temps!</figure>
                                             <figure class="note"><strong></strong></figure>
                                         </div>
                                     </div>
                                 </section>
+								
+								
 
                                 
                         </div><!-- /.col-md-9 -->
